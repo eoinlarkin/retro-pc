@@ -5,6 +5,7 @@ An ecommerce website for the selling of vintage PC hardware
 
 - [Objectives](#objectives)
   - [User Stories](#user-stories)
+- [SEO]
 - [Design](#design)
   - [Wireframes](#wireframes)
   - [Color Palette](#color-palette)
@@ -25,6 +26,9 @@ An ecommerce website for the selling of vintage PC hardware
   - [HTML / CSS](#html---css)
   - [Images](#images)
   - [Other](#other)
+
+
+## SEO
 
 ## Credits & Attributions
 
