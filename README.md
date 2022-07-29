@@ -2,38 +2,43 @@
 
 An ecommerce website for the selling of vintage PC hardware
 
+# Objectives
 
-- [Objectives](#objectives)
-  - [User Stories](#user-stories)
-- [SEO]
-- [Design](#design)
-  - [Wireframes](#wireframes)
-  - [Color Palette](#color-palette)
-  - [Fonts](#fonts)
-- [Database Model & Schema](#database-model---schema)
-- [Features](#features)
-  - [Implemented Features](#implemented-features)
-  - [Future Additional Features](#future-additional-features)
-- [Testing](#testing)
-- [Deployment](#deployment)
-  - [Heroku Deployment](#heroku-deployment)
-- [Technologies Used](#technologies-used)
-  - [Languages](#languages)
-  - [Tools](#tools)
-- [Credits](#credits)
-  - [Libraries](#libraries)
-  - [Code](#code)
-  - [HTML / CSS](#html---css)
-  - [Images](#images)
-  - [Other](#other)
+## User Stories
+
+# SEO
+
+# Design
+
+## Wireframes
+## COlor Palette
+## Fonts
+
+# Database Model & Schema
+
+# Design
 
 
-## SEO
+## Wireframes
+## Color Palette
+## Fonts
+# Database Model & Schema
+# Features
+  ## Implemented Features
+  ## Future Additional Features
+# Testing
+# Deployment
+  ## Heroku Deployment
+# Technologies Used
+  ## Languages
+  ## Tools
 
-## Credits & Attributions
-
-### Other
-
+# Credits
+  ## Libraries
+  ## Code
+  ## HTML / CSS
+  ## Images
+  ## Other
 - `venv` was used to manage the python dependencies 
 
 
