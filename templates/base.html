@@ -1,0 +1,49 @@
+{% load static %}
+
+<!doctype html>
+<html lang="en">
+
+<head>
+
+  {% block meta %}
+  <!-- Required meta tags -->
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  {% endblock %}
+
+  {% block extra_meta %}
+  {% endblock %}
+
+  {% block corecss %}
+  {% endblock %}
+
+
+  {% block corejs %}
+  {% endblock %}
+
+  {% block extra_js %}
+  {% endblock %}
+
+  <title>RetroPC {% block extra_title %}{% endblock %}</title>
+</head>
+
+<body>
+  <header>
+  </header>
+
+  <h1>Test Text</h1>
+
+  {% block page_header %}
+  {% endblock %}
+
+  {% block content %}
+  {% endblock %}
+
+  {% block postloadjs %}
+  {% endblock %}
+
+
+</body>
+
+</html>
