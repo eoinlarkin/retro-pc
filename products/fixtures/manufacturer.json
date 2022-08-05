@@ -1,0 +1,17 @@
+[
+    {
+        "pk": 1,
+        "model": "products.manufacturer",
+        "fields": {
+            "manufacturer": "MITS"
+        }
+    },
+    {
+        "pk": 2,
+        "model": "products.manufacturer",
+        "fields": {
+            "manufacturer": "Processor Technology"
+        }
+    }
+
+]
