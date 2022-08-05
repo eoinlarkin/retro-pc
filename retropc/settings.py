@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 
 from pathlib import Path
 import os
+import dj_database_url # required for postgres deployment
 
 # required to use env.py for environment variables
 # used for local testing
@@ -31,7 +32,12 @@ SECRET_KEY = os.environ.get("SECRET_KEY")
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    "retropc.herokuapp.com",
+    "localhost",
+    "127.0.0.1",
+    "0.0.0.0",
+    ]
 
 
 # Application definition
