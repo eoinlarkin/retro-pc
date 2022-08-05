@@ -5,13 +5,13 @@ class ReleaseDecade(models.Model):
     release_decade = models.CharField(max_length=254, null=True, blank=True)
 
     def __str__(self):
-        return self.name
+        return self.release_decade
 
 class Manufacturer(models.Model):
     manufacturer = models.CharField(max_length=254, null=True, blank=True)
 
     def __str__(self):
-        return self.name
+        return self.manufacturer
 
 class Product(models.Model):
     release_decade = models.ForeignKey('ReleaseDecade', null=True, blank=True, on_delete=models.SET_NULL)
