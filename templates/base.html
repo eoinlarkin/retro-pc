@@ -30,6 +30,19 @@
 
 <body>
   <header>
+
+    <nav>
+      <ul>
+          <li class="active"><a href="#">Home</a></li>
+          <li><a href="store">Store</a></li>
+          <li><a href="#">Cart</a></li>
+          {% if request.user.is_superuser %}
+          <a href="" class="dropdown-item">Product Management</a>
+          {% endif %}
+          <li><a href="#">Profile</a></li>
+      </ul>
+  </nav>
+
   </header>
 
   <h1>Test Text</h1>

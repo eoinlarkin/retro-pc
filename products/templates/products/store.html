@@ -1,0 +1,122 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block page_header %}
+    <div>
+        Page Header for Products
+    </div>
+{% endblock %}
+
+{% block content %}
+
+
+
+                <h2>Products</h2>
+                {% for c in current_manufacturer %}
+                    <a class="" href="{% url 'store' %}?manufacturer={{ c.name }}">
+                        <span class="">{{ c.friendly_name }}</span>
+                    </a>
+                {% endfor %}
+                <hr class="">
+            </div>
+        </div>
+        <div class="">
+            <div class="">
+                <div class="">
+                    <div class="">
+                        <div class="">
+                            <select id="sort-selector" class="">
+                                <option value="reset" {% if current_sorting == 'None_None' %}selected{% endif %}>Sort by...</option>
+                                <option value="price_asc" {% if current_sorting == 'price_asc' %}selected{% endif %}>Price (low to high)</option>
+                                <option value="price_desc" {% if current_sorting == 'price_desc' %}selected{% endif %}>Price (high to low)</option>
+                                <option value="name_asc" {% if current_sorting == 'name_asc' %}selected{% endif %}>Name (A-Z)</option>
+                                <option value="name_desc" {% if current_sorting == 'name_desc' %}selected{% endif %}>Name (Z-A)</option>
+                                <option value="manufacturer_asc" {% if current_sorting == 'manufacturer_asc' %}selected{% endif %}>Manufacturer (A-Z)</option>
+                                <option value="manufacturer_desc" {% if current_sorting == 'manufacturer_desc' %}selected{% endif %}>Manufacturer (Z-A)</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="">
+                        <p class="">
+                            {% if search_term or current_manufacturer or current_sorting != 'None_None' %}
+                                <span class="small"><a href="{% url 'store' %}">Store Home</a> | </span>
+                            {% endif %}
+                            {{ products|length }} Products{% if search_term %} found for <strong>"{{ search_term }}"</strong>{% endif %}
+                        </p>
+                    </div>
+                </div>
+                <div class="row">
+                    {% for product in products %}
+                        <div class="">
+                            <div class="">
+                                {% if product.image %}
+                                <a href="{% url 'product_detail' product.id %}">
+                                    <img class="" src="{{ product.image.url }}" alt="{{ product.name }}">
+                                </a>
+                                {% else %}
+                                <a href="{% url 'product_detail' product.id %}">
+                                    <img class="" src="{{ MEDIA_URL }}noimage.png" alt="{{ product.name }}">
+                                </a>
+                                {% endif %}
+                                <div class="">
+                                    <p class="">{{ product.name }}</p>
+                                </div>
+                                <div class="">
+                                    <div class="">
+                                        <div class="">
+                                            <p class="">${{ product.price }}</p>
+                                            {% if product.manufacturer %}
+                                            <p class="">
+                                                <a class="" href="{% url 'products' %}?category={{ product.category.name }}">
+                                                    <i class=""></i>{{ product.category.friendly_name }}
+                                                </a>
+                                            </p>
+                                            {% endif %}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                </div>
+            </div>
+        </div>
+
+        {% endfor %}
+    
+  
+{% endblock %}
+
+{% block postloadjs %}
+
+    <!-- This will append the code to anything already in the block as opposed to  overwriting -->
+    {{ block.super }} 
+    <script type="text/javascript">
+		$('.btt-link').click(function(e) {
+			window.scrollTo(0,0)
+		})
+	</script>
+    
+    <!-- Code to make the sorting logic work -->
+    <script type="text/javascript">
+        $('#sort-selector').change(function() {
+            var selector = $(this);
+            var currentUrl = new URL(window.location);
+
+            var selectedVal = selector.val();
+            if(selectedVal != "reset"){
+                var sort = selectedVal.split("_")[0]; // get sorting parameter
+                var direction = selectedVal.split("_")[1]; // get ascending or descending
+
+                currentUrl.searchParams.set("sort", sort);
+                currentUrl.searchParams.set("direction", direction);
+
+                window.location.replace(currentUrl);
+            } else {
+                currentUrl.searchParams.delete("sort");
+                currentUrl.searchParams.delete("direction");
+
+                window.location.replace(currentUrl);
+            }
+        })
+    </script>
+{% endblock %}

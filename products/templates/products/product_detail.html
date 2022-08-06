@@ -1,0 +1,99 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block page_header %}
+    <div class="">
+        <div class="">
+            <div class=""></div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block content %}
+    <div class=""></div>
+    <div class="">
+        <div class="">
+            <div class="">
+                <div class="">
+                    {% if product.image %}
+                        <a href="{{ product.image.url }}" target="_blank">
+                            <img class="" src="{{ product.image.url }}" alt="{{ product.name }}">
+                        </a>
+                        {% else %}
+                        <a href="">
+                            <img class="" src="{{ MEDIA_URL }}noimage.png" alt="{{ product.name }}">
+                        </a>
+                    {% endif %}
+                </div>
+            </div>
+            <div class="">
+                <div class="">
+                    <p class="">{{ product.name }}</p>
+                    <p class="">${{ product.price }}</p>
+                    <p class="">${{ product.manufactuer }}</p>
+                    <p class="">{{ product.description }}</p>
+
+                    <!-- Uses the post method to send information to the server -->
+                    <!-- As we are using post, need to include the csrf_token  -->
+                    <!-- <form class="form" action="% url 'add_to_bag' product.id %" method="POST"> -->
+                    <form class="form" action="" method="POST">    
+                        {% csrf_token %}
+                        <div class="form-row">
+                            
+                            
+                            <!-- First Column with quantity -->
+                            <div class="">
+                                <p class=""><strong>Quantity:</strong></p>
+                                <div class="">
+                                    <div class="">                     
+                                        <div class="">
+                                            <button class="" 
+                                                data-item_id="{{ product.id }}" id="decrement-qty_{{ product.id }}">
+                                                <span class="">
+                                                    <i class=""></i>
+                                                </span>
+                                            </button>
+                                        </div>
+                                        <input class="" type="number"
+                                            name="quantity" value="1" min="1" max="99"
+                                            data-item_id="{{ product.id }}"
+                                            id="id_qty_{{ product.id }}">
+                                        <div class="">
+                                            <button class=""
+                                                data-item_id="{{ product.id }}" id="increment-qty_{{ product.id }}">
+                                                <span class="">
+                                                    <i class=""></i>
+                                                </span>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Second Column with products -->
+                            <div class="">
+                                <a href="{% url 'products' %}" class="">
+                                    <span class="">
+                                        <i class=""></i>
+                                    </span>
+                                    <!-- Keep Shopping button -->
+                                    <span class="">Keep Shopping</span>
+                                </a>
+                                <input type="submit" class="" value="Add to Bag">
+                            </div>
+                            <!-- Hidden redirect button -->
+                            <!-- Redirect URL will contain the current url -->
+                            <input type="hidden" name="redirect_url" value="{{ request.path }}">
+
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block postloadjs %}
+{{ block.super }}
+{% include 'products/includes/quantity_input_script.html' %}
+{% endblock  %}
