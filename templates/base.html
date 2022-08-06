@@ -35,7 +35,7 @@
       <ul>
           <li class="active"><a href="#">Home</a></li>
           <li><a href="store">Store</a></li>
-          <li><a href="#">Cart</a></li>
+          <li><a href="{% url 'cart' %}">Cart</a></li>
           {% if request.user.is_superuser %}
           <a href="" class="dropdown-item">Product Management</a>
           {% endif %}
