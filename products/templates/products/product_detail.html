@@ -33,14 +33,13 @@
                     <p class="">${{ product.manufactuer }}</p>
                     <p class="">{{ product.description }}</p>
 
+                    <!-- Add to Cart Form-->
                     <!-- Uses the post method to send information to the server -->
                     <!-- As we are using post, need to include the csrf_token  -->
-                    <!-- <form class="form" action="% url 'add_to_bag' product.id %" method="POST"> -->
-                    <form class="form" action="" method="POST">    
+                    <!-- <form class="form" action="% url 'add_to_cart' product.id %" method="POST"> -->
+                    <form class="form" action="{% url 'add_to_cart' product.id %}" method="POST">    
                         {% csrf_token %}
-                        <div class="form-row">
-                            
-                            
+                        <div class="form-row">                          
                             <!-- First Column with quantity -->
                             <div class="">
                                 <p class=""><strong>Quantity:</strong></p>
@@ -79,7 +78,7 @@
                                     <!-- Keep Shopping button -->
                                     <span class="">Keep Shopping</span>
                                 </a>
-                                <input type="submit" class="" value="Add to Bag">
+                                <input type="submit" class="" value="Add to cart">
                             </div>
                             <!-- Hidden redirect button -->
                             <!-- Redirect URL will contain the current url -->

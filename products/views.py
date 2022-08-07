@@ -2,12 +2,15 @@ from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.contrib import messages
 from django.db.models.functions import Lower
 from django.db.models import Q
+
+from cart.contexts import cart_contents
 from .models import Product, Manufacturer
 
 def index(request):
     """ 
     A view to return the index page 
     """
+    #print(cart_contents)
     return render(request, 'products/index.html')
 
 def store_view(request):
