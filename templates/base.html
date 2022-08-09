@@ -45,6 +45,19 @@
 
   </header>
 
+          <!-- The search form will have a method of get; we will submitting searches as urls 
+             There is no action as this has not yet been defined 
+             The input type will be 'text' and this will be associated witha a name of `q` -->
+             <form method="GET" action="{% url 'store' %}">
+                <input class="" type="text" name="q" placeholder="Search our site">
+                <div class="">
+                    <button class="" type="submit">
+                    Search Site  
+                    </button>
+                </div>
+            </form>
+
+
   <h1>Test Text</h1>
 
   {% block page_header %}

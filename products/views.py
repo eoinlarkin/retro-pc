@@ -19,7 +19,7 @@ def store_view(request):
     """
     
     products = Product.objects.all()
-    query = None
+    query = None # setting blank query for search on page load
     manufacturer = None
     sort = None
     direction = None
@@ -51,8 +51,9 @@ def store_view(request):
             query = request.GET['q']
             if not query:
                 messages.error(request, "You didn't enter any search criteria!")
-                return redirect(reverse('products'))
+                return redirect(reverse('store'))
             
+            # using django Q to drive search:
             queries = Q(name__icontains=query) | Q(description__icontains=query)
             products = products.filter(queries)
 
