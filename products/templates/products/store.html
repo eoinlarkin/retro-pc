@@ -67,7 +67,7 @@
                                             <p class="">${{ product.price }}</p>
                                             {% if product.manufacturer %}
                                             <p class="">
-                                                <a class="" href="{% url 'products' %}?category={{ product.category.name }}">
+                                                <a class="" href="{% url 'store' %}?category={{ product.category.name }}">
                                                     <i class=""></i>{{ product.category.friendly_name }}
                                                 </a>
                                             </p>

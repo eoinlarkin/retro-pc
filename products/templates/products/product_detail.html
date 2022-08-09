@@ -28,10 +28,10 @@
             </div>
             <div class="">
                 <div class="">
-                    <p class="">{{ product.name }}</p>
+                    <p class="">Name: {{ product.name }}</p>
                     <p class="">${{ product.price }}</p>
-                    <p class="">${{ product.manufactuer }}</p>
-                    <p class="">{{ product.description }}</p>
+                    <p class="">Manufacturer: {{ product.manufactuer }}</p>
+                    <p class="">Description: {{ product.description }}</p>
 
                     <!-- Add to Cart Form-->
                     <!-- Uses the post method to send information to the server -->
@@ -48,9 +48,7 @@
                                         <div class="">
                                             <button class="" 
                                                 data-item_id="{{ product.id }}" id="decrement-qty_{{ product.id }}">
-                                                <span class="">
-                                                    <i class=""></i>
-                                                </span>
+                                                Decrease Quantity
                                             </button>
                                         </div>
                                         <input class="" type="number"
@@ -60,9 +58,7 @@
                                         <div class="">
                                             <button class=""
                                                 data-item_id="{{ product.id }}" id="increment-qty_{{ product.id }}">
-                                                <span class="">
-                                                    <i class=""></i>
-                                                </span>
+                                                Increase Quantity
                                             </button>
                                         </div>
                                     </div>
@@ -71,7 +67,7 @@
 
                             <!-- Second Column with products -->
                             <div class="">
-                                <a href="{% url 'products' %}" class="">
+                                <a href="{% url 'store' %}" class="">
                                     <span class="">
                                         <i class=""></i>
                                     </span>
