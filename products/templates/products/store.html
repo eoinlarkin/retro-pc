@@ -10,16 +10,16 @@
 {% block content %}
 
 
+        <h2>Manufactuer Names</h2>
 
-                <h2>Products</h2>
-                {% for c in current_manufacturer %}
-                    <a class="" href="{% url 'store' %}?manufacturer={{ c.name }}">
-                        <span class="">{{ c.friendly_name }}</span>
-                    </a>
-                {% endfor %}
-                <hr class="">
-            </div>
+        <div>
+            {% for m in manufacturer %}
+                <span>{{ m.manufacturer }}</span>
+            {% endfor %}
         </div>
+
+        <h2>Products</h2>
+        
         <div class="">
             <div class="">
                 <div class="">
@@ -36,6 +36,8 @@
                             </select>
                         </div>
                     </div>
+
+                    <!-- Search box functionality -->
                     <div class="">
                         <p class="">
                             {% if search_term or current_manufacturer or current_sorting != 'None_None' %}
@@ -45,6 +47,8 @@
                         </p>
                     </div>
                 </div>
+
+                <!-- Product Listing -->
                 <div class="row">
                     {% for product in products %}
                         <div class="">
@@ -67,6 +71,7 @@
                             </div>
                         </div>
                 </div>
+
             </div>
         </div>
 
