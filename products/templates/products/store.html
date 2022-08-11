@@ -3,20 +3,30 @@
 
 {% block page_header %}
     <div>
-        Page Header for Products
+        <h2>Page Header for Products</h2>
     </div>
 {% endblock %}
 
 {% block content %}
 
+        <!-- Filter names for filtering view -->
 
         <h2>Manufactuer Names</h2>
 
-        <div>
+        <ul>
             {% for m in manufacturer %}
-                <span>{{ m.manufacturer }}</span>
+                <li>{{ m.manufacturer }}</li>
             {% endfor %}
-        </div>
+        </ul>
+
+        <h2>Decades</h2>
+
+        <ul>
+            {% for y in release_decade %}
+                <li>{{ y.release_decade }}</li>
+            {% endfor %}
+        </ul>
+
 
         <h2>Products</h2>
         
