@@ -1,21 +1,21 @@
 [
     {
         "pk": 70,
-        "model": "products.releasedecade",
+        "model": "store.releasedecade",
         "fields": {
             "release_decade": "1970s"
         }
     },
     {
         "pk": 80,
-        "model": "products.releasedecade",
+        "model": "store.releasedecade",
         "fields": {
             "release_decade": "1980s"
         }
     },
     {
         "pk": 90,
-        "model": "products.releasedecade",
+        "model": "store.releasedecade",
         "fields": {
             "release_decade": "1990s"
         }

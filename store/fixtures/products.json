@@ -1,12 +1,12 @@
 [
    {
       "pk":1,
-      "model":"products.product",
+      "model":"store.product",
       "fields":{
          "sku":"altair_8800",
          "name":"Altair 8800",
          "manufacturer":1,
-         "cpu":"Intel 8080",
+         "cpu": 1,
          "description":"The Altair 8800 is a microcomputer designed in 1974 by MITS and based on the Intel 8080 CPU.[2] Interest grew quickly after it was featured on the cover of the January 1975 issue of Popular Electronics[3] and was sold by mail order through advertisements there, in Radio-Electronics, and in other hobbyist magazines.[4][5] The Altair is widely recognized as the spark that ignited the microcomputer revolution[6] as the first commercially successful personal computer",
          "price":2200,
          "release_decade":70,
@@ -17,12 +17,12 @@
    },
    {
       "pk":2,
-      "model":"products.product",
+      "model":"store.product",
       "fields":{
          "sku":"sol_20",
          "name":"Sol-20",
          "manufacturer":2,
-         "cpu":"Intel 8080",
+         "cpu": 1,
          "description":"The Sol-20 was the first fully assembled microcomputer with a built-in keyboard and television output,[a] what would later be known as a home computer. The design was a combination of an Intel 8080-based motherboard, a VDM-1 graphics card, the 3P+S I/O card to drive a keyboard, and circuitry to connect to a cassette deck for program storage. Additional expansion was available via five S-100 bus slots at the back of the machine. It also included swappable ROMs with a rudimentary operating system.",
          "price":1495,
          "release_decade":70,

@@ -1,0 +1,9 @@
+[
+    {
+        "pk": 1,
+        "model": "store.cpu",
+        "fields": {
+            "cpu": "Intel 8080"
+        }
+    }
+    ]

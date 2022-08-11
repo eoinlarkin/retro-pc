@@ -1,4 +1,4 @@
-from products.models import Manufacturer, ReleaseDecade
+from store.models import Manufacturer, ReleaseDecade, Cpu
 
 
 def filter_listing(request):
@@ -8,4 +8,5 @@ def filter_listing(request):
     context = {}
     context["manufacturer"] = Manufacturer.objects.all()
     context["release_decade"] = ReleaseDecade.objects.all()
+    context["cpu"] = Cpu.objects.all()
     return context

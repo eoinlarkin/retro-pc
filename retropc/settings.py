@@ -53,7 +53,7 @@ INSTALLED_APPS = [
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
-    'products',
+    'store',
     'cart'
 ]
 
@@ -81,7 +81,7 @@ TEMPLATES = [
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
                 'cart.contexts.cart_contents',
-                'products.contexts.filter_listing'
+                'store.contexts.filter_listing'
             ],
         },
     },

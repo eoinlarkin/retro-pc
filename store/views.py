@@ -11,7 +11,7 @@ def index(request):
     A view to return the index page 
     """
     #print(cart_contents)
-    return render(request, 'products/index.html')
+    return render(request, 'store/index.html')
 
 def store_view(request):
     """ 
@@ -66,7 +66,7 @@ def store_view(request):
         'current_sorting': current_sorting,
     }
 
-    return render(request, 'products/store.html', context)
+    return render(request, 'store/store.html', context)
 
 
 def product_detail(request, product_id):
@@ -78,4 +78,4 @@ def product_detail(request, product_id):
         'product': product,
     }
 
-    return render(request, 'products/product_detail.html', context)
+    return render(request, 'store/product_detail.html', context)
