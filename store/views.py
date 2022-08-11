@@ -4,7 +4,7 @@ from django.db.models.functions import Lower
 from django.db.models import Q
 
 from cart.contexts import cart_contents
-from .models import Product, Manufacturer
+from .models import Product
 
 def index(request):
     """ 
@@ -25,34 +25,43 @@ def store_view(request):
     direction = None
 
     if request.GET:
-        if 'sort' in request.GET:
-            sortkey = request.GET['sort']
-            sort = sortkey
+        # if 'sort' in request.GET:
+        #     sortkey = request.GET['sort']
+        #     sort = sortkey
             
-            if sortkey == 'name':
-                sortkey = 'lower_name'
-                products = products.annotate(lower_name=Lower('name'))
+        #     if sortkey == 'name':
+        #         sortkey = 'lower_name'
+        #         products = products.annotate(lower_name=Lower('name'))
             
-            if sortkey == 'manufacturer':
-                sortkey = 'manufacturer__name'
+        #     if sortkey == 'manufacturer':
+        #         sortkey = 'manufacturer__name'
             
-            if 'direction' in request.GET:
-                direction = request.GET['direction']
-                if direction == 'desc':
-                    sortkey = f'-{sortkey}'
-            products = products.order_by(sortkey)
+        #     if 'direction' in request.GET:
+        #         direction = request.GET['direction']
+        #         if direction == 'desc':
+        #             sortkey = f'-{sortkey}'
+        #     products = products.order_by(sortkey)
             
         if 'manufacturer' in request.GET:
             manufacturer = request.GET['manufacturer'].split(',')
-            products = products.filter(manufacturer__name__in=manufacturer)
-            manufacturer = Manufacturer.objects.filter(name__in=manufacturer)
+            products = products.filter(manufacturer__manufacturer__in=manufacturer)
+            #manufacturer = Manufacturer.objects.filter(manufacturer__in=manufacturer)
+
+        if 'year' in request.GET:
+            year = request.GET['year'].split(',')
+            products = products.filter(release_decade__release_decade__in=year)
+            #manufacturer = Manufacturer.objects.filter(manufacturer__in=manufacturer)
+
+        if 'cpu' in request.GET:
+            cpu = request.GET['cpu'].split(',')
+            products = products.filter(cpu__cpu__in=cpu)
+            #manufacturer = Manufacturer.objects.filter(manufacturer__in=manufacturer)
 
         if 'q' in request.GET:
             query = request.GET['q']
             if not query:
                 messages.error(request, "You didn't enter any search criteria!")
-                return redirect(reverse('store'))
-            
+                return redirect(reverse('store'))        
             # using django Q to drive search:
             queries = Q(name__icontains=query) | Q(description__icontains=query)
             products = products.filter(queries)
@@ -62,7 +71,6 @@ def store_view(request):
     context = {
         'products': products,
         'search_term': query,
-        'current_categories': manufacturer,
         'current_sorting': current_sorting,
     }
 

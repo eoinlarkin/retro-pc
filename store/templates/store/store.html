@@ -15,7 +15,7 @@
 
         <ul>
             {% for m in manufacturer %}
-                <li>{{ m.manufacturer }}</li>
+                <li><a class="" href="{% url 'store' %}?manufacturer={{ m.manufacturer }}">{{ m.manufacturer }}</a></li>
             {% endfor %}
         </ul>
 
@@ -23,7 +23,14 @@
 
         <ul>
             {% for y in release_decade %}
-                <li>{{ y.release_decade }}</li>
+                <li><a class="" href="{% url 'store' %}?year={{ y.release_decade }}">{{ y.release_decade }}</a></li>
+            {% endfor %}
+        </ul>
+
+        <h2>CPU</h2>
+        <ul>
+            {% for c in cpu %}
+                <li><a class="" href="{% url 'store' %}?cpu={{ c.cpu }}">{{ c.cpu }}</a></li>
             {% endfor %}
         </ul>
 
