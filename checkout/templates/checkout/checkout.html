@@ -1,0 +1,137 @@
+{% extends "base.html" %}
+{% load static %}
+{% load cart_tools %}
+
+{% block extra_css %}
+<!-- Template CSS file -->
+<!-- Template will go here if we are using a template css file -->
+{% endblock %}
+
+{% block page_header %}
+
+{% endblock %}
+
+{% block content %}
+
+<div>
+    <div>
+        <div>
+            <hr>
+            <h2>Checkout</h2>
+            <hr>
+        </div>
+    </div>
+
+    <div>
+
+        <!--    Order Summary Div -->
+        <div>
+            <p>Order Summary ({{ product_count }})</p>
+            <div>
+                <div>
+                    <p>Item</p>
+                </div>
+                <div>
+                    <p>Subtotal</p>
+                </div>
+            </div>
+            {% for item in cart_items %}
+            <div>
+                <div>
+                    <a href="{% url 'product_detail' item.product.id %}">
+                        {% if item.product.image %}
+                        <img src="{{ item.product.image.url }}" alt="{{ product.name }}">
+                        {% else %}
+                        <img src="{{ MEDIA_URL }}noimage.png" alt="{{ product.name }}">
+                        {% endif %}
+                    </a>
+                </div>
+                <div>
+                    <p><strong>{{ item.product.name }}</strong></p>
+                    <p>Qty: {{ item.quantity }}</p>
+                </div>
+                <div>
+                    <p>${{ item.product.price | calc_subtotal:item.quantity }}</p>
+                </div>
+            </div>
+            {% endfor %}
+            <hr>
+            <div>
+                <div>
+                    <p>Order Total:</p>
+                    <p>Delivery:</p>
+                    <p>Grand Total:</p>
+                </div>
+                <div>
+                    <p>${{ total | floatformat:2 }}</p>
+                    <p>${{ delivery | floatformat:2 }}</p>
+                    <p><strong>${{ grand_total | floatformat:2 }}</strong></p>
+                </div>
+            </div>
+        </div>
+
+        <!--    Order Form Div -->
+        <div>
+            <p>Please fill out the form below to complete your order</p>
+            <form action="{% url 'checkout' %}" method="POST" id="payment-form">
+                {% csrf_token %}
+                <fieldset>
+                    <legend>Details</legend>
+                    {{ order_form.full_name }}
+                    {{ order_form.email }}
+                </fieldset>
+                <fieldset>
+                    <legend>Delivery</legend>
+                    {{ order_form.phone_number }}
+                    {{ order_form.country }}
+                    {{ order_form.postcode }}
+                    {{ order_form.town_or_city }}
+                    {{ order_form.street_address1 }}
+                    {{ order_form.street_address2 }}
+                    {{ order_form.county }}
+                    <div>
+                        {% if user.is_authenticated %}
+                        <label for="id-save-info">Save this delivery information to my profile</label>
+                        <input type="checkbox" id="id-save-info" name="save-info" checked>
+                        {% else %}
+                        <label for="id-save-info">
+                            <a href="{% url 'account_signup' %}">Create an account</a> or
+                            <a href="{% url 'account_login' %}">login</a> to save this information
+                        </label>
+                        {% endif %}
+                    </div>
+                </fieldset>
+                <fieldset>
+                    <legend>Payment</legend>
+                    <!-- A Stripe card element will go here -->
+                    <div id="card-element"></div>
+
+                    <!-- Used to display form errors -->
+                    <div id="card-errors" role="alert"></div>
+                </fieldset>
+
+                <div>
+                    <a href="{% url 'cart' %}">
+                        <span>
+                            <i></i>
+                        </span>
+                        <span>Adjust Bag</span>
+                    </a>
+                    <button id="submit-button">
+                        <span>Complete Order</span>
+                        <span>
+                            <i></i>
+                        </span>
+                    </button>
+                    <p>
+                        <span>
+                            <i></i>
+                        </span>
+                        <span>Your card will be charged <strong>${{ grand_total|floatformat:2 }}</strong></span>
+                    </p>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}
