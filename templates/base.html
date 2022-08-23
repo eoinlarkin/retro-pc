@@ -58,6 +58,12 @@
   </form>
 
 
+  {% if messages %}
+
+    {% for message in messages %}
+      {% include 'includes/toasts/toast_success.html' %}
+    {% endfor %}
+  {% endif %}
 
 
 
@@ -70,6 +76,9 @@
   {% endblock %}
 
   {% block postloadjs %}
+  <script type="text/javascript">
+    $('.toast').toast('show')
+  </script>
   {% endblock %}
 
 

@@ -1,5 +1,8 @@
 from django.http import HttpResponse
 from django.shortcuts import render, redirect, reverse, HttpResponse
+from django.contrib import messages
+
+from store.models import Product
 
 # Create your views here.
 def view_cart(request):
@@ -11,6 +14,8 @@ def add_to_cart(request, item_id):
     """
     Add a quantity of the specified product to the shopping cart
     """
+
+    product = Product.objects.get(pk=item_id)
 
     # This quantity value is coming from the form
     # We will need to convert it to an integer as it is being read in as a string
@@ -25,7 +30,8 @@ def add_to_cart(request, item_id):
         cart[item_id] += quantity
     else:
         cart[item_id] = quantity
-    
+        messages.success(request, f'Added {product.name} to your bag')
+
     request.session['cart'] = cart
     print(cart)
     return redirect(redirect_url)
