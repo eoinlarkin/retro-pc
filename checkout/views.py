@@ -8,13 +8,13 @@ def checkout(request):
     Gets the bag from the session;
     if there is nothing in the bag it will redirect back to the product page
     '''
-    bag = request.session.get('bag', {})
+    bag = request.session.get('cart', {})
     if not bag:
         messages.error(request, "There's nothing in your bag at the moment")
-        return redirect(reverse('products'))
+        return redirect(reverse('store'))
 
     order_form = OrderForm()
-    template = 'checkout/checkout.html'
+    template = 'checkout/checkout.html' 
     context = {
         'order_form': order_form,
     }
