@@ -58,14 +58,20 @@
   </form>
 
 
-  {% if messages %}
-
-    {% for message in messages %}
-      {% include 'includes/toasts/toast_success.html' %}
-    {% endfor %}
-  {% endif %}
-
-
+  {% for message in messages %}
+      {% with message.level as level %}
+          {% if level == 40 %}
+              <!-- Level 40 - Error -->
+          {% elif level == 30 %}
+              <!-- Level 30 - Warning -->
+          {% elif level == 25 %}
+              <!-- Level 25 - Success -->
+              {% include 'includes/toasts/toast_success.html' %}
+          {% else %}
+              <!-- Info -->
+          {% endif %}
+      {% endwith %}
+  {% endfor %}
 
   <h1>Test Text</h1>
 
