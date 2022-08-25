@@ -36,10 +36,18 @@
         <li><a href="{% url 'home' %}">Home</a></li>
         <li><a href="{% url 'store' %}">Store</a></li>
         <li><a href="{% url 'cart' %}">Cart</a></li>
+        {% if request.user.is_authenticated %}
+          <li><a href="{% url 'profile' %}">Profile</a></li>
+          <li><a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a></li>
         {% if request.user.is_superuser %}
-        <a href="" class="dropdown-item">Product Management</a>
+          <li><a href="" class="dropdown-item">Product Management</a></li>
         {% endif %}
-        <li><a href="#">Profile</a></li>
+        {% else %}
+          <li><a href="{% url 'account_signup' %}" class="dropdown-item">Register</a></li>
+          <li><a href="{% url 'account_login' %}" class="dropdown-item">Login</a></li>
+        {% endif %}
+
+
       </ul>
     </nav>
 
@@ -59,18 +67,18 @@
 
 
   {% for message in messages %}
-      {% with message.level as level %}
-          {% if level == 40 %}
-              <!-- Level 40 - Error -->
-          {% elif level == 30 %}
-              <!-- Level 30 - Warning -->
-          {% elif level == 25 %}
-              <!-- Level 25 - Success -->
-              {% include 'includes/toasts/toast_success.html' %}
-          {% else %}
-              <!-- Info -->
-          {% endif %}
-      {% endwith %}
+  {% with message.level as level %}
+  {% if level == 40 %}
+  <!-- Level 40 - Error -->
+  {% elif level == 30 %}
+  <!-- Level 30 - Warning -->
+  {% elif level == 25 %}
+  <!-- Level 25 - Success -->
+  {% include 'includes/toasts/toast_success.html' %}
+  {% else %}
+  <!-- Info -->
+  {% endif %}
+  {% endwith %}
   {% endfor %}
 
   <h1>Test Text</h1>
