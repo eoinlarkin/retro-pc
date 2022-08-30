@@ -1,34 +1,211 @@
 [
    {
-      "pk":1,
-      "model":"store.product",
-      "fields":{
-         "sku":"altair_8800",
-         "name":"Altair 8800",
-         "manufacturer":1,
+      "pk": 1,
+      "model": "store.product",
+      "fields": {
+         "sku": "altair_8800",
+         "name": "Altair 8800",
+         "manufacturer": 1,
          "cpu": 1,
-         "description":"The Altair 8800 is a microcomputer designed in 1974 by MITS and based on the Intel 8080 CPU.[2] Interest grew quickly after it was featured on the cover of the January 1975 issue of Popular Electronics[3] and was sold by mail order through advertisements there, in Radio-Electronics, and in other hobbyist magazines.[4][5] The Altair is widely recognized as the spark that ignited the microcomputer revolution[6] as the first commercially successful personal computer",
-         "price":2200,
-         "release_decade":70,
-         "release_year": 1975 ,
-         "image_url":"https://upload.wikimedia.org/wikipedia/commons/thumb/0/01/Altair_8800_Computer.jpg/1280px-Altair_8800_Computer.jpg",
-         "image":"altair_8800_computer.jpg"
+         "description": "The Altair 8800 is a microcomputer designed in 1974 by MITS and based on the Intel 8080 CPU.[2] Interest grew quickly after it was featured on the cover of the January 1975 issue of Popular Electronics[3] and was sold by mail order through advertisements there, in Radio-Electronics, and in other hobbyist magazines.[4][5] The Altair is widely recognized as the spark that ignited the microcomputer revolution[6] as the first commercially successful personal computer",
+         "price": 2200,
+         "release_decade": 70,
+         "release_year": 1975,
+         "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/01/Altair_8800_Computer.jpg/1280px-Altair_8800_Computer.jpg",
+         "image": "altair_8800_computer.jpg"
       }
    },
    {
-      "pk":2,
-      "model":"store.product",
-      "fields":{
-         "sku":"sol_20",
-         "name":"Sol-20",
-         "manufacturer":2,
+      "pk": 2,
+      "model": "store.product",
+      "fields": {
+         "sku": "sol_20",
+         "name": "Sol-20",
+         "manufacturer": 2,
          "cpu": 1,
-         "description":"The Sol-20 was the first fully assembled microcomputer with a built-in keyboard and television output,[a] what would later be known as a home computer. The design was a combination of an Intel 8080-based motherboard, a VDM-1 graphics card, the 3P+S I/O card to drive a keyboard, and circuitry to connect to a cassette deck for program storage. Additional expansion was available via five S-100 bus slots at the back of the machine. It also included swappable ROMs with a rudimentary operating system.",
-         "price":1495,
-         "release_decade":70,
+         "description": "The Sol-20 was the first fully assembled microcomputer with a built-in keyboard and television output,[a] what would later be known as a home computer. The design was a combination of an Intel 8080-based motherboard, a VDM-1 graphics card, the 3P+S I/O card to drive a keyboard, and circuitry to connect to a cassette deck for program storage. Additional expansion was available via five S-100 bus slots at the back of the machine. It also included swappable ROMs with a rudimentary operating system.",
+         "price": 1495,
+         "release_decade": 70,
          "release_year": 1979,
-         "image_url":"https://upload.wikimedia.org/wikipedia/commons/5/5e/Processor_Technology_SOL_20_Computer.jpg",
-         "image":"altair_8800_computer.jpg"
+         "image_url": "https://upload.wikimedia.org/wikipedia/commons/5/5e/Processor_Technology_SOL_20_Computer.jpg",
+         "image": "sol-20.jpg"
+      }
+   },
+   {
+      "pk": 3,
+      "model": "store.product",
+      "fields": {
+         "sku": "exidy_sorcerer",
+         "name": "Exidy Sorcerer",
+         "manufacturer": 3,
+         "cpu": 2,
+         "description": "The Sorcerer is a home computer system released in 1978 by the video game company Exidy. Based on the Zilog Z80 and the general layout of the emerging S-100 standard, the Sorcerer was comparatively advanced when released, especially when compared to the contemporary more commercially successful Commodore PET and TRS-80. The basic design was proposed by Paul Terrell, formerly of the Byte Shop, a pioneering computer store.",
+         "price": 895,
+         "release_decade": 70,
+         "release_year": 1978,
+         "image_url": "https://upload.wikimedia.org/wikipedia/commons/0/06/Exidy_Sorcerer_%28retouch%29.jpg",
+         "image": "exidy-sorcerer.jpg"
+      }
+   },
+   {
+      "pk": 4,
+      "model": "store.product",
+      "fields": {
+         "sku": "ibm_5100",
+         "name": "IBM 5100",
+         "manufacturer": 4,
+         "cpu": 3,
+         "description": "The IBM 5100 Portable Computer is a portable computer (one of the first) introduced in September 1975, six years before the IBM Personal Computer, and eight before the first successful IBM compatible portable computer, the Compaq Portable. It was the evolution of a prototype called the SCAMP (Special Computer APL Machine Portable) that was developed at the IBM Palo Alto Scientific Center in 1973. Whether considered evolutionary from SCAMP or revolutionary, it still needed to be plugged into an electric socket.",
+         "price": 8975,
+         "release_decade": 70,
+         "release_year": 1975,
+         "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2d/IBM_5100_-_MfK_Bern.jpg/800px-IBM_5100_-_MfK_Bern.jpg",
+         "image": "IBM-5100.jpg"
+      }
+   },
+   {
+      "pk": 5,
+      "model": "store.product",
+      "fields": {
+         "sku": "apple_ii",
+         "name": "Apple II",
+         "manufacturer": 5,
+         "cpu": 4,
+         "description": "The Apple II series is a family of home computers, one of the first highly successful mass-produced microcomputer products, designed primarily by Steve Wozniak, manufactured by Apple Computer (now Apple Inc.), and launched in 1977 with the original Apple II. In terms of ease of use, features, and expandability, the Apple II was a major advancement over its predecessor, the Apple I, a limited-production bare circuit board computer for electronics hobbyists. \n\n Through 1988, a number of models were introduced, with the most popular, the Apple IIe, remaining relatively unchanged into the 1990s.  A model with more advanced graphics and sound and a 16-bit processor, the Apple IIGS, was added in 1986. It remained compatible with earlier Apple II models, but the IIGS had more in common with mid-1980s systems like the Atari ST, Amiga, and Acorn Archimedes. \n\n The Apple II was first sold on June 10, 1977. By the end of production in 1993, somewhere between five and six million Apple II series computers (including about 1.25 million Apple IIGS models) had been produced. The Apple II was one of the longest running mass-produced home computer series, with models in production for just under 17 years.",
+         "price": 1298,
+         "release_decade": 70,
+         "release_year": 1977,
+         "image_url": "https://upload.wikimedia.org/wikipedia/commons/9/98/Apple_II_typical_configuration_1977.png",
+         "image": "apple_ii.png"
+      }
+   },
+   {
+      "pk": 6,
+      "model": "store.product",
+      "fields": {
+         "sku": "commodore_pet",
+         "name": "Commodore PET",
+         "manufacturer": 6,
+         "cpu": 4,
+         "description": "The Commodore PET is a line of personal computers produced starting in 1977 by Commodore International. A single all-in-one case combines a MOS Technology 6502 microprocessor, Commodore BASIC in read-only memory, keyboard, computer monitor, and, in early models, a cassette deck. \n\n Development of the system began in 1976 and a prototype was demonstrated at the January 1977 Consumer Electronics Show. \n\n The PET design underwent a series of updates: more memory, better keyboard, larger screen, and other modifications. The systems were a top seller in the Canadian and United States education markets, as well as for business use in Europe. \n\n The name was suggested by Andre Souson after he saw the Pet Rock in Los Gatos, and stated they were going to make the pet computer. It was backronymed to Personal Electronic Transactor.",
+         "price": 795,
+         "release_decade": 70,
+         "release_year": 1977,
+         "image_url": "https://upload.wikimedia.org/wikipedia/commons/c/c5/Commodore_2001_Series-IMG_0448b.jpg",
+         "image": "commodore_pet.jpg"
+      }
+   },
+   {
+      "pk": 7,
+      "model": "store.product",
+      "fields": {
+         "sku": "trs_80",
+         "name": "TRS-80",
+         "manufacturer": 7,
+         "cpu": 2,
+         "description": "The TRS-80 Micro Computer System (TRS-80, later renamed the Model I to distinguish it from successors) is a desktop microcomputer launched in 1977 and sold by Tandy Corporation through their Radio Shack stores. The name is an abbreviation of Tandy Radio Shack, Z80 [microprocessor]. It is one of the earliest mass-produced and mass-marketed retail home computers. \n\n The TRS-80 has a full-stroke QWERTY keyboard, the Zilog Z80 processor, 4 KB dynamic random-access memory (DRAM) standard memory, small size and desk area, floating-point Level I BASIC language interpreter in read-only memory (ROM),64-character per line video monitor. A cassette tape drive for program storage was included in the original package.",
+         "price": 599,
+         "release_decade": 70,
+         "release_year": 1977,
+         "image_url": "https://upload.wikimedia.org/wikipedia/commons/0/04/Radioshack_TRS80-IMG_7206.jpg",
+         "image": "trs_80.jpg"
+      }
+   },
+      {
+      "pk": 8,
+      "model": "store.product",
+      "fields": {
+         "sku": "sharp_mz_80k",
+         "name": "MZ-80K",
+         "manufacturer": 8,
+         "cpu": 2,
+         "description": "The Sharp MZ80K was one of the popular early consumer-level microcomputers, with an architecture based on the Zilog Z80 8-bit microprocessor. It was introduced into Europe in 1979. The machine had 48KB of RAM, 32KB of which was available for user programs (the actual figure was dependent on the memory configuration and the system languages being used). It could run a variety of high-level languages including BASIC, Pascal and FORTRAN, which had to be loaded into RAM before any programming could be undertaken. It could also be programmed directly in assembly code or machine code. The machine had an inbuilt monochrome display and a cassette tape drive. The display, keyboard and cassette drive lifted on hinges to expose the motherboard and circuitry underneath. Graphics capability was primitive, with only preset shapes and icons being available and no native hi-res capability. This was not unusual for a late-1970s vintage microcomputer. The main drawback, however, of the MZ-80K was the non-standard keyboard, which was difficult to use.",
+         "price": 500,
+         "release_decade": 70,
+         "release_year": 1979,
+         "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/25/Sharp_MZ-80K_computer.jpg/798px-Sharp_MZ-80K_computer.jpg",
+         "image": "Sharp_MZ_80K.jpg"
+      }
+   },{
+      "pk": 9,
+      "model": "store.product",
+      "fields": {
+         "sku": "sinclair_zx80",
+         "name": "ZX80",
+         "manufacturer": 9,
+         "cpu": 2,
+         "description": "The Sinclair ZX80 is a home computer launched on 29 January 1980[2] by Science of Cambridge Ltd. (later to be better known as Sinclair Research). It is notable for being one of the first computers available in the United Kingdom for less than a hundred pounds.\n Internally, the machine was designed by Jim Westwood around a Z80 central processing unit with a clock speed of 3.25 MHz, and was equipped with 1 KB of static RAM and 4 KB of read-only memory (ROM). It had no sound output.\nThe ZX80 was designed around readily available TTL chips; the only proprietary technology was the firmware.The machine was mounted in a small white plastic case, with a one-piece blue membrane keyboard on the front. There were problems with durability, reliability and overheating (despite appearances, the black stripes visible on the top rear of the case are merely cosmetic, and are not ventilation slots).\nDisplay was over an RF connection to a household television, and simple offline program storage was possible using a cassette recorder. The video display generator of the ZX80 used minimal hardware plus a combination of software to generate a video signal.   ",
+         "price": 100,
+         "release_decade": 80,
+         "release_year": 1980,
+         "image_url": "https://upload.wikimedia.org/wikipedia/commons/2/24/ZX80.jpg",
+         "image": "ZX80.jpg"
+      }
+   },
+   {
+      "pk": 10,
+      "model": "store.product",
+      "fields": {
+         "sku": "sinclair_sepctrum",
+         "name": "ZX Spectrum",
+         "manufacturer": 9,
+         "cpu": 2,
+         "description": "The ZX Spectrum (UK: /zɛd ɛks/) is an 8-bit personal home computer developed by Sinclair Research. It was first released in the United Kingdom on 23 April 1982 and went on to become Britain's best-selling microcomputer. \n Referred to during development as the ZX81 Colour and ZX82, it was launched as the ZX Spectrum to highlight the machine's colour display, compared with the black and white display of its predecessor, the ZX81. The Spectrum was released as eight different models, ranging from the entry level with 16 KB RAM released in 1982 to the ZX Spectrum +3 with 128 KB RAM and built in floppy disk drive in 1987; altogether they sold over 5 million units worldwide (not counting unofficial clones).\n The Spectrum was among the first home computers in the United Kingdom aimed at a mainstream audience, similar in significance to the Commodore 64 in the US or the MO5 in France. The introduction of the ZX Spectrum led to a boom in companies producing software and hardware for the machine,the effects of which are still seen. Some credit it as the machine which launched the British information technology industry. Licensing deals and clones followed, earning Clive Sinclair a knighthood for services to British industry.",
+         "price": 125,
+         "release_decade": 80,
+         "release_year": 1982,
+         "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/ZXSpectrum48k.jpg/800px-ZXSpectrum48k.jpg",
+         "image": "ZXSpectrum.jpg"
+      }
+   },
+   {
+      "pk": 11,
+      "model": "store.product",
+      "fields": {
+         "sku": "ibm_pc",
+         "name": "IBM PC",
+         "manufacturer": 4,
+         "cpu": 5,
+         "description": "The IBM Personal Computer (model 5150, commonly known as the IBM PC) is the first microcomputer released in the IBM PC model line and the basis for the IBM PC compatible de facto standard. Released on August 12, 1981, it was created by a team of engineers and designers directed by Don Estridge in Boca Raton, Florida.\nThe machine was based on open architecture and third-party peripherals. Over time, expansion cards and software technology increased to support it.\nThe PC had a substantial influence on the personal computer market. The specifications of the IBM PC became one of the most popular computer design standards in the world. The only significant competition it faced from a non-compatible platform throughout the 1980s was from the Apple Macintosh product line. The majority of modern personal computers are distant descendants of the IBM PC.",
+         "price": 1565,
+         "release_decade": 80,
+         "release_year": 1981,
+         "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a6/IBM_PC-IMG_7271_%28transparent%29.png/800px-IBM_PC-IMG_7271_%28transparent%29.png",
+         "image": "ibm_pc.png"
+      }
+   },
+   {
+      "pk": 12,
+      "model": "store.product",
+      "fields": {
+         "sku": "apple_list",
+         "name": "Apple Lisa",
+         "manufacturer": 5,
+         "cpu": 6,
+         "description": "Lisa is a desktop computer developed by Apple, released on January 19, 1983. It is one of the first personal computers to present a graphical user interface (GUI) in a machine aimed at individual business users. Its development began in 1978. It underwent many changes before shipping at US$9,995  with a five-megabyte hard drive. It was affected by its high price, insufficient software, unreliable Apple FileWare floppy disks, and the immediate release of the cheaper and faster Macintosh. Only 10,000 were sold in two years. \n       Considered a commercial failure (albeit one with technical acclaim), Lisa introduced a number of advanced features that reappeared on the Macintosh and eventually IBM PC compatibles. Among them is an operating system with protected memory and a document-oriented workflow. The hardware was more advanced overall than the forthcoming Macintosh 128K; the Lisa included hard disk drive support, capacity for up to 2 megabytes (MB) of random-access memory (RAM), expansion slots, and a larger, higher-resolution display.",
+         "price": 9995,
+         "release_decade": 80,
+         "release_year": 1983,
+         "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Apple_Lisa.jpg/540px-Apple_Lisa.jpg",
+         "image": "apple-lisa.jpg"
+      }
+   },
+   {
+      "pk": 13,
+      "model": "store.product",
+      "fields": {
+         "sku": "compaq-deskpro",
+         "name": "Compaq Deskpro 386",
+         "manufacturer": 10,
+         "cpu": 7,
+         "description": "The Compaq Deskpro was a line of business-oriented personal computers manufactured by Compaq, then discontinued after the merger with Hewlett-Packard.Models were produced containing microprocessors from the 8086 up to the x86-based Intel Pentium 4.\nThe original Compaq Deskpro (released in 1984), available in several disk configurations, was an XT-class PC equipped with an 8 MHz 8086 CPU and Compaq's unique display hardware that combined Color Graphics Adapter graphics with high resolution Monochrome Display Adapter text. \n As a result, it was considerably faster than the original IBM PC, the XT and the AT, and had a much better quality text display compared to IBM PCs which were equipped with either the IBM Monochrome Display Adapter or Color Graphics Adapter cards.",
+         "price": 10299,
+         "release_decade": 80,
+         "release_year": 1986,
+         "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/89/DeskPro_386S.jpg/634px-DeskPro_386S.jpg",
+         "image": "DeskPro_386S.jpg"
       }
    }
+
+
 ]

@@ -5,5 +5,48 @@
         "fields": {
             "cpu": "Intel 8080"
         }
+    },
+    {
+        "pk": 2,
+        "model": "store.cpu",
+        "fields": {
+            "cpu": "Zilog Z80"
+        }
+    },
+    {
+        "pk": 3,
+        "model": "store.cpu",
+        "fields": {
+            "cpu": "IBM PALM"
+        }
+    },
+    {
+        "pk": 4,
+        "model": "store.cpu",
+        "fields": {
+            "cpu": "MOS Technology 6502"
+        }
+    },
+    {
+        "pk": 5,
+        "model": "store.cpu",
+        "fields": {
+            "cpu": "Intel 8088"
+        }
+    },
+    {
+        "pk": 6,
+        "model": "store.cpu",
+        "fields": {
+            "cpu": "Motorola 68000"
+        }
+    },
+    {
+        "pk": 7,
+        "model": "store.cpu",
+        "fields": {
+            "cpu": "Intel 80386"
+        }
     }
+
     ]

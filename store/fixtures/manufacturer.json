@@ -12,6 +12,62 @@
         "fields": {
             "manufacturer": "Processor Technology"
         }
+    },
+    {
+        "pk": 3,
+        "model": "store.manufacturer",
+        "fields": {
+            "manufacturer": "Exidy"
+        }
+    },
+    {
+        "pk": 4,
+        "model": "store.manufacturer",
+        "fields": {
+            "manufacturer": "IBM"
+        }
+    },
+    {
+        "pk": 5,
+        "model": "store.manufacturer",
+        "fields": {
+            "manufacturer": "Apple"
+        }
+    },
+    {
+        "pk": 6,
+        "model": "store.manufacturer",
+        "fields": {
+            "manufacturer": "Commodore International"
+        }
+    },
+    {
+        "pk": 7,
+        "model": "store.manufacturer",
+        "fields": {
+            "manufacturer": "Tandy Corporation"
+        }
+    },
+    {
+        "pk": 8,
+        "model": "store.manufacturer",
+        "fields": {
+            "manufacturer": "Sharp"
+        }
+    },
+    {
+        "pk": 9,
+        "model": "store.manufacturer",
+        "fields": {
+            "manufacturer": "Sinclair"
+        }
+    },
+    {
+        "pk": 10,
+        "model": "store.manufacturer",
+        "fields": {
+            "manufacturer": "Compaq"
+        }
     }
 
 ]
