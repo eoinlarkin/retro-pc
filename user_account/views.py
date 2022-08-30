@@ -19,8 +19,11 @@ def user_account(request):
         if form.is_valid():
              form.save()
              messages.success(request, 'Profile updated successfully')
+        else:
+            messages.error(request,'Error - updated failed !')
 
-    form = UserProfileForm(instance=profile)
+    else:
+        form = UserProfileForm(instance=profile)
 
     # geeting the users orders
     orders = profile.orders.all()
