@@ -59,6 +59,7 @@
                             </td>
                             <td>{{ order.date }}</td>
                             <td>
+                                <!-- Unordered list for the orders -->
                                 <ul>
                                     {% for item in order.lineitems.all %}
                                     <li>
