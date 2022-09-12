@@ -38,13 +38,13 @@
         <li><a href="{% url 'cart' %}">Cart</a></li>
         {% if request.user.is_authenticated %}
           <li><a href="{% url 'profile' %}">Profile</a></li>
-          <li><a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a></li>
+          <li><a href="{% url 'account_logout' %}" >Logout</a></li>
         {% if request.user.is_superuser %}
-          <li><a href="" class="dropdown-item">Product Management</a></li>
+          <li><a href="{% url 'add_new_product' %}" >Product Management</a></li>
         {% endif %}
         {% else %}
-          <li><a href="{% url 'account_signup' %}" class="dropdown-item">Register</a></li>
-          <li><a href="{% url 'account_login' %}" class="dropdown-item">Login</a></li>
+          <li><a href="{% url 'account_signup' %}" >Register</a></li>
+          <li><a href="{% url 'account_login' %}" >Login</a></li>
         {% endif %}
 
 
