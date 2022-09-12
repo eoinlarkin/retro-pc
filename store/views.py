@@ -1,8 +1,11 @@
 from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.contrib import messages
 from django.db.models.functions import Lower
-from django.contrib.auth.decorators import login_required
 from django.db.models import Q
+
+# login required decorator
+# django will check whether a user is logged in before executing the view
+from django.contrib.auth.decorators import login_required
 
 from cart.contexts import cart_contents
 from .models import Product
@@ -102,7 +105,7 @@ def add_new_product(request):
     if request.method == 'POST':
         form = ProductAdminForm(request.POST, request.FILES)
         if form.is_valid():
-            product = form.save()
+            product = form.save() # saving the product
             messages.success(request, 'Successfully added product!')
             return redirect(reverse('product_detail', args=[product.id]))
         else:
@@ -126,7 +129,12 @@ def edit_product(request, product_id):
 
     product = get_object_or_404(Product, pk=product_id)
     if request.method == 'POST':
+        
+        # instance flag is used to indicate that we are updating the selected product
+        # request.files is required for the image upload; 
+        # when Django handles a file upload, the file data ends up placed in request.FILES
         form = ProductAdminForm(request.POST, request.FILES, instance=product)
+        
         if form.is_valid():
             form.save()
             messages.success(request, 'Successfully updated product!')
@@ -156,4 +164,4 @@ def delete_product(request, product_id):
     product = get_object_or_404(Product, pk=product_id)
     product.delete()
     messages.success(request, 'Product deleted!')
-    return redirect(reverse('products'))
+    return redirect(reverse('store'))

@@ -23,18 +23,15 @@
 
         <div class="row">
             <div class="col-12 col-md-6">
-                <form method="POST" action="{% url 'edit_product' product.id %}" class="form mb-2" enctype="multipart/form-data">
+                <!-- Code to send form the details for the product that we wish to edit -->
+                <form method="POST" action="{% url 'edit_product' product.id %}" enctype="multipart/form-data">
                     {% csrf_token %}
                     {% for field in form %}
-                        {% if field.name != 'image' %}
-                            {{ field | as_crispy_field }}
-                        {% else %}
-                            {{ field }}
-                        {% endif %}
+                    {{ field.name }}: {{ field }}
                     {% endfor %}
                     <div class="text-right">
-                        <a class="btn btn-outline-black rounded-0" href="{% url 'products' %}">Cancel</a>
-                        <button class="btn btn-black rounded-0" type="submit">Update Product</button>
+                        <a href="{% url 'store' %}">Cancel</a>
+                        <button type="submit">Update Product</button>
                     </div>
                 </form>
             </div>            

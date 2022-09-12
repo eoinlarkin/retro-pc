@@ -33,6 +33,12 @@
                     <p class="">Manufacturer: {{ product.manufacturer }}</p>
                     <p class="">Description: {{ product.description }}</p>
 
+                    <!-- Code to edit and delete if user is admin -->
+                    {% if request.user.is_superuser %}
+                        <a href="{% url 'edit_product' product.id %}">Edit</a> | 
+                        <a href="{% url 'delete_product' product.id %}">Delete</a>
+                    {% endif %}
+
                     <!-- Add to Cart Form-->
                     <!-- Uses the post method to send information to the server -->
                     <!-- As we are using post, need to include the csrf_token  -->

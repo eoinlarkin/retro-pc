@@ -7,6 +7,12 @@ from .forms import UserProfileForm
 
 from checkout.models import Order
 
+# login required decorator
+# django will check whether a user is logged in before executing the view
+from django.contrib.auth.decorators import login_required
+
+
+@login_required
 def user_account(request):
     """ Display the user's profile. """
     profile = get_object_or_404(UserProfile, user=request.user)
@@ -20,7 +26,7 @@ def user_account(request):
              form.save()
              messages.success(request, 'Profile updated successfully')
         else:
-            messages.error(request,'Error - updated failed !')
+            messages.error(request,'Error - updated failed ! ')
 
     else:
         form = UserProfileForm(instance=profile)

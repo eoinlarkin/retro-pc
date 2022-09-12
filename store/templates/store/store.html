@@ -83,6 +83,13 @@
                                     <p>{{ product.name }}</p>
                                     <p>${{ product.price }}</p>
                                     <p>{{ product.manufacturer }}</p>
+
+                                    <!-- Code to edit and delete if user is admin -->
+                                    {% if request.user.is_superuser %}
+                                        <a href="{% url 'edit_product' product.id %}">Edit</a> | 
+                                        <a href="{% url 'delete_product' product.id %}">Delete</a>
+                                    {% endif %}
+
                                 </div>
 
                             </div>
