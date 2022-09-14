@@ -42,6 +42,26 @@ An ecommerce website for the selling of vintage PC hardware
 
 ## Wireframes
 ## Color Palette
+
+The following color palette was used for the design of the site. The objective was to use a color palette with a high degree of contrast. The color scheme was derived from the [dmg theme](https://github.com/monkeytypegame/monkeytype/blob/master/frontend/static/themes/dmg.css) from the MonkeyType typing application []
+
+| Color             |Hex Code            |
+|-------------------|--------------------|
+| Background        |   #dadbdc          |
+| Main Color        |   #ae185e          |
+| Caret Color       |   #384693          |
+| Sub Color         |   #3846b1          |
+| Sub Alt Color     |   #bec1d2          |
+| Text Color        |   #414141          |
+| Error Color       |   #ae185e          |
+| Error Extra Color |   #93335c          |
+| Extra Color       |   #80a053          |
+| Error Extra Color |   #306230          |
+| Background Focus  |   #306230          |
+
+
+
+
 ## Fonts
 # Database Model & Schema
 # Features
