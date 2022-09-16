@@ -3,9 +3,13 @@
 {% load cart_tools %}
 
 {% block extra_css %}
-<!-- Template CSS file -->
-<!-- Template will go here if we are using a template css file -->
+<link rel="stylesheet" href="{% static 'checkout/css/checkout.css' %}">
 {% endblock %}
+
+{% block pre_js %}
+{% endblock pre_js %}
+
+
 
 {% block page_header %}
 
@@ -103,6 +107,7 @@
                 </fieldset>
                 <fieldset>
                     <legend>Payment</legend>
+
                     <!-- A Stripe card element will go here -->
                     <div id="card-element"></div>
 
@@ -134,4 +139,13 @@
         </div>
     </div>
 </div>
+{% endblock %}
+
+
+
+{% block postloadjs %}
+{{ block.super }}
+{{ stripe_public_key|json_script:"id_stripe_public_key" }}
+{{ client_secret|json_script:"id_client_secret" }}
+<script src="{% static 'checkout/js/stripe_elements.js' %}"></script>
 {% endblock %}

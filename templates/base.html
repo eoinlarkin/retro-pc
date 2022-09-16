@@ -3,8 +3,6 @@
 <!doctype html>
 <html lang="en">
 
-<head>
-
   {% block meta %}
   <!-- Required meta tags -->
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -20,7 +18,14 @@
 
 
   {% block corejs %}
-  {% endblock %}
+  <!--  Stripe Integration -->
+  <script src="https://js.stripe.com/v3/"></script>
+
+  <script
+  src="https://code.jquery.com/jquery-3.6.1.slim.js"
+  integrity="sha256-tXm+sa1uzsbFnbXt8GJqsgi2Tw+m4BLGDof6eUPjbtk="
+  crossorigin="anonymous"></script>  
+   {% endblock %}
 
   {% block extra_js %}
   {% endblock %}
@@ -95,7 +100,7 @@
   </script>
   {% endblock %}
 
-
+ 
 </body>
 
 <footer>
