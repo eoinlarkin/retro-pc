@@ -1,5 +1,6 @@
 from django.shortcuts import render, reverse, redirect, get_object_or_404
 from django.contrib import messages
+from django.conf import settings
 
 from .forms import OrderForm
 from .models import Order, OrderLineItem
@@ -9,9 +10,15 @@ from user_account.models import UserProfile
 from user_account.forms import UserProfileForm
 from cart.contexts import cart_contents
 
+import stripe
+
 
 def checkout(request):
+    stripe_public_key = settings.STRIPE_PUBLIC_KEY
+    stripe_secret_key = settings.STRIPE_SECRET_KEY
+
     """
+    Function to support the processing of the checkout 
     Gets the bag from the session;
     if there is nothing in the bag it will redirect back to the product page
     """
@@ -20,12 +27,44 @@ def checkout(request):
         messages.error(request, "There's nothing in your bag at the moment")
         return redirect(reverse("store"))
 
+    # Error Logging
+    print(f"Stripe public key \n{stripe_public_key}")
+    print(f"Stripe secret key \n{stripe_secret_key}")
+
+    # Using the cart.contexts to retrieve the current_cart dictionary
+    # From this the current monetary total is extracted
+    # This is then used to calculate the stripe total which must be an integer
+    current_cart = cart_contents(request)
+    cart_total = current_cart["grand_total"]
+    stripe_total = round(cart_total * 100)
+    stripe.api_key = stripe_secret_key
+    intent = stripe.PaymentIntent.create(
+        amount=stripe_total,
+        currency=settings.STRIPE_CURRENCY,
+    )
+
+    # Error Logging
+    print(intent)
+    print("##########################################")
+    print("Client Secret:")
+    print(intent.client_secret)
+
     order_form = OrderForm()
+
+    if not stripe_public_key:
+        messages.warning(
+            request,
+            "Stripe public key is missing; \n \
+         check environment variables",
+        )
+
+    # Setting contect for Django to render
+
     template = "checkout/checkout.html"
     context = {
         "order_form": order_form,
-        "stripe_public_key": "pk_test_51IdIvoH0kCl7fda6nB8HeAiTN7FpZFfb5auEu2aXR8IqdwNpZ7pRKCzVGceGpIKyykg77Tw7PZU0CFnUfFPUxfJI00glzlgyuV",
-        "cient_secret": "test client secret",
+        "stripe_public_key": stripe_public_key,
+        "client_secret": intent.client_secret,
     }
 
     return render(request, template, context)
