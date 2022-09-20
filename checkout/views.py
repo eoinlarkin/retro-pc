@@ -19,37 +19,83 @@ def checkout(request):
 
     """
     Function to support the processing of the checkout 
-    Gets the bag from the session;
-    if there is nothing in the bag it will redirect back to the product page
+    Gets the cart from the session;
+    if there is nothing in the cart it will redirect back to the product page
     """
-    bag = request.session.get("cart", {})
-    if not bag:
-        messages.error(request, "There's nothing in your bag at the moment")
-        return redirect(reverse("store"))
 
-    # Error Logging
-    print(f"Stripe public key \n{stripe_public_key}")
-    print(f"Stripe secret key \n{stripe_secret_key}")
+    if request.method == "POST":
+        cart = request.session.get("cart", {})
 
-    # Using the cart.contexts to retrieve the current_cart dictionary
-    # From this the current monetary total is extracted
-    # This is then used to calculate the stripe total which must be an integer
-    current_cart = cart_contents(request)
-    cart_total = current_cart["grand_total"]
-    stripe_total = round(cart_total * 100)
-    stripe.api_key = stripe_secret_key
-    intent = stripe.PaymentIntent.create(
-        amount=stripe_total,
-        currency=settings.STRIPE_CURRENCY,
-    )
+        # capturing the form data for submission
+        form_data = {
+            "full_name": request.POST["full_name"],
+            "email": request.POST["email"],
+            "phone_number": request.POST["phone_number"],
+            "country": request.POST["country"],
+            "postcode": request.POST["postcode"],
+            "town_or_city": request.POST["town_or_city"],
+            "street_address1": request.POST["street_address1"],
+            "street_address2": request.POST["street_address2"],
+            "county": request.POST["county"],
+        }
+        order_form = OrderForm(form_data)
+        if order_form.is_valid():
+            order = order_form.save()
+            for item_id, item_data in cart.items():
+                try:
+                    product = Product.objects.get(id=item_id)
+                    # if isinstance(item_data, int):
+                    order_line_item = OrderLineItem(
+                        order=order,
+                        product=product,
+                        quantity=item_data,
+                    )
+                    order_line_item.save()
 
-    # Error Logging
-    print(intent)
-    print("##########################################")
-    print("Client Secret:")
-    print(intent.client_secret)
+                except Product.DoesNotExist:
+                    messages.error(
+                        request,
+                        (
+                            "One of the products in your cart wasn't \
+                            found in our database. "
+                            "Please call us for assistance!"
+                        ),
+                    )
+                    order.delete()
+                    return redirect(reverse("cart"))
 
-    order_form = OrderForm()
+            request.session["save_info"] = "save-info" in request.POST
+            return redirect(
+                reverse("checkout_success", args=[order.order_number])
+            )
+        else:
+            messages.error(
+                request,
+                "There was an error with your form. \
+                Please double check your information.",
+            )
+
+    else:
+        cart = request.session.get("cart", {})
+        if not cart:
+            messages.error(
+                request, "There's nothing in your cart at the moment"
+            )
+            return redirect(reverse("store"))
+
+        # Using the cart.contexts to retrieve the current_cart dictionary
+        # From this the current monetary total is extracted
+        # This is then used to calculate stripe total which must be integer
+        current_cart = cart_contents(request)
+        cart_total = current_cart["grand_total"]
+        stripe_total = round(cart_total * 100)
+        stripe.api_key = stripe_secret_key
+        intent = stripe.PaymentIntent.create(
+            amount=stripe_total,
+            currency=settings.STRIPE_CURRENCY,
+        )
+
+        order_form = OrderForm()
 
     if not stripe_public_key:
         messages.warning(

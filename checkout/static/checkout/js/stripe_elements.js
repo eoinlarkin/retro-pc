@@ -72,14 +72,14 @@ var form = document.getElementById('payment-form');
 form.addEventListener('submit', function (ev) {
     ev.preventDefault(); // preventing default action
     card.update({
-        'disabled': true
+        'disabled': true // preventing multiple submissions
     });
     $('#submit-button').attr('disabled', true);
     stripe.confirmCardPayment(clientSecret, {
         payment_method: {
             card: card,
         }
-    }).then(function (result) {
+    }).then(function (result) { // executing function to submit card
         if (result.error) {
             // checking for error with payment submission
             var errorDiv = document.getElementById('card-errors');
