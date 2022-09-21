@@ -28,9 +28,11 @@ def add_to_cart(request, item_id):
 
     if item_id in list(cart.keys()):
         cart[item_id] += quantity
+        messages.success(request, f"Added {product.name} to your bag")
     else:
         cart[item_id] = quantity
         messages.success(request, f"Added {product.name} to your bag")
+        print('message printed')
 
     request.session["cart"] = cart
     print(cart)

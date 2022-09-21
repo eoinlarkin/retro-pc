@@ -18,10 +18,19 @@
 
 
   {% block corejs %}
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <!-- 
+  <script src="https://kit.fontawesome.com/e9c73d7092.js" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script> -->
+
+<script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
+
   <!--  Stripe Integration -->
   <script src="https://js.stripe.com/v3/"></script>
 
-  <script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
+
    {% endblock %}
 
   {% block extra_js %}
@@ -68,20 +77,16 @@
   </form>
 
 
-  {% for message in messages %}
-  {% with message.level as level %}
-  {% if level == 40 %}
-  <!-- Level 40 - Error -->
-  {% elif level == 30 %}
-  <!-- Level 30 - Warning -->
-  {% elif level == 25 %}
-  <!-- Level 25 - Success -->
-  {% include 'includes/toasts/toast_success.html' %}
-  {% else %}
-  <!-- Info -->
+  <!-- {% if messages %}{% for message in messages %}<script>alert("{{ message }}");</script>{% endfor %}{% endif %} -->
+
+      <!-- Load any user messages -->
+      {% if messages %}
+      {% for message in messages %}
+              {% include 'includes/toasts/_toast.html' %}
+      {% endfor %}
   {% endif %}
-  {% endwith %}
-  {% endfor %}
+
+
 
   <h1>Test Text</h1>
 
@@ -91,11 +96,6 @@
   {% block content %}
   {% endblock %}
 
-  {% block postloadjs %}
-  <script type="text/javascript">
-    $('.toast').toast('show')
-  </script>
-  {% endblock %}
 
  
 </body>
