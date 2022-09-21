@@ -2,7 +2,6 @@ from django.http import HttpResponse
 
 from .models import Order, OrderLineItem
 from store.models import Product
-from user_account.models import UserProfile
 
 
 import json
@@ -28,10 +27,10 @@ class StripeWH_Handler:
         Handle the payment_intent.succeeded webhook from Stripe
         """
         intent = event.data.object
-        #print(intent)
+        # print(intent)
         pid = intent.id
         cart = intent.metadata.cart
-        #save_info = intent.metadata.save_info
+        # save_info = intent.metadata.save_info
 
         billing_details = intent.charges.data[0].billing_details
         shipping_details = intent.shipping

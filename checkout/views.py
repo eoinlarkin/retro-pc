@@ -24,15 +24,18 @@ import json
 @require_POST
 def cache_checkout_data(request):
     try:
-        pid = request.POST.get('client_secret').split('_secret')[0]
+        pid = request.POST.get("client_secret").split("_secret")[0]
         stripe.api_key = settings.STRIPE_SECRET_KEY
-        stripe.PaymentIntent.modify(pid, metadata={
-            'cart': json.dumps(request.session.get('cart', {})),
-            'save_info': request.POST.get('save_info'),
-            'username': request.user,
-        })
+        stripe.PaymentIntent.modify(
+            pid,
+            metadata={
+                "cart": json.dumps(request.session.get("cart", {})),
+                "save_info": request.POST.get("save_info"),
+                "username": request.user,
+            },
+        )
 
-        print('try statement working  - data:')
+        print("try statement working  - data:")
         return HttpResponse(status=200)
     except Exception as e:
         messages.error(
@@ -48,7 +51,7 @@ def checkout(request):
     stripe_secret_key = settings.STRIPE_SECRET_KEY
 
     """
-    Function to support the processing of the checkout 
+    Function to support the processing of the checkout
     Gets the cart from the session;
     if there is nothing in the cart it will redirect back to the product page
     """
@@ -71,7 +74,7 @@ def checkout(request):
         order_form = OrderForm(form_data)
         if order_form.is_valid():
             order = order_form.save(commit=False)
-            pid = request.POST.get('client_secret').split('_secret')[0]
+            pid = request.POST.get("client_secret").split("_secret")[0]
             order.stripe_pid = pid
             order.original_cart = json.dumps(cart)
             order.save()
