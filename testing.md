@@ -20,3 +20,9 @@
 - Images can be added successfully through the form
 - Products that have been added manually can be added to the cart
     - May need to include if statement logic if the image does not render correctly
+
+
+## Stripe Webhooks
+
+- These can be tested by checking Video # 055
+- This can be tested by commenting out the form.submit() in the stripe_elements.js

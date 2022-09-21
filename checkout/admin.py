@@ -1,34 +1,62 @@
 from django.contrib import admin
 from .models import Order, OrderLineItem
 
+
 class OrderLineItemAdminInline(admin.TabularInline):
-    '''
-    Allows us to edit from directly in the admin panel 
-    '''
+    """
+    Allows us to edit from directly in the admin panel
+    """
+
     model = OrderLineItem
-    readonly_fields = ('lineitem_total',)
+    readonly_fields = ("lineitem_total",)
 
 
 class OrderAdmin(admin.ModelAdmin):
     inlines = (OrderLineItemAdminInline,)
 
-    readonly_fields = ('order_number', 'date',
-                       'delivery_cost', 'order_total',
-                       'grand_total',)
+    readonly_fields = (
+        "order_number",
+        "date",
+        "delivery_cost",
+        "order_total",
+        "grand_total",
+        "original_cart",
+        "stripe_pid",
+    )
 
     # specifying the order of the fields
-    fields = ('order_number', 'user_profile', 'date', 'full_name',
-              'email', 'phone_number', 'country',
-              'postcode', 'town_or_city', 'street_address1',
-              'street_address2', 'county', 'delivery_cost',
-              'order_total', 'grand_total',)
+    fields = (
+        "order_number",
+        "user_profile",
+        "date",
+        "full_name",
+        "email",
+        "phone_number",
+        "country",
+        "postcode",
+        "town_or_city",
+        "street_address1",
+        "street_address2",
+        "county",
+        "delivery_cost",
+        "order_total",
+        "grand_total",
+        "original_cart",
+        "stripe_pid",
+    )
 
     # setting the fields to display in lists
-    list_display = ('order_number', 'date', 'full_name',
-                    'order_total', 'delivery_cost',
-                    'grand_total',)
+    list_display = (
+        "order_number",
+        "date",
+        "full_name",
+        "order_total",
+        "delivery_cost",
+        "grand_total",
+    )
 
     # ordering in reverse cronological order
-    ordering = ('-date',)
+    ordering = ("-date",)
+
 
 admin.site.register(Order, OrderAdmin)
