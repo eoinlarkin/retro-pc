@@ -127,6 +127,8 @@ In order to deploy the application to Heroku, the following steps should be foll
   ## Code
   ## HTML / CSS
   ## Images
+    - Cover image sourced from Unsplash
+      https://unsplash.com/photos/yP89apz2TAA
   ## Other
 - `venv` was used to manage the python dependencies 
 
