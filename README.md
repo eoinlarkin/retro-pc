@@ -45,19 +45,19 @@ An ecommerce website for the selling of vintage PC hardware
 
 The following color palette was used for the design of the site. The objective was to use a color palette with a high degree of contrast. The color scheme was derived from the [dmg theme](https://github.com/monkeytypegame/monkeytype/blob/master/frontend/static/themes/dmg.css) from the MonkeyType typing application []
 
-| Color             |Hex Code            |
-|-------------------|--------------------|
-| Background        |   #dadbdc          |
-| Main Color        |   #ae185e          |
-| Caret Color       |   #384693          |
-| Sub Color         |   #3846b1          |
-| Sub Alt Color     |   #bec1d2          |
-| Text Color        |   #414141          |
-| Error Color       |   #ae185e          |
-| Error Extra Color |   #93335c          |
-| Extra Color       |   #80a053          |
-| Error Extra Color |   #306230          |
-| Background Focus  |   #306230          |
+| Color             |Hex Code            |Tailwind            |                    |
+|-------------------|--------------------|--------------------|--------------------|
+| Background        |   #dadbdc          |  zinc 100           |                    |
+| Main Color        |   #ae185e          | fuchsia-800                   |                    |
+| Caret Color       |   #384693          | blue-900           |                    |
+| Sub Color         |   #3846b1          | indigo 600         |                    |
+| Sub Alt Color     |   #bec1d2          | slate-300          |                    |
+| Text Color        |   #414141          | slate 600          |                    |
+| Error Color       |   #ae185e          |                    |                    |
+| Error Extra Color |   #93335c          |                    |                    |
+| Extra Color       |   #80a053          |                    |                    |
+| Error Extra Color |   #306230          |                    |                    |
+| Background Focus  |   #306230          |                    |                    |
 
 
 
@@ -125,12 +125,18 @@ In order to deploy the application to Heroku, the following steps should be foll
 # Credits
   ## Libraries
   ## Code
+
+  - **[Sticky Footer](https://stackoverflow.com/questions/59812003/tailwindcss-fixed-sticky-footer-on-the-bottom)**  
+
+
   ## HTML / CSS
   ## Images
     - Cover image sourced from Unsplash
       https://unsplash.com/photos/yP89apz2TAA
   ## Other
 - `venv` was used to manage the python dependencies 
+
+
 
 
 

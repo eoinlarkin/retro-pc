@@ -3,40 +3,41 @@
 <!doctype html>
 <html lang="en">
 
-  {% block meta %}
-  <!-- Required meta tags -->
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  {% endblock %}
+{% block meta %}
+<!-- Required meta tags -->
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+{% endblock %}
 
-  {% block extra_meta %}
-  {% endblock %}
+{% block extra_meta %}
+{% endblock %}
 
-  {% block corecss %}
-  {% endblock %}
+{% block corecss %}
+<link type="text/css" rel="stylesheet" href="{% static '/css/output.css' %}" />
 
-
-  {% block corejs %}
-
-  <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> -->
-  <!-- 
-  <script src="https://kit.fontawesome.com/e9c73d7092.js" crossorigin="anonymous"></script>
-  <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script> -->
-
-<script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
-
-  <!--  Stripe Integration -->
-  <script src="https://js.stripe.com/v3/"></script>
+{% endblock %}
 
 
-   {% endblock %}
+{% block corejs %}
 
-  {% block extra_js %}
-  {% endblock %}
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-  <title>RetroPC {% block extra_title %}{% endblock %}</title>
+<!-- JQuery -->
+<script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI="
+  crossorigin="anonymous"></script>
+
+<!--  Stripe Integration -->
+<script src="https://js.stripe.com/v3/"></script>
+
+
+{% endblock %}
+
+{% block extra_js %}
+{% endblock %}
+
+<title>RetroPC {% block extra_title %}{% endblock %}</title>
 </head>
 
 <body>
@@ -48,14 +49,14 @@
         <li><a href="{% url 'store' %}">Store</a></li>
         <li><a href="{% url 'cart' %}">Cart</a></li>
         {% if request.user.is_authenticated %}
-          <li><a href="{% url 'profile' %}">Profile</a></li>
-          <li><a href="{% url 'account_logout' %}" >Logout</a></li>
+        <li><a href="{% url 'profile' %}">Profile</a></li>
+        <li><a href="{% url 'account_logout' %}">Logout</a></li>
         {% if request.user.is_superuser %}
-          <li><a href="{% url 'add_new_product' %}" >Product Management</a></li>
+        <li><a href="{% url 'add_new_product' %}">Product Management</a></li>
         {% endif %}
         {% else %}
-          <li><a href="{% url 'account_signup' %}" >Register</a></li>
-          <li><a href="{% url 'account_login' %}" >Login</a></li>
+        <li><a href="{% url 'account_signup' %}">Register</a></li>
+        <li><a href="{% url 'account_login' %}">Login</a></li>
         {% endif %}
 
 
@@ -68,9 +69,9 @@
   <!-- There is no action as this has not yet been defined -->
   <!-- The input type will be 'text' and this will be associated witha a name of `q` -->
   <form method="GET" action="{% url 'store' %}">
-    <input class=""text" name="q" placeholder="Search our site">
+    <input class="" text" name="q" placeholder="Search our site">
     <div class="">
-      <button class=""submit">
+      <button class="" submit">
         Search Site
       </button>
     </div>
@@ -79,11 +80,11 @@
 
   <!-- {% if messages %}{% for message in messages %}<script>alert("{{ message }}");</script>{% endfor %}{% endif %} -->
 
-      <!-- Load any user messages -->
-      {% if messages %}
-      {% for message in messages %}
-              {% include 'includes/toasts/_toast.html' %}
-      {% endfor %}
+  <!-- Load any user messages -->
+  {% if messages %}
+  {% for message in messages %}
+  {% include 'includes/toasts/_toast.html' %}
+  {% endfor %}
   {% endif %}
 
 
@@ -100,17 +101,16 @@
   {% endblock  %}
 
 
- 
+
 </body>
 
 <footer>
 
-  <!-- Email Contact Form -->
-  <form class="" method="POST" action="{% url 'newsletter_signup' %}?next={{ request.path }}">
-    {% csrf_token %}
-    <input type="email" name="email" class="" placeholder="Enter your email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" required>
-    <button type="submit" class="">Sign Up</button>
-</form>
+
+    {% include 'footer.html' %}
+
+
+
 
 </footer>
 
