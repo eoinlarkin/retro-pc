@@ -165,3 +165,7 @@ def delete_product(request, product_id):
     product.delete()
     messages.success(request, 'Product deleted!')
     return redirect(reverse('store'))
+
+def test_404(request):
+    """Error Handler 404 - Page Not Found"""
+    return render(request, "store/404_test.html")

@@ -3,6 +3,7 @@ module.exports = {
   content: ["./templates/*.{html,js}",
   "./cart/**/*.{html,js}",
   "./checkout/**/*.{html,js}",
+  "./store/**/*.{html,js}",
   "./user_account/**/*.{html,js}",],
   theme: {
     extend: {},

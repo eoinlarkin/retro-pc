@@ -14,13 +14,11 @@
 {% endblock %}
 
 {% block corecss %}
-<link type="text/css" rel="stylesheet" href="{% static '/css/output.css' %}" />
-
+<link rel="stylesheet" href="{% static '/css/output.css' %}" type="text/css"/>
 {% endblock %}
 
 
 {% block corejs %}
-
 <!-- Font Awesome -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
@@ -30,8 +28,6 @@
 
 <!--  Stripe Integration -->
 <script src="https://js.stripe.com/v3/"></script>
-
-
 {% endblock %}
 
 {% block extra_js %}
@@ -87,10 +83,6 @@
   {% endfor %}
   {% endif %}
 
-
-
-  <h1>Test Text</h1>
-
   {% block page_header %}
   {% endblock %}
 
@@ -99,8 +91,6 @@
 
   {% block postloadjs %}
   {% endblock  %}
-
-
 
 </body>
 
