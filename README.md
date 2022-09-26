@@ -51,7 +51,7 @@ The following color palette was used for the design of the site. The objective w
 | Main Color        |   #ae185e          | fuchsia-800                   |                    |
 | Caret Color       |   #384693          | blue-900           |                    |
 | Sub Color         |   #3846b1          | indigo 600         |                    |
-| Sub Alt Color     |   #bec1d2          | slate-300          |                    |
+| Sub Alt Color     |   #bec1d2          | slate-200          |                    |
 | Text Color        |   #414141          | slate 600          |                    |
 | Error Color       |   #ae185e          |                    |                    |
 | Error Extra Color |   #93335c          |                    |                    |

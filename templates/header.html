@@ -1,0 +1,96 @@
+<!-- Hamburger Menu -->
+<!-- Template from following codepen: https://codepen.io/Zeeslag/pen/MWpLoKX -->
+
+<!DOCTYPE html>
+
+  <nav class="px-4 py-4 flex bg-slate-200 relative justify-between items-center ">
+    <!-- <div class="container flex flex-wrap justify-between items-center mx-auto"> -->
+      <a class="text-4xl font-bold leading-none justify-start lowercase" href="#"
+        >retro pc
+      </a>
+
+      <div class="lg:hidden" id="navbar-default">
+        <div class="lg:hidden">
+          <button class="navbar-burger text-sky-800 p-3">
+            <i class="fa-solid fa-bars text-2xl"></i>
+          </button>
+        </div>
+      </div>
+
+
+
+      <div class="hidden lg:flex lg:justify-end lg:align-middle">
+      <ul class="hidden lg:flex lg:justify space-x-6 lg:align-middle">
+            <!-- Placeholder Link for Export Data link -->
+            <!-- <li><button class="mr-8 uppercase  hover:text-cyan-600" >Export Data</button></li> -->
+            <li>
+              <a
+                href="{% url 'home' %}"
+                class="uppercase hover:text-cyan-600 px-4"
+                >Home</a
+              >
+            </li>
+
+            <li>
+              <a
+                href="{% url 'store' %}"
+                class="uppercase hover:text-cyan-600"
+                >Store</a
+              >
+            </li>
+
+
+            <li>
+              <a
+                href="{% url 'cart' %}"
+                class="uppercase hover:text-cyan-600"
+                >Cart</a
+              >
+            </li>
+
+
+            {% if request.user.is_authenticated %}
+            <li><a href="{% url 'profile' %}" class="uppercase hover:text-cyan-600">Profile</a></li>
+            <li><a href="{% url 'account_logout' %}" class="uppercase hover:text-cyan-600">Logout</a></li>
+            {% if request.user.is_superuser %}
+            <li><a href="{% url 'add_new_product' %}" class="uppercase hover:text-cyan-600">Product Management</a></li>
+            {% endif %}
+            {% else %}
+            <li><a href="{% url 'account_signup' %}" class="uppercase hover:text-cyan-600">Register</a></li>
+            <li><a href="{% url 'account_login' %}" class="uppercase hover:text-cyan-600">Login</a></li>
+            {% endif %}
+
+
+
+
+          </ul>
+        <!-- </div> -->
+      </div>
+      </nav>
+  
+  <div class="navbar-menu relative z-50 hidden">
+    <div class="navbar-backdrop fixed inset-0 bg-gray-800 opacity-25"></div>
+    <nav
+      class="fixed top-0 left-0 bottom-0 flex flex-col w-5/6 max-w-sm py-6 px-6 bg-white border-r overflow-y-auto"
+    >
+      <div class="flex items-center mb-8">
+        <a class="mr-auto text-3xl font-bold leading-none" href="#">GLIST </a>
+        <button class="navbar-close">
+          <i class="fa-solid fa-xmark text-2xl"></i>
+        </button>
+      </div>
+      <div>
+        <ul>
+          <li class="mb-1">
+            <a
+              a
+              href="/signout"
+              class="block p-4 text-2xl font-semibold text-gray-400 hover:bg-blue-50 hover:text-cyan-600 rounded"
+              id="sign-out-hamburger"
+              >Sign Out</a
+            >
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </div>
