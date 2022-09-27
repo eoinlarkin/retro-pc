@@ -698,6 +698,14 @@ html {
   margin-bottom: 0.25rem;
 }
 
+.mb-auto {
+  margin-bottom: auto;
+}
+
+.mb-40 {
+  margin-bottom: 10rem;
+}
+
 .block {
   display: block;
 }

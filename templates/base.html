@@ -1,7 +1,8 @@
+<!doctype html>
+<html>
+
 {% load static %}
 
-<!doctype html>
-<html lang="en">
 
 {% block meta %}
 <!-- Required meta tags -->
@@ -37,47 +38,46 @@
 {% endblock %}
 
 <title>RetroPC {% block extra_title %}{% endblock %}</title>
-</head>
 
 
-<body class="flex flex-col h-screen justify-between">
 
+<!-- <body class="flex flex-col h-screen justify-between"> -->
+<body>
+
+  <div>
   <header>{% include 'header.html' %}</header>
 
-  <!-- The search form will have a method of get; we will submitting searches as urls -->
-  <!-- There is no action as this has not yet been defined -->
-  <!-- The input type will be 'text' and this will be associated witha a name of `q` -->
-  <form method="GET" action="{% url 'store' %}">
-    <input class="" text" name="q" placeholder="Search our site">
-    <div class="">
-      <button class="" submit">
-        Search Site
-      </button>
-    </div>
-  </form>
 
+<div>
+  {% include 'search_bar.html' %}
+</div>
 
   <!-- {% if messages %}{% for message in messages %}<script>alert("{{ message }}");</script>{% endfor %}{% endif %} -->
 
   <!-- Load any user messages -->
+  <div>
   {% if messages %}
   {% for message in messages %}
   {% include 'includes/toasts/_toast.html' %}
   {% endfor %}
   {% endif %}
+</div>
 
+  <div class="mb-auto">
   <main>
     {% block content %}
     {% endblock %}
   </main>
-  
+</div>
+
   {% block postloadjs %}
   {% endblock  %}
 
-</body>
-
-<footer>
+  <footer>
     {% include 'footer.html' %}
 </footer>
+</div>
+
+</body>
 
 </html>
