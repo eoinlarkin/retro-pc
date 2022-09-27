@@ -1,13 +1,16 @@
 // Burger menus
 document.addEventListener('DOMContentLoaded', function () {
     // open
-    const burger = document.querySelectorAll('.navbar-burger');
-    const menu = document.querySelectorAll('.navbar-menu');
-
+    const burger = document.querySelectorAll('.drawer-burger');
+    const menu = document.querySelectorAll('.drawer-menu');
+  
+    console.log(burger)
+    console.log(menu)
 
     if (burger.length && menu.length) {
       for (var i = 0; i < burger.length; i++) {
         burger[i].addEventListener('click', function () {
+            console.log('button pressed')
           for (var j = 0; j < menu.length; j++) {
             menu[j].classList.toggle('hidden');
           }
@@ -16,8 +19,8 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   
     // close
-    const close = document.querySelectorAll('.navbar-close');
-    const backdrop = document.querySelectorAll('.navbar-backdrop');
+    const close = document.querySelectorAll('.drawer-close');
+    const backdrop = document.querySelectorAll('.drawer-backdrop');
   
     if (close.length) {
       for (var i = 0; i < close.length; i++) {

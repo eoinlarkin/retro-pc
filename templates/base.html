@@ -11,9 +11,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 {% endblock %}
 
-{% block extra_meta %}
-{% endblock %}
-
 {% block corecss %}
 <link rel="stylesheet" href="{% static '/css/output.css' %}" type="text/css"/>
 
@@ -22,6 +19,7 @@
 
 <!-- Flowbite -->
 <link rel="stylesheet" href="https://unpkg.com/flowbite@1.5.3/dist/flowbite.min.css" />
+
 {% endblock %}
 
 
@@ -31,12 +29,15 @@
 <!-- Hamburger Menu -->
 <script src="{% static '/js/hamburger.js' %}"></script>
 
+
 <!-- JQuery -->
 <script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI="
   crossorigin="anonymous"></script>
 
 <!--  Stripe Integration -->
 <script src="https://js.stripe.com/v3/"></script>
+
+
 
 {% endblock %}
 
@@ -82,8 +83,9 @@
 </footer>
 </div>
 
+<script src="{% static '/js/drawer.js' %}"></script>
+<script src="https://cdn.jsdelivr.net/npm/tw-elements/dist/js/index.min.js"></script>
 
-<script src="https://unpkg.com/flowbite@1.5.3/dist/flowbite.js"></script>
 </body>
 
 </html>

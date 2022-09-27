@@ -10,10 +10,13 @@
 {% block content %}
 
         <!-- Sidebar -->
-        {% include 'sidebar.html' %}
+        {% include 'drawer.html' %}
+
+        <div class="flex flex-row justify-center space-x-4">
+        {% include 'drawer_buttons.html' %}
+        </div>
 
 
-        <!-- Filter names for filtering view -->
 
 
 
@@ -119,4 +122,6 @@
             }
         })
     </script>
+
+<script src="https://unpkg.com/flowbite@1.5.3/dist/flowbite.js"></script>
 {% endblock %}
