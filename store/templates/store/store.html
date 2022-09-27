@@ -9,30 +9,12 @@
 
 {% block content %}
 
+        <!-- Sidebar -->
+        {% include 'sidebar.html' %}
+
+
         <!-- Filter names for filtering view -->
 
-        <h2>Manufactuer Names</h2>
-
-        <ul>
-            {% for m in manufacturer %}
-                <li><a class="" href="{% url 'store' %}?manufacturer={{ m.manufacturer }}">{{ m.manufacturer }}</a></li>
-            {% endfor %}
-        </ul>
-
-        <h2>Decades</h2>
-
-        <ul>
-            {% for y in release_decade %}
-                <li><a class="" href="{% url 'store' %}?year={{ y.release_decade }}">{{ y.release_decade }}</a></li>
-            {% endfor %}
-        </ul>
-
-        <h2>CPU</h2>
-        <ul>
-            {% for c in cpu %}
-                <li><a class="" href="{% url 'store' %}?cpu={{ c.cpu }}">{{ c.cpu }}</a></li>
-            {% endfor %}
-        </ul>
 
 
         <h2>Products</h2>
