@@ -50,36 +50,59 @@
                                     ${{ item.product.price }}
                                 </td>
                                 <td class="py-4 px-6">
-                                    <form >
+
+                                    <form class="form update-form" method="POST" action="{% url 'adjust_cart' item.item_id %}">
                                         {% csrf_token %}
-                                        <div >
-                                            <div >
-                                                <div >
-                                                    <button  
-                                                        data-item_id="{{ item.item_id }}" id="decrement-qty_{{ item.item_id }}">
-                                                        <span>
-                                                            <i ></i>
+                                        <div class="input-group input-group-{{ product.id }} ">
+                                        <div class="flex space-x-4 ">
+                                            
+
+                                                <!-- Start: Button to Decrease the Quantity -->
+                                                <div class="flex align-middle justify-center">
+                                                    <button class=" decrement-qty decrement-qty_{{ product.id }}" data-item_id="{{ product.id }}">
+                                                        <span class="">
+                                                            <i class="fas fa-minus fa-sm"></i>
                                                         </span>
                                                     </button>
                                                 </div>
-                                                <!-- Value below refers to the quantity currently in the shopping cart-->
-                                                <input 
-                                                    name="quantity" value="{{ item.quantity }}" min="1" max="99"
-                                                    data-item_id="{{ item.item_id }}"
-                                                    id="id_qty_{{ item.item_id }}">
-                                                <div >
-                                                    <button 
-                                                        data-item_id="{{ item.item_id }}" id="increment-qty_{{ item.item_id }}">
+                                                <!-- End: Button to Decrease the Quantity --> 
+
+                                                <!-- Start: Input Form showing the quantity -->
+                                                <div>
+                                                <input class="qty_input id_qty_{{ product.id }} text-black" type="number"
+                                                name="quantity" value="{{ item.quantity }}" min="1" max="99"
+                                                data-item_id="{{ product.id }}">
+                                                </div>
+                                                <!-- End: Input Form showing the quantity -->
+
+                                                <!-- Start: Button to Increase the Quantity -->
+                                                <div class="flex align-middle justify-center">
+                                                    <button class="increment-qty increment-qty_{{ product.id }}" data-item_id="{{ product.id }}">
                                                         <span>
-                                                            <i ></i>
+                                                            <i class="fas fa-plus fa-sm"></i>
                                                         </span>
                                                     </button>
                                                 </div>
+                                                <!-- End: Button to Decrease the Quantity -->
+
+                                                <!-- Start: Submit button -->
+                                                <div>
+                                                <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full"><input type="submit" class="" value="Update">
+                                                  </button>
+                                                </div>
+
+                                                <!-- <input type="submit" class="" value="Update"> -->
+                                                <!-- End: Submit button -->
+
                                             </div>
                                         </div>
-                                    </form>
-                                    <a><small>Update</small></a>
-                                    <a><small>Remove</small></a>
+
+                                    </form>             
+
+
+
+
+
                                 </td>
                                 <td
                                 
@@ -203,6 +226,8 @@
 
 {% block postloadjs %}
 {{ block.super }}
+
+<script src="{% static '/js/quantity_input_script.js' %}"></script>
 
 
 <script type="text/javascript">

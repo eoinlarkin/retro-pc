@@ -56,7 +56,28 @@ def adjust_cart(request, item_id):
         cart.pop(item_id)
 
     request.session["cart"] = cart
+    return redirect(reverse("cart"))
+
+
+def increase_cart_quantity(request, item_id):
+    """
+    Increase the quantity of the selected item by 1
+    """
+
+    quantity = int(request.POST.get("quantity"))
+
+    # if there is a cart dictionary in the current session we use that
+    # otherwise we create an empty dictionary for this value
+    cart = request.session.get("cart", {})
+
+    if quantity > 0:
+        cart[item_id] = quantity +1
+    else:
+        cart.pop(item_id)
+
+    request.session["cart"] = cart
     return redirect(reverse("view_cart"))
+
 
 
 def remove_from_cart(request, item_id):

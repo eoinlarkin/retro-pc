@@ -3,6 +3,12 @@ function handleEnableDisable(itemId) {
     var currentValue = parseInt($(`.id_qty_${itemId}`).val());
     var minusDisabled = currentValue < 2;
     var plusDisabled = currentValue > 4;
+    console.log('Current value')
+    console.log(currentValue)
+    console.log('Decrese button disabled')
+    console.log(minusDisabled)
+    console.log('Increase button disabled')
+    console.log(plusDisabled)
     $(`.decrement-qty_${itemId}`).prop('disabled', minusDisabled);
     $(`.increment-qty_${itemId}`).prop('disabled', plusDisabled);
 }
