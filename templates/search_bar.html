@@ -2,14 +2,15 @@
  <!-- The search form will have a method of get; we will submitting searches as urls -->
   <!-- There is no action as this has not yet been defined -->
   <!-- The input type will be 'text' and this will be associated witha a name of `q` -->
-<div class="bg-slate-900 px-2 pb-2 pt-2">
+<div class="bg-yellow px-2 pb-4 pt-4">
   <form class="flex justify-center " method="GET"
       action="{% url 'store' %}">
 
       <input type="" name="q"
-          class="justify-center w-full sm:max-w-sm border border-grey-light rounded py-2 pl-0 sm:pl-2"
+          class="justify-center w-full sm:max-w-sm border border-black rounded py-2 pl-0 sm:pl-2"
           placeholder="Search our site !" required>
       <button type="submit"
-          class="px-6 ml-4 block text-center rounded bg-indigo-300 text-green hover:bg-indigo-600 focus:outline-none text-zinc-100">Search Site</button>
+          class="btn-blue-greenhighlight">Search Site</button>
+
   </form>
 </div>

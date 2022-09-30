@@ -9,10 +9,10 @@
             action="{% url 'newsletter_signup' %}?next={{ request.path }}">
             {% csrf_token %}
             <input type="email" name="email"
-                class="justify-center w-full sm:max-w-sm border border-grey-light rounded py-2 pl-0 sm:pl-2"
+                class="justify-center w-full sm:max-w-sm border border-black rounded py-2 pl-0 sm:pl-2"
                 placeholder="Enter your email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" required>
             <button type="submit"
-                class="px-6 ml-4 block text-center rounded bg-indigo-300 text-green hover:bg-indigo-600 focus:outline-none text-zinc-100">Sign
+                class="btn-blue-greenhighlight">Sign
                 Up</button>
         </form>
         <!-- Bottom footer with contact links-->

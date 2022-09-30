@@ -49,9 +49,8 @@
 
 
 <!-- <body class="flex flex-col h-screen justify-between"> -->
-<body class="bg-yellow-400">
-
-  <div class="flex flex-col">
+<body class="bg-white min-h-screen flex flex-col">
+  
     <div class="sticky top-0 z-50">
     <header>{% include 'header.html' %}</header>
     {% include 'search_bar.html' %}
@@ -69,7 +68,7 @@
   {% endif %}
 </div>
 
-  <main class="grow">
+  <main class="grow flex items-center justify-center">
     {% block content %}
     {% endblock %}
 </main>
@@ -78,10 +77,11 @@
   {% block postloadjs %}
   {% endblock  %}
 
-  <footer class="">
+
+  <footer class="sticky top-[100vh]">
     {% include 'footer.html' %}
 </footer>
-</div>
+
 
 <script src="{% static '/js/drawer.js' %}"></script>
 <script src="{% static '/js/toast.js' %}"></script>
