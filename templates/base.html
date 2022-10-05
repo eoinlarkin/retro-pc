@@ -20,6 +20,10 @@
 <!-- Flowbite -->
 <link rel="stylesheet" href="https://unpkg.com/flowbite@1.5.3/dist/flowbite.min.css" />
 
+<!-- Tailwind Elements-->
+
+
+
 {% endblock %}
 
 
@@ -68,7 +72,7 @@
   {% endif %}
 </div>
 
-  <main class="grow flex items-center justify-center">
+  <main class="flex items-center justify-center">
     {% block content %}
     {% endblock %}
 </main>
@@ -85,8 +89,13 @@
 
 <script src="{% static '/js/drawer.js' %}"></script>
 <script src="{% static '/js/toast.js' %}"></script>
-<script src="https://cdn.jsdelivr.net/npm/tw-elements/dist/js/index.min.js"></script>
+
+<!-- Tailwind Elements -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tw-elements/dist/css/index.min.css" />
 
 </body>
+
+
+
 
 </html>

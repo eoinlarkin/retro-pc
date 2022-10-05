@@ -2,89 +2,82 @@
 {% load static %}
 
 {% block page_header %}
-    <div>
-        <h2>Page Header for Products</h2>
-    </div>
 {% endblock %}
 
 {% block content %}
 
-        <!-- Sidebar -->
+    <!-- Start: Store Page Content -->
+    <div class="flex flex-col">
+
+        <!-- Start: Sidebar -->
         {% include 'drawer.html' %}
+        <!-- End: Sidebar -->
 
-        <div class="flex flex-row justify-center space-x-4">
-        {% include 'drawer_buttons.html' %}
-        </div>
+        <!-- Start: Product Header -->
+        <div class="text-2xl text-center">Products</div>
+        <!-- End: Product Header -->
 
-
-
-
-
-        <h2>Products</h2>
+        <!-- Start: Drawer Buttons -->
         
+        <div class="flex flex-row justify-center">
+        {% include 'dropdown_buttons.html' %}
+        </div>
+    
+        <!-- End: Drawer Buttons -->
 
-        <div class="flex flex-col">
-                <div class="">
-                    <div class="">
-                        <div class="">
-                            <select id="sort-selector" class="">
-                                <option value="reset" {% if current_sorting == 'None_None' %}selected{% endif %}>Sort by...</option>
-                                <option value="price_asc" {% if current_sorting == 'price_asc' %}selected{% endif %}>Price (low to high)</option>
-                                <option value="price_desc" {% if current_sorting == 'price_desc' %}selected{% endif %}>Price (high to low)</option>
-                                <option value="name_asc" {% if current_sorting == 'name_asc' %}selected{% endif %}>Name (A-Z)</option>
-                                <option value="name_desc" {% if current_sorting == 'name_desc' %}selected{% endif %}>Name (Z-A)</option>
-                                <option value="manufacturer_asc" {% if current_sorting == 'manufacturer_asc' %}selected{% endif %}>Manufacturer (A-Z)</option>
-                                <option value="manufacturer_desc" {% if current_sorting == 'manufacturer_desc' %}selected{% endif %}>Manufacturer (Z-A)</option>
-                            </select>
-                        </div>
-                    </div>
+        <!-- Start: Container for the sort selector -->       
+        <select id="sort-selector" class="flex justify-center">
+            <option value="reset" {% if current_sorting == 'None_None' %}selected{% endif %}>Sort by...</option>
+            <option value="price_asc" {% if current_sorting == 'price_asc' %}selected{% endif %}>Price (low to high)</option>
+            <option value="price_desc" {% if current_sorting == 'price_desc' %}selected{% endif %}>Price (high to low)</option>
+            <option value="name_asc" {% if current_sorting == 'name_asc' %}selected{% endif %}>Name (A-Z)</option>
+            <option value="name_desc" {% if current_sorting == 'name_desc' %}selected{% endif %}>Name (Z-A)</option>
+            <option value="manufacturer_asc" {% if current_sorting == 'manufacturer_asc' %}selected{% endif %}>Manufacturer (A-Z)</option>
+            <option value="manufacturer_desc" {% if current_sorting == 'manufacturer_desc' %}selected{% endif %}>Manufacturer (Z-A)</option>
+        </select>
 
-                    <!-- Search box functionality -->
-                    <div class="">
-                        <p class="">
-                            {% if search_term or current_manufacturer or current_sorting != 'None_None' %}
-                                <span class="small"><a href="{% url 'store' %}">Store Home</a> | </span>
-                            {% endif %}
-                            {{ products|length }} Products{% if search_term %} found for <strong>"{{ search_term }}"</strong>{% endif %}
-                        </p>
-                    </div>
-                </div>
+        <!-- End: Container for the sort selector -->
 
-
-                <!-- Start Product Listing -->
-                <div class="flex items-center justify-center mb-8">
-                    <div class="place-items-center grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                {% for product in products %}
-                <div>
-                <a href="{% url 'product_detail' product.id %}" class="flex flex-col items-center bg-white rounded-lg border shadow-md md:flex-row md:max-w-xl hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700">
-                    {% if product.image %}
-                    <img class="object-cover w-full h-64 rounded-t-lg md:w-48 md:rounded-none md:rounded-l-lg"                    
-                    src="{{ product.image.url }}" alt="{{ product.name }}">
-                    {% else %}
-                    <a href="{% url 'product_detail' product.id %}">
-                        <img class="" src="{{ MEDIA_URL }}noimage.png" alt="{{ product.name }}">
-                    </a>
-                    {% endif %}
-                    <div class="flex flex-col justify-between p-4 leading-normal">
-                        <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">{{ product.name }}</h5>
-                        <ul>
-                        <li class="mb-3 font-normal text-gray-700 dark:text-gray-400">${{ product.price }}</li>
-                        <li class="mb-3 font-normal text-gray-700 dark:text-gray-400">{{ product.manufacturer }}</li>
-                        </ul>
-                    </div>
-                    Code to edit and delete if user is admin
-                    {% if request.user.is_superuser %}
-                    <a href="{% url 'edit_product' product.id %}">Edit</a> | 
-                    <a href="{% url 'delete_product' product.id %}">Delete</a>
-                {% endif %}
+        <!-- Start Product Listing -->
+        <div>
+            <div class="flex items-center justify-center mb-8">
+                <div class="place-items-center grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {% for product in products %}
+            <div>
+            <a href="{% url 'product_detail' product.id %}" class="flex flex-col items-center bg-white rounded-lg border shadow-md md:flex-row md:max-w-xl hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700">
+                {% if product.image %}
+                <img class="object-cover w-full h-64 rounded-t-lg md:w-48 md:rounded-none md:rounded-l-lg"                    
+                src="{{ product.image.url }}" alt="{{ product.name }}">
+                {% else %}
+                <a href="{% url 'product_detail' product.id %}">
+                    <img class="" src="{{ MEDIA_URL }}noimage.png" alt="{{ product.name }}">
                 </a>
-                
+                {% endif %}
+                <div class="flex flex-col justify-between p-4 leading-normal">
+                    <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">{{ product.name }}</h5>
+                    <ul>
+                    <li class="mb-3 font-normal text-gray-700 dark:text-gray-400">${{ product.price }}</li>
+                    <li class="mb-3 font-normal text-gray-700 dark:text-gray-400">{{ product.manufacturer }}</li>
+                    </ul>
                 </div>
-                {% endfor %}
+                Code to edit and delete if user is admin
+                {% if request.user.is_superuser %}
+                <a href="{% url 'edit_product' product.id %}">Edit</a> | 
+                <a href="{% url 'delete_product' product.id %}">Delete</a>
+            {% endif %}
+            </a>
+            
             </div>
-        </div>
+            {% endfor %}
         </div>
 
+
+        </div>
+        </div>
+        <!-- End Product Listing -->
+
+    </div>
+    <!-- End: Store Page Content -->
 
    
 
@@ -127,5 +120,5 @@
         })
     </script>
 
-<script src="https://unpkg.com/flowbite@1.5.3/dist/flowbite.js"></script>
+
 {% endblock %}
