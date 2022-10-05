@@ -2,6 +2,7 @@
 module.exports = {
   important: true,
   content: ["./templates/*.{html,js}",
+  "./templates/**/*.{html,js}",
   "./cart/**/*.{html,js}",
   "./checkout/**/*.{html,js}",
   "./store/**/*.{html,js}",
@@ -16,6 +17,7 @@ module.exports = {
       'white': '#F4F4F5',
       'red': '#9B1D20',
       'green': '#3F8D48',
+      'pure-white': '#FFF',
     },
   },
   plugins: [

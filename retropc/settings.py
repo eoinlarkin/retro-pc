@@ -48,11 +48,18 @@ INSTALLED_APPS = [
     "allauth",
     "allauth.account",
     "allauth.socialaccount",
+    "crispy_forms",
+    "crispy_tailwind",
     "store",
     "cart",
     "checkout",
     "user_account",
+    
 ]
+
+# Crispy Forms:
+CRISPY_ALLOWED_TEMPLATE_PACKS = "tailwind"
+CRISPY_TEMPLATE_PACK = "tailwind"
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
