@@ -27,12 +27,48 @@ An ecommerce website for the selling of vintage PC hardware
 - As a **shopper** I would like to **select the quantity of product when purchasing**
 
 
-# SEO
+# Marketing
+
+## Marketing Strategy
+
+## Facebook Business
+
+A mockup of a Facebook business page has been created for the retro-pc webiste. As this was A real Facebook marketing site could be used to advertise the business, promote the products sold on the website and communicate directly with customers. 
+
+<details>
+  <summary><strong style="color:skyblue">Facebook Marketing Page:</strong></summary>
+  <img src="./docs/images/retro-pc-fb-business-page.png" alt="navbar"/>
+  </details>
+
+
+
+
+# SEO 
 
 # Design
 
 ## Wireframes
-## COlor Palette
+
+## Color Palette
+A broad color palette was chosen for the site with a range of complimenting colors chosen. In choosing the color palette, my objective was to select a color palette that would create a strong visual identity with a number of colors with high contrast.
+
+In defining the colors in the HTML code, custom [Tailwind color codes](https://tailwindcss.com/docs/customizing-colors) were defined; the hex codes corresponding to the custome codes were as follows:
+
+
+| Color          |Hex Code        |
+|----------------|----------------|
+|      Yellow    |  `#D97706`     | 
+|      Blue      |`#235789`       |
+|      Black     |`#000000`       |
+|      White     |`#F4F4F5`       |
+|      Red       |`#9B1D20`       |
+|      Green     | `#3F8D48`      |
+|      Pure-white| `#FFF`         |
+|      Gray      |`#cbd5e1`       |
+
+
+
+
 ## Fonts
 
 # Database Model & Schema
@@ -41,23 +77,24 @@ An ecommerce website for the selling of vintage PC hardware
 
 
 ## Wireframes
+
+- Footer
+- Header
+- Homepage
+- Store Page
+- Login
+- Logout
+- Signup
+- Cart
+- Checkout
+- Product Adminsitration
+
+
 ## Color Palette
 
 The following color palette was used for the design of the site. The objective was to use a color palette with a high degree of contrast. The color scheme was derived from the [dmg theme](https://github.com/monkeytypegame/monkeytype/blob/master/frontend/static/themes/dmg.css) from the MonkeyType typing application []
 
-| Color             |Hex Code            |Tailwind            |                    |
-|-------------------|--------------------|--------------------|--------------------|
-| Background        |   #dadbdc          |  zinc 100           |                    |
-| Main Color        |   #ae185e          | fuchsia-800                   |                    |
-| Caret Color       |   #384693          | blue-900           |                    |
-| Sub Color         |   #3846b1          | indigo 600         |                    |
-| Sub Alt Color     |   #bec1d2          | slate-200          |                    |
-| Text Color        |   #414141          | slate 600          |                    |
-| Error Color       |   #ae185e          |                    |                    |
-| Error Extra Color |   #93335c          |                    |                    |
-| Extra Color       |   #80a053          |                    |                    |
-| Error Extra Color |   #306230          |                    |                    |
-| Background Focus  |   #306230          |                    |                    |
+
 
 
 
@@ -66,8 +103,18 @@ The following color palette was used for the design of the site. The objective w
 # Database Model & Schema
 # Features
   ## Implemented Features
+
+  - Toast Functionality
+  - Newsletter Sign-up Form
+  - Admin Product Management
+  - Payment Integration
+  - User Authentication 
+  - Custom 404 Page
+
+
   ## Future Additional Features
 # Testing
+Test of the site is documented in the TESTING.md file
 
 # Deployment
 
@@ -121,6 +168,28 @@ In order to deploy the application to Heroku, the following steps should be foll
 # Technologies Used
   ## Languages
   ## Tools
+
+
+- [VScode](https://code.visualstudio.com/)
+  All coding was completed in VS Code.
+- [Heroku](https://www.heroku.com/)
+  Heroku was used for the deployment of the app.
+- [Black])(https://github.com/psf/black)
+  Black was used as the Linter for Python files.
+- [Stripe](www.stripe.com)
+  Stripe was used as the payments platform.
+- [Django](https://www.djangoproject.com/)
+  The Django framework was used to develop the site.
+- [TailwindCSS](https://tailwindcss.com/)
+  TailwindCSS was used as teh CSS framework to accelerate development of the site.
+- [coolors.co](https://coolors.co/)
+  Potential site palettes were tested with Coolors.
+- [Figma](https://www.figma.com/templates/wireframe-kits/)
+  Wireframes for the site were generated using Figma
+- [gauger.io](gauger.io)
+  This website was used to generate the favicon using an icon from Font Awesome.
+- [Markdown TOC](https://ecotrust-canada.github.io/markdown-toc/)
+  For generating the formatted table of contents in markdown
 
 # Credits
   ## Libraries
