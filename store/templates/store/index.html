@@ -6,13 +6,23 @@
 <container class="mx-auto my-auto">
     <div class="flex flex-col">
 
-        <div class="text-center mb-8">
+        <div class="flex flex-col">
+        <div class="text-center mb-2 mt-2 text-2xl text-blue w-96 mx-auto">
             <p>The web's best site for vintage electronics !</p>
+        </div>
+        <div class="mx-auto mb-4">
+        <a href="{% url 'store' %}">
+            <button
+                class="btn-blue-greenhighlight text-xl">
+                Shop Now !
+            </button>
+        </a>
+        </div>
 
         </div>
 
         <div
-            class="bg-slate-900 mx-auto object-center object-fill items-center justify-center bg-pure-white rounded-lg border-4 shadow-md border-black py-12 px-12">
+            class="bg-slate-900 mx-auto object-center object-fill items-center justify-center bg-pure-white rounded-lg border-4 shadow-md border-black py-8 px-8">
 
             <img src="{% static '/media/5426888_apple_mac_pc_retro_icon.png' %}"
                 class="mx-auto object-fill object-center" alt="Cover Image" style="height:50%;">

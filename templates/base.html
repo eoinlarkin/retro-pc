@@ -55,16 +55,15 @@
   </div>
 
 
-  <!-- {% if messages %}{% for message in messages %}<script>alert("{{ message }}");</script>{% endfor %}{% endif %} -->
-
-  <!-- Load any user messages -->
-  <div class="">
-  {% if messages %}
-  {% for message in messages %}
-  {% include 'includes/toasts/_toast.html' %}
-  {% endfor %}
-  {% endif %}
-</div>
+  <!-- START: Messages -->
+  <div>
+    {% if messages %}
+    {% for message in messages %}
+    {% include 'includes/_toast.html' %}
+    {% endfor %}
+    {% endif %}
+  </div>
+  <!-- END: Messages -->
 
 <main class="flex grow">
     {% block content %}

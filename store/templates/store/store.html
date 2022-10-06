@@ -7,26 +7,24 @@
 {% block content %}
 
     <!-- Start: Store Page Content -->
-    <div class="flex flex-col">
-
-        <!-- Start: Sidebar -->
-        {% include 'drawer.html' %}
-        <!-- End: Sidebar -->
+    <div class="flex flex-col mx-auto">
 
         <!-- Start: Product Header -->
         <div class="text-2xl text-center">Products</div>
         <!-- End: Product Header -->
 
-        <!-- Start: Drawer Buttons -->
-        
-        <div class="flex flex-row justify-center">
-        {% include 'dropdown_buttons.html' %}
+        <!-- Start: Sidebar -->
+        {% include '_filter_drawer.html' %}
+        <!-- End: Sidebar -->
+
+        <!-- Start: Drawer Buttons -->      
+        <div class="flex flex-col md:flex-row md:relative absolute justify-center invisible md:visible">
+        {% include '_filter_dropdown_buttons.html' %}
         </div>
-    
         <!-- End: Drawer Buttons -->
 
         <!-- Start: Container for the sort selector -->       
-        <select id="sort-selector" class="flex justify-center">
+        <select id="sort-selector" class="flex justify-center w-96 mx-auto">
             <option value="reset" {% if current_sorting == 'None_None' %}selected{% endif %}>Sort by...</option>
             <option value="price_asc" {% if current_sorting == 'price_asc' %}selected{% endif %}>Price (low to high)</option>
             <option value="price_desc" {% if current_sorting == 'price_desc' %}selected{% endif %}>Price (high to low)</option>
@@ -35,43 +33,38 @@
             <option value="manufacturer_asc" {% if current_sorting == 'manufacturer_asc' %}selected{% endif %}>Manufacturer (A-Z)</option>
             <option value="manufacturer_desc" {% if current_sorting == 'manufacturer_desc' %}selected{% endif %}>Manufacturer (Z-A)</option>
         </select>
-
         <!-- End: Container for the sort selector -->
 
         <!-- Start Product Listing -->
-        <div>
-            <div class="flex items-center justify-center mb-8">
-                <div class="place-items-center grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {% for product in products %}
-            <div>
-            <a href="{% url 'product_detail' product.id %}" class="flex flex-col items-center bg-white rounded-lg border shadow-md md:flex-row md:max-w-xl hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700">
-                {% if product.image %}
-                <img class="object-cover w-full h-64 rounded-t-lg md:w-48 md:rounded-none md:rounded-l-lg"                    
-                src="{{ product.image.url }}" alt="{{ product.name }}">
-                {% else %}
-                <a href="{% url 'product_detail' product.id %}">
-                    <img class="" src="{{ MEDIA_URL }}noimage.png" alt="{{ product.name }}">
+            <div class="flex mb-8 mt-8 mx-auto">
+                <div class="place-items-center grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 md:gap-12 gap-4">
+                {% for product in products %}
+                <div>
+                <a href="{% url 'product_detail' product.id %}" class="flex flex-col items-center bg-pure-white rounded-lg border shadow-md md:flex-row md:max-w-xl border-black hover:bg-gray w-96 max-w-sm">
+                    {% if product.image %}
+                    <img class="object-cover w-full h-64 rounded-t-lg md:w-48 md:rounded-none md:rounded-l-lg"                    
+                    src="{{ product.image.url }}" alt="{{ product.name }}">
+                    {% else %}
+                    <a href="{% url 'product_detail' product.id %}">
+                        <img class="" src="{{ MEDIA_URL }}noimage.png" alt="{{ product.name }}">
+                    </a>
+                    {% endif %}
+                    <div class="flex flex-col justify-between p-4 leading-normal">
+                        <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 ">{{ product.name }}</h5>
+                        <ul>
+                        <li class="mb-3 font-normal text-gray-700 ">${{ product.price }}</li>
+                        <li class="mb-3 font-normal text-gray-700 ">{{ product.manufacturer }}</li>
+                        </ul>
+                    </div>
+                    <!-- Code to edit and delete if user is admin -->
+                    {% if request.user.is_superuser %}
+                    <a href="{% url 'edit_product' product.id %}">Edit</a> | 
+                    <a href="{% url 'delete_product' product.id %}">Delete</a>
+                    {% endif %}
                 </a>
-                {% endif %}
-                <div class="flex flex-col justify-between p-4 leading-normal">
-                    <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">{{ product.name }}</h5>
-                    <ul>
-                    <li class="mb-3 font-normal text-gray-700 dark:text-gray-400">${{ product.price }}</li>
-                    <li class="mb-3 font-normal text-gray-700 dark:text-gray-400">{{ product.manufacturer }}</li>
-                    </ul>
+                
                 </div>
-                Code to edit and delete if user is admin
-                {% if request.user.is_superuser %}
-                <a href="{% url 'edit_product' product.id %}">Edit</a> | 
-                <a href="{% url 'delete_product' product.id %}">Delete</a>
-            {% endif %}
-            </a>
-            
-            </div>
-            {% endfor %}
-        </div>
-
-
+                {% endfor %}
         </div>
         </div>
         <!-- End Product Listing -->
