@@ -10,11 +10,11 @@
 
 @layer components {
   .btn-blue-greenhighlight {
-    @apply px-6 ml-4 block text-center rounded bg-blue hover:bg-green focus:outline-none text-white !important;
+    @apply flex px-6 ml-4 items-center text-center justify-center  my-auto rounded bg-blue hover:bg-green focus:outline-none text-white !important;
   }
 
 .btn-blue-redhighlight {
-  @apply px-6 ml-4 block text-center rounded bg-blue hover:bg-red focus:outline-none text-white !important;
+  @apply flex px-6 ml-4 items-center text-center justify-center my-auto  rounded bg-blue hover:bg-red focus:outline-none text-white !important;
 }
 
 

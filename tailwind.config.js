@@ -18,6 +18,7 @@ module.exports = {
       'red': '#9B1D20',
       'green': '#3F8D48',
       'pure-white': '#FFF',
+      'gray': '#cbd5e1'
     },
   },
   plugins: [
