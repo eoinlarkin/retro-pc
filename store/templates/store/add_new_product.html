@@ -1,40 +1,31 @@
 {% extends "base.html" %}
 {% load static %}
+{% load crispy_forms_tags %}
+{% load tailwind_filters %}
+
 
 {% block page_header %}
-<div>
-    <div>
-        <div></div>
-    </div>
-</div>
 {% endblock %}
 
 {% block content %}
-<div></div>
-<div>
+
+<div class="flex flex-col items-center justify-center bg-pure-white rounded-lg border-2 shadow-md border-none md:border-black my-auto mx-auto  min-w-md pb-8 mb-8 pt-8 mt-8">
     <div>
-        <div>
-            <hr>
-            <h2>Product Management</h2>
-            <h5>Add a Product</h5>
-            <hr>
-        </div>
+            <p class="text-3xl text-center">Product Management</p>
+            <p class="text-lg text-center mt-4 mn-8">Add a Product</p>
     </div>
 
-    <div>
-        <div>
+
+    <div class="mx-auto bg-pure-white w-11/12 border-gray rounded-lg border-2 shadow-md border-separate">
+     <div class="mx-2 my-2">   
             <form method="POST" action="{% url 'add_new_product' %}" enctype="multipart/form-data">
                 {% csrf_token %}
                 {% for field in form %}
-                {% if field.name != 'image' %}
-                {{ field.name }}: {{ field }}
-                {% else %}
-                {{ field }}
-                {% endif %}
+                {{ field | as_crispy_field }}
                 {% endfor %}
-                <div>
-                    <a href="{% url 'store' %}">Cancel</a>
-                    <button type="submit">Add Product</button>
+                <div class="flex flex-row justify-center">
+                    <a href="{% url 'store' %}" class="btn-blue-redhighlight mb-4 w-40">Cancel</a>
+                    <button type="submit" class="btn-blue-greenhighlight mb-4 w-40">Add Product</button>
                 </div>
             </form>
         </div>

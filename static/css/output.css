@@ -2495,6 +2495,26 @@ html {
   margin-right: 1rem !important;
 }
 
+.my-auto {
+  margin-top: auto !important;
+  margin-bottom: auto !important;
+}
+
+.mx-auto {
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+.mx-2 {
+  margin-left: 0.5rem !important;
+  margin-right: 0.5rem !important;
+}
+
+.my-2 {
+  margin-top: 0.5rem !important;
+  margin-bottom: 0.5rem !important;
+}
+
 .mb-8 {
   margin-bottom: 2rem !important;
 }
@@ -2943,6 +2963,22 @@ html {
   margin-top: 0.5rem !important;
 }
 
+.mb-8 {
+  margin-bottom: 2rem !important;
+}
+
+.mt-8 {
+  margin-top: 2rem !important;
+}
+
+.mt-4 {
+  margin-top: 1rem !important;
+}
+
+.mb-4 {
+  margin-bottom: 1rem !important;
+}
+
 .block {
   display: block !important;
 }
@@ -3215,6 +3251,14 @@ html {
   width: 15rem !important;
 }
 
+.w-11\/12 {
+  width: 91.666667% !important;
+}
+
+.w-auto {
+  width: auto !important;
+}
+
 .min-w-max {
   min-width: -webkit-max-content !important;
   min-width: -moz-max-content !important;
@@ -3457,6 +3501,10 @@ html {
   border-radius: 0.25rem !important;
 }
 
+.rounded-lg {
+  border-radius: 0.5rem !important;
+}
+
 .rounded-t-lg {
   border-top-left-radius: 0.5rem !important;
   border-top-right-radius: 0.5rem !important;
@@ -3496,6 +3544,10 @@ html {
 
 .border-4 {
   border-width: 4px !important;
+}
+
+.border-2 {
+  border-width: 2px !important;
 }
 
 .border-r {
@@ -3632,6 +3684,11 @@ html {
 .bg-white {
   --tw-bg-opacity: 1 !important;
   background-color: rgb(244 244 245 / var(--tw-bg-opacity)) !important;
+}
+
+.bg-pure-white {
+  --tw-bg-opacity: 1 !important;
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity)) !important;
 }
 
 .bg-clip-padding {
@@ -4107,6 +4164,14 @@ html {
   padding-bottom: 1rem !important;
 }
 
+.pb-8 {
+  padding-bottom: 2rem !important;
+}
+
+.pt-8 {
+  padding-top: 2rem !important;
+}
+
 .text-left {
   text-align: left !important;
 }
@@ -4311,6 +4376,16 @@ html {
 .text-xs {
   font-size: 0.75rem !important;
   line-height: 1rem !important;
+}
+
+.text-3xl {
+  font-size: 1.875rem !important;
+  line-height: 2.25rem !important;
+}
+
+.text-lg {
+  font-size: 1.125rem !important;
+  line-height: 1.75rem !important;
 }
 
 .font-bold {
