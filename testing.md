@@ -28,3 +28,55 @@
 
 - These can be tested by checking Video # 055
 - This can be tested by commenting out the form.submit() in the stripe_elements.js
+
+
+## Validators
+
+### HTML
+
+The W3 HTML validator was used to validate the HTML code of the site. The results were as follows:
+
+
+### PEP8
+
+PEP8 compliance was managed directly in VS Code using the [black](https://github.com/psf/black) linter. Prior to final deployment the files were also tested using the [PEP8 Online Validator](http://pep8online.com/)
+
+The following `.py` files were tested using the linter:
+
+**cart App**
+* :heavy_check_mark: **admin.py**
+* :heavy_check_mark: **apps.py**
+* :heavy_check_mark: **contexts.py**
+* :heavy_check_mark: **models.py**
+* :heavy_check_mark: **tests.py**
+* :heavy_check_mark: **urls.py**
+* :heavy_check_mark: **views.py**
+
+**checkout App**
+* :heavy_check_mark: **admin.py**
+* :heavy_check_mark: **apps.py**
+* :heavy_check_mark: **forms.py**
+* :heavy_check_mark: **models.py**
+* :heavy_check_mark: **signals.py**
+* :heavy_check_mark: **tests.py**
+* :heavy_check_mark: **urls.py**
+* :heavy_check_mark: **views.py**
+* :heavy_check_mark: **web_handler.py**
+* :heavy_check_mark: **webhooks.py**
+
+**store App**
+* :heavy_check_mark: **admin.py**
+* :heavy_check_mark: **apps.py**
+* :heavy_check_mark: **contexts.py**
+* :heavy_check_mark: **forms.py**
+* :heavy_check_mark: **models.py**
+* :heavy_check_mark: **tests.py**
+* :heavy_check_mark: **urls.py**
+* :heavy_check_mark: **views.py**
+
+**retropc App**
+* :heavy_check_mark: **asgi.py**
+* :heavy_check_mark: **settings.py**
+* :heavy_check_mark: **urls.py**
+* :heavy_check_mark: **views.py**
+* :heavy_check_mark: **wsgi.py**
