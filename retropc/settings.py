@@ -54,7 +54,6 @@ INSTALLED_APPS = [
     "cart",
     "checkout",
     "user_account",
-    
 ]
 
 # Crispy Forms:

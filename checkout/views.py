@@ -102,9 +102,7 @@ def checkout(request):
                     return redirect(reverse("cart"))
 
             request.session["save_info"] = "save-info" in request.POST
-            return redirect(
-                reverse("checkout_success", args=[order.order_number])
-            )
+            return redirect(reverse("checkout_success", args=[order.order_number]))
         else:
             messages.error(
                 request,
@@ -115,9 +113,7 @@ def checkout(request):
     else:
         cart = request.session.get("cart", {})
         if not cart:
-            messages.error(
-                request, "There's nothing in your cart at the moment"
-            )
+            messages.error(request, "There's nothing in your cart at the moment")
             return redirect(reverse("store"))
 
         # Using the cart.contexts to retrieve the current_cart dictionary
