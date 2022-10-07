@@ -1,14 +1,13 @@
 {% extends "base.html" %} {% load static %} {% block extra_css %}
 <link rel="stylesheet" href="{% static 'checkout/css/checkout.css' %}" />
 {% endblock %} {% block page_header %} {% endblock %} {% block content %}
-<div>
+<div class="mx-auto">
   <!-- Start: Order Confirmed Text-->
   <div class="mt-16 text-center">
     <div>
       <p class="text-2xl mb-4">Thank You</p>
       <p class="mb-4">
-        Your order information is below. A confirmation email will be sent to
-        <strong>{{ order.email }}</strong>.
+        Your order information is below.
       </p>
     </div>
   </div>
@@ -176,7 +175,7 @@
   <!-- If so, a button to return to the profile is rendered -->
   
     <div>
-      <a href="{% url 'store' %}" class="btn-blue-greenhighlight mb-2 mt-2 w-36 mx-auto md:mx-0"">
+      <a href="{% url 'store' %}" class="btn-blue-greenhighlight mb-2 mt-2 w-36 mx-auto">
         Back to the Store
       </a>
     </div>

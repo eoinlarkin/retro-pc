@@ -247,7 +247,7 @@ In order to deploy the application to Heroku, the following steps should be foll
 
   - **[404 Error](https://www.vectorstock.com/royalty-free-vector/power-plug-and-cloud-icon-in-shape-on-a-white-vector-29024655">)**
  
- - **[Custom Tailwind Fonts](https://blog.logrocket.com/how-to-use-custom-fonts-tailwind-css/)
+ - **[Custom Tailwind Fonts](https://blog.logrocket.com/how-to-use-custom-fonts-tailwind-css/)**
 
 
   ## HTML / CSS
