@@ -69,11 +69,11 @@ def newsletter_signup(request):
     View to subscribe users to the website newsletter
     """
     email = request.POST["email"]
-    existing_sub = NewsletterSubscribers.objects.filter(email=email).exists()
-    if existing_sub:
-        pass
+    check_sub_exists = NewsletterSubscribers.objects.filter(email=email).exists()
+    if check_sub_exists:
+        messages.success(request, "You are already a newsletter subscriber !")
     else:
         sub = NewsletterSubscribers(email=email)
         sub.save()
-    messages.success(request, "Thank you for subscribing to our newsletter!")
+        messages.success(request, "Thank you for subscribing to our newsletter!")
     return redirect(request.GET.get("next"))

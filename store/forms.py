@@ -1,6 +1,6 @@
 
 from django import forms
-from .models import Product, Cpu, Manufacturer, ReleaseDecade 
+from .models import Product 
 
 
 class ProductAdminForm(forms.ModelForm):

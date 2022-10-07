@@ -1,5 +1,5 @@
 from django import forms
-from .models import UserProfile
+from .models import UserProfile, NewsletterSubscribers
 
 
 class UserProfileForm(forms.ModelForm):
@@ -36,3 +36,10 @@ class UserProfileForm(forms.ModelForm):
                 "class"
             ] = "border-black rounded-0 profile-form-input"
             self.fields[field].label = False
+
+
+class NewsletterSubscribersForm(forms.ModelForm):
+
+    class Meta:
+        model = NewsletterSubscribers
+        fields = "__all__"

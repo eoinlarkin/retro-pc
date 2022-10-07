@@ -40,9 +40,7 @@ def create_or_update_user_profile(sender, instance, created, **kwargs):
 # Model for the recoding of user details for the newsletter
 class NewsletterSubscribers(models.Model):
     email = models.EmailField(verbose_name="email", max_length=60, unique=True)
-    subscription_date = models.DateTimeField(
-        verbose_name="date subscribed", auto_now_add=True
-    )
+    subscription_date = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
         return f"{self.email}"

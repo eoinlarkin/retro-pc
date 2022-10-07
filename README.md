@@ -40,8 +40,28 @@ A mockup of a Facebook business page has been created for the retro-pc webiste. 
   <img src="./docs/images/retro-pc-fb-business-page.png" alt="navbar"/>
   </details>
 
+## Newsletter Signup
 
+A newsletter signup form was implemented via a Django form. This allows users to enroll in the site newsletter. Details of users signed up to the newsletter can be accessed in the administration backend.
 
+On signing up to the newsletter, a toast is posted confirming the subscription. If a user already is a subscriber; they receive a toast confirming that they have already subscribed to the newsletter and no new data is posted to the database.
+
+In addition to capturing the user's email, the date that the user subscribed to the newsletter is also recorded.
+
+<details>
+  <summary><strong style="color:skyblue">Newsletter Form:</strong></summary>
+  <img src="./docs/images/newsletter-form.png" alt="newsletter-form-image"/>
+  </details>
+
+<details>
+  <summary><strong style="color:skyblue">Newsletter Admin Panel:</strong></summary>
+  <img src="./docs/images/newsletter-sub-list.png" alt="newsletter-admin-panel"/>
+  </details>  
+
+<details>
+  <summary><strong style="color:skyblue">Newsletter Subscriber Detail:</strong></summary>
+  <img src="./docs/images/newsletter-subscriber.png" alt="newsletter-subcriber"/>
+  </details>  
 
 # SEO 
 
