@@ -1,37 +1,30 @@
 {% extends "base.html" %}
 {% load static %}
+{% load crispy_forms_tags %}
+{% load tailwind_filters %}
 
 {% block page_header %}
-    <div class="container header-container">
-        <div class="row">
-            <div class="col"></div>
-        </div>
-    </div>
 {% endblock %}
 
 {% block content %}
-    <div class="overlay"></div>
-    <div class="container">
-        <div class="row">
-            <div class="col-12 col-md-6">
-                <hr>
-                <h2 class="logo-font mb-4">Product Management</h2>
-                <h5 class="text-muted">Edit a Product</h5>
-                <hr>
-            </div>
-        </div>
+<div class="flex flex-col items-center justify-center bg-pure-white rounded-lg border-2 shadow-md border-none md:border-black my-auto mx-auto  min-w-md pb-8 mb-12 pt-8 mt-8">
+    <div>
+            <p class="text-3xl text-center">Product Management</p>
+            <p class="text-lg text-center mt-4 mn-8">Edit a Product</p>
+    </div>
 
-        <div class="row">
-            <div class="col-12 col-md-6">
+
+    <div class="mx-auto bg-pure-white w-11/12 border-gray rounded-lg border-2 shadow-md border-separate">
+        <div class="mx-2 my-2">   
                 <!-- Code to send form the details for the product that we wish to edit -->
                 <form method="POST" action="{% url 'edit_product' product.id %}" enctype="multipart/form-data">
                     {% csrf_token %}
                     {% for field in form %}
-                    {{ field.name }}: {{ field }}
+                    {{ field | as_crispy_field }}
                     {% endfor %}
-                    <div class="text-right">
-                        <a href="{% url 'store' %}">Cancel</a>
-                        <button type="submit">Update Product</button>
+                    <div class="flex flex-row justify-center">
+                        <a href="{% url 'store' %}" class="btn-blue-redhighlight mb-4 w-40 h-16">Cancel</a>
+                        <button type="submit" class="btn-blue-greenhighlight mb-4 w-40 h-16">Update Product</button>
                     </div>
                 </form>
             </div>            
