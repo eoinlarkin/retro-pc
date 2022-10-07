@@ -149,18 +149,12 @@
             <!-- START: Confirm / Adjust Buttons-->
             <div>
                 <div class="flex flex-col md:flex-row justify-center">
-                    <a href="{% url 'cart' %}" class="btn-blue-redhighlight mb-2 mt-2 w-36 align-middle">
-                        <span>
-                            <i></i>
-                        </span>
+                    <a href="{% url 'cart' %}" class="btn-blue-redhighlight mb-2 mt-2 w-36 mx-auto md:mx-0">
                         <span>Adjust Bag</span>
                     </a>
-                    <div id="submit-button" class="btn-blue-greenhighlight mb-2 mt-2 w-36">
+                    <button id="submit-button" class="btn-blue-greenhighlight mb-2 mt-2 w-36  mx-auto md:mx-0">
                         <span>Complete Order</span>
-                        <span>
-                            <i></i>
-                        </span>
-                    </div>
+                    </button>
                 </div>
                 <!-- START: Charge Warning -->
                 <p class="text-center pb-4 pt-4">
@@ -193,5 +187,5 @@
 {{ block.super }}
 {{ stripe_public_key|json_script:"id_stripe_public_key" }}
 {{ client_secret|json_script:"id_client_secret" }}
-<script src="{% static 'checkout/js/stripe_elements.js' %}"></script>
+<script src="{% static '/js/stripe_elements.js' %}"></script>
 {% endblock postloadjs %}

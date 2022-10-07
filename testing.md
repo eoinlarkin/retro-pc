@@ -37,7 +37,7 @@
 The W3 HTML validator was used to validate the HTML code of the site. The results were as follows:
 
 
-### PEP8
+### Python
 
 PEP8 compliance was managed directly in VS Code using the [black](https://github.com/psf/black) linter. Prior to final deployment the files were also tested using the [PEP8 Online Validator](http://pep8online.com/)
 
@@ -80,3 +80,33 @@ The following `.py` files were tested using the linter:
 * :heavy_check_mark: **urls.py**
 * :heavy_check_mark: **views.py**
 * :heavy_check_mark: **wsgi.py**
+
+### Javascript
+
+Javascript files were tested for compatability with recommended javascript formatting using [jshint.com](jshint.com). No issues were noted in the files aside from some minor warnings:
+
+
+<details>
+  <summary><strong style="color:skyblue">`drawer.js`:</strong></summary>
+  <img src="./docs/jshint/jshint-drawer.png" alt="jshint drawer"/>
+</details>  
+
+<details>
+  <summary><strong style="color:skyblue">`hamburger.js`:</strong></summary>
+  <img src="./docs/jshint/jshint-hamburger.png" alt="jshint hamburger"/>
+</details>  
+
+<details>
+  <summary><strong style="color:skyblue">`quantity_input_select.js`:</strong></summary>
+  <img src="./docs/jshint/jshint-quantity_select.png" alt="jshint quantity select"/>
+</details>  
+
+<details>
+  <summary><strong style="color:skyblue">`stripe_elements.js`:</strong></summary>
+  <img src="./docs/jshint/jshint-stripe.png" alt="jshint stripe"/>
+</details>  
+
+<details>
+  <summary><strong style="color:skyblue">`toast.js`:</strong></summary>
+  <img src="./docs/jshint/jshint-toast.png" alt="jshint toast"/>
+</details>  

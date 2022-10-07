@@ -1,6 +1,8 @@
+/*jshint esversion: 6 */
+/*globals $:false */
 /*
     Stripe Integration Flow as follows:
-    Step 01 -> Checkout View creates a Stripe PaymentIntent
+    Step 01 -> Checkout View creates a Stripe PaymentIntentp
     Step 02 -> Stripe returns a client_secret which is returned to the template
     Step 03 -> client_secret in the template used to call confirmCardPayment() and verify card
 */
@@ -17,12 +19,6 @@ var stripePublicKey = $('#id_stripe_public_key').text().slice(1, -1);
 var clientSecret = $('#id_client_secret').text().slice(1, -1);
 var stripe = Stripe(stripePublicKey);
 var elements = stripe.elements();
-
-console.log('Client secret:')
-console.log(clientSecret)
-
-console.log('Stripe Publick Key:')
-console.log(stripePublicKey)
 
 // style for card element
 var style = {
@@ -143,5 +139,5 @@ form.addEventListener('submit', function (ev) {
     }).fail(function () {
         // just reload the page, the error will be in django messages
         location.reload();
-    })
+    });
 });

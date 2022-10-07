@@ -1,3 +1,5 @@
+/*globals $:false */
+
 // Function to hide the toast message
 function hideToast() {
     $("#toast").addClass('invisible');
@@ -6,5 +8,5 @@ function hideToast() {
 // Calling the hide function when the button with the id
 // of 'toast-button' is clicked
 $("#toast-button").click(function(){
-    hideToast()
-    })
+    hideToast();
+    });

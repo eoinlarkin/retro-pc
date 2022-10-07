@@ -1,3 +1,4 @@
+/*jshint esversion: 6 */
 // Burger menus
 document.addEventListener('DOMContentLoaded', function () {
     // open
