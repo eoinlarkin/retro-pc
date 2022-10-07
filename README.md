@@ -93,6 +93,28 @@ In defining the colors in the HTML code, custom [Tailwind color codes](https://t
 
 # Database Model & Schema
 
+The following diagram provides an overview of the various models used by the application and the relationship between them.
+
+![database-scheme|600x400](./docs/images/retro-pc-db-schema.png)
+
+In building the application, the following applications and associated models were created:
+
+**store**
+- ReleaseDecade
+- Manfacturer
+- CPU
+- Product
+
+**cart**
+- Order
+- ORderLineItem
+
+**user_account**
+- UserProfile
+- NewsletterSubscribers
+
+The application features four custome models; _Manufacturer_, _CPU_, _Product_ and _NewsletterSubscribers_
+
 # Design
 
 
@@ -227,8 +249,8 @@ In order to deploy the application to Heroku, the following steps should be foll
 
   ## HTML / CSS
   ## Images
-    - Cover image sourced from Unsplash
-      https://unsplash.com/photos/yP89apz2TAA
+    - The cover icon is derived from an icon sourced from [iconfinder.com](iconfinder.com) 
+      [link](https://www.iconfinder.com/icons/5426888/apple_mac_pc_retro_icon)
   ## Other
 - `venv` was used to manage the python dependencies 
 
