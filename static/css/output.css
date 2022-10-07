@@ -3207,6 +3207,14 @@ html {
   width: 9rem !important;
 }
 
+.w-full {
+  width: 100% !important;
+}
+
+.w-60 {
+  width: 15rem !important;
+}
+
 .min-w-max {
   min-width: -webkit-max-content !important;
   min-width: -moz-max-content !important;
@@ -3445,6 +3453,10 @@ html {
   border-radius: 0.5rem !important;
 }
 
+.rounded {
+  border-radius: 0.25rem !important;
+}
+
 .rounded-t-lg {
   border-top-left-radius: 0.5rem !important;
   border-top-right-radius: 0.5rem !important;
@@ -3480,6 +3492,10 @@ html {
 
 .border {
   border-width: 1px !important;
+}
+
+.border-4 {
+  border-width: 4px !important;
 }
 
 .border-r {
@@ -3984,6 +4000,21 @@ html {
   padding-right: 1rem !important;
 }
 
+.py-3 {
+  padding-top: 0.75rem !important;
+  padding-bottom: 0.75rem !important;
+}
+
+.px-6 {
+  padding-left: 1.5rem !important;
+  padding-right: 1.5rem !important;
+}
+
+.py-4 {
+  padding-top: 1rem !important;
+  padding-bottom: 1rem !important;
+}
+
 .pl-3 {
   padding-left: 0.75rem !important;
 }
@@ -4277,6 +4308,11 @@ html {
   line-height: 1.75rem !important;
 }
 
+.text-xs {
+  font-size: 0.75rem !important;
+  line-height: 1rem !important;
+}
+
 .font-bold {
   font-weight: 700 !important;
 }
@@ -4459,6 +4495,10 @@ html {
 
 .font-semibold {
   font-weight: 600 !important;
+}
+
+.font-medium {
+  font-weight: 500 !important;
 }
 
 .uppercase {
@@ -4862,6 +4902,10 @@ html {
 
   .md\:max-w-xl {
     max-width: 36rem !important;
+  }
+
+  .md\:max-w-6xl {
+    max-width: 72rem !important;
   }
 
   .md\:grid-cols-2 {
