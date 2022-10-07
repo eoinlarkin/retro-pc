@@ -32,7 +32,7 @@ def add_to_cart(request, item_id):
     else:
         cart[item_id] = quantity
         messages.success(request, f"Added {product.name} to your bag")
-        print('message printed')
+        print("message printed")
 
     request.session["cart"] = cart
     print(cart)
@@ -71,13 +71,12 @@ def increase_cart_quantity(request, item_id):
     cart = request.session.get("cart", {})
 
     if quantity > 0:
-        cart[item_id] = quantity +1
+        cart[item_id] = quantity + 1
     else:
         cart.pop(item_id)
 
     request.session["cart"] = cart
     return redirect(reverse("view_cart"))
-
 
 
 def remove_from_cart(request, item_id):
