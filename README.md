@@ -107,7 +107,7 @@ In building the application, the following applications and associated models we
 
 **cart**
 - Order
-- ORderLineItem
+- OrderLineItem
 
 **user_account**
 - UserProfile
@@ -142,6 +142,9 @@ The following color palette was used for the design of the site. The objective w
 
 
 ## Fonts
+
+In choosing the font for the site, I elected to use a `monospace` font; this was in keeping with the theme of the site and helped to add to the identity of the site.
+
 # Database Model & Schema
 # Features
   ## Implemented Features

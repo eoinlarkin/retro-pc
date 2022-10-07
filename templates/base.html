@@ -1,5 +1,5 @@
 <!doctype html>
-<html>
+<html lang="en">
 
 {% load static %}
 
@@ -8,7 +8,10 @@
 <!-- Required meta tags -->
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"
+<meta name="description" content="Looking for vintage computers for sale online ?
+Try retro-pc the web's best store for vintage computing hardware ">
+<meta name="keywords" content="pc apple ibm sinclair vintage pc hardware online store mac commadore retro historical old">
 {% endblock %}
 
 {% block corecss %}
@@ -19,8 +22,6 @@
 
 <!-- Flowbite -->
 <link rel="stylesheet" href="https://unpkg.com/flowbite@1.5.3/dist/flowbite.min.css" />
-
-<!-- Tailwind Elements-->
 {% endblock %}
 
 {% block extra_css %}
@@ -42,18 +43,14 @@
 {% block extra_js %}
 {% endblock %}
 
-<title>RetroPC {% block extra_title %}{% endblock %}</title>
+<title>retro-pc</title>
 
-
-
-<!-- <body class="flex flex-col h-screen justify-between"> -->
 <body class="bg-white min-h-screen flex flex-col">
   
     <div class="sticky top-0 z-50">
     <header>{% include 'header.html' %}</header>
     {% include 'search_bar.html' %}
   </div>
-
 
   <!-- START: Messages -->
   <div>
@@ -70,25 +67,17 @@
     {% endblock %}
 </main>
 
-
-  {% block postloadjs %}
-  {% endblock  %}
-
-
-  <footer class="sticky top-[100vh]">
+<footer class="sticky top-[100vh]">
     {% include 'footer.html' %}
 </footer>
 
-
+{% block postloadjs %}
 <script src="{% static '/js/drawer.js' %}"></script>
 <script src="{% static '/js/toast.js' %}"></script>
+{% endblock  %}
 
 <!-- Tailwind Elements -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tw-elements/dist/css/index.min.css" />
-
+<!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tw-elements/dist/css/index.min.css" /> -->
 </body>
-
-
-
 
 </html>
