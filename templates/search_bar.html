@@ -1,4 +1,3 @@
-<!doctype html>
  <!-- The search form will have a method of get; we will submitting searches as urls -->
   <!-- There is no action as this has not yet been defined -->
   <!-- The input type will be 'text' and this will be associated witha a name of `q` -->
@@ -6,7 +5,7 @@
   <form class="flex justify-center " method="GET"
       action="{% url 'store' %}">
 
-      <input type="" name="q"
+      <input type="text" name="q"
           class="justify-center w-full sm:max-w-sm border border-black rounded py-2 pl-0 sm:pl-2"
           placeholder="Search our site !" required>
       <button type="submit"
