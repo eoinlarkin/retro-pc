@@ -7,11 +7,13 @@
 {% block content %}
 
 
+<!-- Page Div -->
 <div
     class="flex flex-col items-center justify-center bg-pure-white rounded-lg border-2 shadow-md border-none md:border-black my-auto mx-auto  pb-2 mb-4 pt-2 mt-4 w-full">
 
-
-    <div>
+    <!-- Parent Div -->
+    <div class="max-w-4xl">
+        <!-- Image and Attributes -->
         <div class="max-w-4xl">
             <a href="{% url 'product_detail' product.id %}"
                 class="flex flex-col items-center bg-pure-white rounded-lg border shadow-md md:flex-row  border-black hover:bg-gray ">
@@ -37,9 +39,9 @@
                 <a href="{% url 'edit_product' product.id %}">Edit</a> |
                 <a href="{% url 'delete_product' product.id %}">Delete</a>
                 {% endif %}
-        </div>
 
 
+            </div>
         <!-- Product Description-->
         <div class="bg-pure-white rounded-lg border shadow-md md:flex-row  border-black hover:bg-gray max-w-4xl mt-4 mb-4">
             <p class="text-center text-2xl"><strong>Description:</strong></p>
@@ -95,21 +97,20 @@
                 <!-- Hidden redirect button -->
                 <!-- Redirect URL will contain the current url -->
                 <input type="hidden" name="redirect_url" value="{{ request.path }}">
-
-
             </form>
         </div>
-
+    </div>
 
         <!-- Keep Shopping Button -->
+        <div>
         <a href="{% url 'store' %}" class="flex justify-center py-4">
-            <!-- Keep Shopping button -->
             <span class="btn-blue-greenhighlight max-w-lg">Keep Shopping</span>
         </a>
+        </div>
+        <!-- End: Keep Shopping Button -->
     </div>
-    </div>
-    {% endblock %}
 
+    {% endblock %}
 
 
     {% block postloadjs %}

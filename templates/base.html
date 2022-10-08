@@ -71,13 +71,14 @@ Try retro-pc the web's best store for vintage computing hardware ">
     {% include 'footer.html' %}
 </footer>
 
-{% block postloadjs %}
+<!-- Base JS-->
 <script src="{% static 'js/drawer.js' %}"></script>
 <script src="{% static 'js/toast.js' %}"></script>
+
+{% block postloadjs %}
 {% endblock  %}
 
-<!-- Tailwind Elements -->
-<!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tw-elements/dist/css/index.min.css" /> -->
+
 </body>
 
 </html>
