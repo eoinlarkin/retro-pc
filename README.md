@@ -2,6 +2,8 @@
 
 An ecommerce website for the selling of vintage PC hardware
 
+![database-scheme](./docs/images/responsive-preview.png)
+
 # Objectives
 
 ## User Stories
@@ -27,64 +29,10 @@ An ecommerce website for the selling of vintage PC hardware
 - As a **shopper** I would like to **select the quantity of product when purchasing**
 
 
-# Marketing
-
-## Marketing Strategy
-
-## Facebook Business
-
-A mockup of a Facebook business page has been created for the retro-pc webiste. As this was A real Facebook marketing site could be used to advertise the business, promote the products sold on the website and communicate directly with customers. 
-
-<details>
-  <summary><strong style="color:skyblue">Facebook Marketing Page:</strong></summary>
-  <img src="./docs/images/retro-pc-fb-business-page.png" alt="navbar"/>
-  </details>
-
-## Newsletter Signup
-
-A newsletter signup form was implemented via a Django form. This allows users to enroll in the site newsletter. Details of users signed up to the newsletter can be accessed in the administration backend.
-
-On signing up to the newsletter, a toast is posted confirming the subscription. If a user already is a subscriber; they receive a toast confirming that they have already subscribed to the newsletter and no new data is posted to the database.
-
-In addition to capturing the user's email, the date that the user subscribed to the newsletter is also recorded.
-
-<details>
-  <summary><strong style="color:skyblue">Newsletter Form:</strong></summary>
-  <img src="./docs/images/newsletter-form.png" alt="newsletter-form-image"/>
-  </details>
-
-<details>
-  <summary><strong style="color:skyblue">Newsletter Admin Panel:</strong></summary>
-  <img src="./docs/images/newsletter-sub-list.png" alt="newsletter-admin-panel"/>
-  </details>  
-
-<details>
-  <summary><strong style="color:skyblue">Newsletter Subscriber Detail:</strong></summary>
-  <img src="./docs/images/newsletter-subscriber.png" alt="newsletter-subcriber"/>
-  </details>  
-
-# SEO 
-
-## META Tags
-Descriptiv meta tags were added to the site headers to optimise the site for SEO purposes. 
-
-
-## sitemap.xml
-A sitemap was made to list the websites important URL's to ensure that search engines are able to easily index the site. This xml was generated using [XML-sitemaps.com](XML-sitemaps.com) 
-
-
-## robots.txt
-A robots.txt file was created to supprt the indexing of the site by search engines. A robots.txt file was created with the follwoing content: 
-
-```
-User-agent: *
-Disallow:
-Sitemap: YOUR_SITEMAP_URL
-```
 
 # Design
 
-The site was developed using Tailwind CSS with a responsive, mobile first approach.  
+The site was developed using Tailwind CSS and targets a responsive design that will work across different sized screens and devices. 
 
 ## Wireframes
 
@@ -193,6 +141,66 @@ The application features four custome models; _Manufacturer_, _CPU_, _Product_ a
   ## Future Additional Features
 # Testing
 Test of the site is documented in the TESTING.md file
+
+# Marketing
+
+## Business Model
+
+retro-pc is a business to customer (B2C) website focusing on selling rate and vitage computer equipment. The website does business directly with customers. Key site features are the ability to search the site, complete an order and process payments through approved payment providers. 
+
+## Facebook Business
+
+A mockup of a Facebook business page has been created for the retro-pc webiste. As this was A real Facebook marketing site could be used to advertise the business, promote the products sold on the website and communicate directly with customers. 
+
+<details>
+  <summary><strong style="color:skyblue">Facebook Marketing Page:</strong></summary>
+  <img src="./docs/images/retro-pc-fb-business-page.png" alt="navbar"/>
+  </details>
+
+## Newsletter Signup
+
+A newsletter signup form was implemented via a Django form. This allows users to enroll in the site newsletter. Details of users signed up to the newsletter can be accessed in the administration backend.
+
+On signing up to the newsletter, a toast is posted confirming the subscription. If a user already is a subscriber; they receive a toast confirming that they have already subscribed to the newsletter and no new data is posted to the database.
+
+In addition to capturing the user's email, the date that the user subscribed to the newsletter is also recorded.
+
+<details>
+  <summary><strong style="color:skyblue">Newsletter Form:</strong></summary>
+  <img src="./docs/images/newsletter-form.png" alt="newsletter-form-image"/>
+  </details>
+
+<details>
+  <summary><strong style="color:skyblue">Newsletter Admin Panel:</strong></summary>
+  <img src="./docs/images/newsletter-sub-list.png" alt="newsletter-admin-panel"/>
+  </details>  
+
+<details>
+  <summary><strong style="color:skyblue">Newsletter Subscriber Detail:</strong></summary>
+  <img src="./docs/images/newsletter-subscriber.png" alt="newsletter-subcriber"/>
+  </details>  
+
+# SEO 
+
+## META Tags
+Descriptiv meta tags were added to the site headers to optimise the site for SEO purposes. 
+
+
+## sitemap.xml
+A sitemap was made to list the websites important URL's to ensure that search engines are able to easily index the site. This xml was generated using [XML-sitemaps.com](XML-sitemaps.com) 
+
+
+## robots.txt
+A robots.txt file was created to supprt the indexing of the site by search engines. A robots.txt file was created with the follwoing content: 
+
+```
+User-agent: *
+Disallow:
+Sitemap: YOUR_SITEMAP_URL
+```
+
+
+
 
 # Deployment
 
