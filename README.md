@@ -84,7 +84,42 @@ Sitemap: YOUR_SITEMAP_URL
 
 # Design
 
+The site was developed using Tailwind CSS with a responsive, mobile first approach.  
+
 ## Wireframes
+
+Wireframes were created in advance of the design of the layout of the site. As the development of the site progressed, the design evovled however the original wireframes largely reflect the final site design:
+
+
+<details>
+  <summary><strong style="color:skyblue">Footer</strong></summary>
+  <img src="./docs/wireframes/Footer.png" alt="footer"/>
+  </details>  
+
+<details>
+  <summary><strong style="color:skyblue">Navigation Bar</strong></summary>
+  <img src="./docs/wireframes/NAV-BAR.png" alt="footer"/>
+  </details>  
+
+<details>
+  <summary><strong style="color:skyblue">Landing Page</strong></summary>
+  <img src="./docs/wireframes/Landing-Page.png" alt="landing page"/>
+  </details>  
+
+<details>
+  <summary><strong style="color:skyblue">Cart Summary</strong></summary>
+  <img src="./docs/wireframes/Cart-Summary.png" alt="cart summary"/>
+  </details>  
+
+<details>
+  <summary><strong style="color:skyblue">Checkout</strong></summary>
+  <img src="./docs/wireframes/Checkout.png" alt="checkout"/>
+  </details>  
+
+<details>
+  <summary><strong style="color:skyblue">Sign-Up / Register</strong></summary>
+  <img src="./docs/wireframes/sign-up-register.png" alt="sign-up register"/>
+  </details>  
 
 ## Color Palette
 A broad color palette was chosen for the site with a range of complimenting colors chosen. In choosing the color palette, my objective was to select a color palette that would create a strong visual identity with a number of colors with high contrast.
@@ -107,8 +142,9 @@ In defining the colors in the HTML code, custom [Tailwind color codes](https://t
 
 
 
-
 ## Fonts
+
+In choosing the font for the site, I elected to use a `monospace` font; this was in keeping with the theme of the site and helped to add to the identity of the site.
 
 # Database Model & Schema
 
@@ -134,35 +170,13 @@ In building the application, the following applications and associated models we
 
 The application features four custome models; _Manufacturer_, _CPU_, _Product_ and _NewsletterSubscribers_
 
-# Design
-
-
-## Wireframes
-
-- Footer
-- Header
-- Homepage
-- Store Page
-- Login
-- Logout
-- Signup
-- Cart
-- Checkout
-- Product Adminsitration
-
-
-## Color Palette
-
-The following color palette was used for the design of the site. The objective was to use a color palette with a high degree of contrast. The color scheme was derived from the [dmg theme](https://github.com/monkeytypegame/monkeytype/blob/master/frontend/static/themes/dmg.css) from the MonkeyType typing application []
 
 
 
 
 
 
-## Fonts
 
-In choosing the font for the site, I elected to use a `monospace` font; this was in keeping with the theme of the site and helped to add to the identity of the site.
 
 # Database Model & Schema
 # Features
