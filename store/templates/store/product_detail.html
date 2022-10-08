@@ -2,103 +2,116 @@
 {% load static %}
 
 {% block page_header %}
-    <div class="">
-        <div class="">
-            <div class=""></div>
-        </div>
-    </div>
 {% endblock %}
 
 {% block content %}
-    <div class=""></div>
-    <div class="">
-        <div class="">
-            <div class="">
-                <div class="">
-                    {% if product.image %}
-                        <a href="{{ product.image.url }}" target="_blank">
-                            <img class="" src="{{ product.image.url }}" alt="{{ product.name }}">
-                        </a>
-                        {% else %}
-                        <a href="">
-                            <img class="" src="{{ MEDIA_URL }}noimage.png" alt="{{ product.name }}">
-                        </a>
-                    {% endif %}
+
+
+<div
+    class="flex flex-col items-center justify-center bg-pure-white rounded-lg border-2 shadow-md border-none md:border-black my-auto mx-auto  pb-2 mb-4 pt-2 mt-4 w-full">
+
+
+    <div>
+        <div class="max-w-4xl">
+            <a href="{% url 'product_detail' product.id %}"
+                class="flex flex-col items-center bg-pure-white rounded-lg border shadow-md md:flex-row  border-black hover:bg-gray ">
+                {% if product.image %}
+                <img class="object-cover h-64 rounded-t-lg max-w-xl md:rounded-none md:rounded-l-lg"
+                    src="{{ product.image.url }}" alt="{{ product.name }}">
+                {% else %}
+                <a href="{% url 'product_detail' product.id %}">
+                    <img class="" src="{{ MEDIA_URL }}noimage.png" alt="{{ product.name }}">
+                </a>
+                {% endif %}
+
+                <div class="flex flex-col justify-between p-4 leading-normal w-full md:w-96">
+                    <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 ">{{ product.name }}</h5>
+                    <ul>
+                        <li class="mb-3 font-normal text-gray-700 ">${{ product.price }}</li>
+                        <li class="mb-3 font-normal text-gray-700 ">{{ product.manufacturer }}</li>
+                    </ul>
                 </div>
-            </div>
-            <div class="">
-                <div class="">
-                    <p class="">Name: {{ product.name }}</p>
-                    <p class="">${{ product.price }}</p>
-                    <p class="">Manufacturer: {{ product.manufacturer }}</p>
-                    <p class="">Description: {{ product.description }}</p>
 
-                    <!-- Code to edit and delete if user is admin -->
-                    {% if request.user.is_superuser %}
-                        <a href="{% url 'edit_product' product.id %}">Edit</a> | 
-                        <a href="{% url 'delete_product' product.id %}">Delete</a>
-                    {% endif %}
-
-                    <!-- Add to Cart Form-->
-                    <!-- Uses the post method to send information to the server -->
-                    <!-- As we are using post, need to include the csrf_token  -->
-                    <!-- <form class="form" action="% url 'add_to_cart' product.id %" method="POST"> -->
-                    <form class="form" action="{% url 'add_to_cart' product.id %}" method="POST">    
-                        {% csrf_token %}
-                        <div class="">                          
-                            <div class="">
-                                <p class=""><strong>Quantity:</strong></p>
-                                <div class="">
-                                    <div class="input-group input-group-{{ product.id }}">
-                                        <div class="">
-                                            <button class="decrement-qty decrement-qty_{{ product.id }}" 
-                                                data-item_id="{{ product.id }}">
-                                                <span class="icon">
-                                                    <i class="fas fa-minus"></i>Decrease Quantity
-                                                </span>
-                                            </button>
-                                        </div>
-                                        <input class="qty_input id_qty_{{ product.id }}" type="number"
-                                            name="quantity" value="1" min="1" max="99"
-                                            data-item_id="{{ product.id }}">
-                                        <div class="">
-                                            <button class="increment-qty increment-qty_{{ product.id }}"
-                                                data-item_id="{{ product.id }}">
-                                                <span class="icon">
-                                                    <i class="fas fa-plus"></i>Increase Quantity
-                                                </span>
-                                            </button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Second Column with products -->
-                            <div class="">
-                                <a href="{% url 'store' %}" class="">
-                                    <span class="">
-                                        <i class=""></i>
-                                    </span>
-                                    <!-- Keep Shopping button -->
-                                    <span class="">Keep Shopping</span>
-                                </a>
-                                <input type="submit" class="" value="Add to cart">
-                            </div>
-                            <!-- Hidden redirect button -->
-                            <!-- Redirect URL will contain the current url -->
-                            <input type="hidden" name="redirect_url" value="{{ request.path }}">
-
-                        </div>
-                    </form>
-                </div>
-            </div>
+                <!-- Code to edit and delete if user is admin -->
+                {% if request.user.is_superuser %}
+                <a href="{% url 'edit_product' product.id %}">Edit</a> |
+                <a href="{% url 'delete_product' product.id %}">Delete</a>
+                {% endif %}
         </div>
-    </div>
 
+
+        <!-- Product Description-->
+        <div class="bg-pure-white rounded-lg border shadow-md md:flex-row  border-black hover:bg-gray max-w-4xl mt-4 mb-4">
+            <p class="text-center text-2xl"><strong>Description:</strong></p>
+            {{ product.description }}
+
+        </div>
+
+        <!-- DIV for Add to Cart-->
+        <div class="bg-pure-white rounded-lg border shadow-md md:flex-row  border-black hover:bg-gray ">
+
+            <!-- Add to Cart Form-->
+            <!-- Uses the post method to send information to the server -->
+            <!-- As we are using post, need to include the csrf_token  -->
+            <!-- <form class="form" action="% url 'add_to_cart' product.id %" method="POST"> -->
+            <form class="form" action="{% url 'add_to_cart' product.id %}" method="POST">
+                {% csrf_token %}
+
+
+                <p class="text-center text-2xl"><strong>Quantity:</strong></p>
+
+
+                <!-- Quantity Buttons -->
+                <div class="input-group input-group-{{ product.id }} flex flex-row space-x-8 justify-center">
+
+                    <!-- Minus  Button  -->
+                    <div class="">
+                        <button class="decrement-qty decrement-qty_{{ product.id }}" data-item_id="{{ product.id }}">
+                            <span class="icon">
+                                <i class="text-xl fas fa-minus"></i>
+                            </span>
+                        </button>
+                    </div>
+
+                    <!-- Quantity Amount  -->
+                    <input class="qty_input id_qty_{{ product.id }}" type="number" name="quantity" value="1" min="1"
+                        max="99" data-item_id="{{ product.id }}">
+
+                    <!--Plus Button  -->
+                    <div class="">
+                        <button class="increment-qty increment-qty_{{ product.id }}" data-item_id="{{ product.id }}">
+                            <span class="icon">
+                                <i class="text-xl fas fa-plus"></i>
+                            </span>
+                        </button>
+                    </div>
+                    <!-- Add to cart button -->
+                    <div class="">
+                        <input type="submit" class="btn-blue-greenhighlight" value="Add to cart">
+                    </div>
+                </div>
+                <!-- Second Column with products -->
+
+                <!-- Hidden redirect button -->
+                <!-- Redirect URL will contain the current url -->
+                <input type="hidden" name="redirect_url" value="{{ request.path }}">
+
+
+            </form>
+        </div>
+
+
+        <!-- Keep Shopping Button -->
+        <a href="{% url 'store' %}" class="flex justify-center py-4">
+            <!-- Keep Shopping button -->
+            <span class="btn-blue-greenhighlight max-w-lg">Keep Shopping</span>
+        </a>
+    </div>
+    </div>
     {% endblock %}
 
 
 
-{% block postloadjs %}
-<script type="text/javascript" src="{% static 'js/quantity_input_script.js' %}"></script>
-{% endblock  %}
+    {% block postloadjs %}
+    <script type="text/javascript" src="{% static 'js/quantity_input_script.js' %}"></script>
+    {% endblock %}
