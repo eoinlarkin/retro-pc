@@ -1,33 +1,76 @@
 
 # Testing
 
+In order to validate the functionality of the website, Functional and Non-Functional testing was completed. Testing was completed using a manual test approach.
+
+## Functionality
+
+### Navigation Bar
+
+ * [X] All Navbar links open the correct webpages
+ * [X] Navbar links that are not relevant to guest users are not rendered (e.g. Upload Link)
+ * [X] Hover and focus styles work correctly
+ * [X] The hamburger menu works correctly and renders on smaller device sizes
+
+### Footer
+
+ * [X] All footer links open in new windows
+ * [X] All footer links resolve to valid webpages
+ * [X] Hover and focus styles work correctly
+ * [X] Details of the current logged in user are displayed correctly
+
+
+### Toasts
+* [X]
+
+
+### Register Page
+
+* [X] Creating a new user works correctly
+* [X] Creating a new user works without an email address works correctly
+* [X] Hover and focus styles work correctly
+* [X] The Cover Image renders correctly and scales to various device sizes
+* [X] Deleting a user also removes their uploaded activities
+
+### Sign-in Page
+
+* [X] The Sign In page renders correctly
+* [X] The Sign In form features defensive validation; it is not possible to sign in unless all fields are populated
+* [X] The Cover Image renders correctly and scales to various device sizes
+* [X] Hover and focus styles work correctly
+* [X] The link to the register page renders correctly
+
+### Sign Out Page
+
+* [X] The Sign Out page renders correctly
+* [X] The Sign Out button successfully logs out a user
+* [X] The Cancel button returns the user to the home page
+* [X] The Cover Image renders correctly and scales to various device sizes
+* [X] Hover and focus styles work correctly
+
+
+### Store Page
+
+### Order Summary Page
+
+* [X] All plots render correctly
+* [X] The activity metrics render correctly
+* [X] The edit button functions correctly
+* [X] The delete button functions correctly
+* [X] Hover and focus styles work correctly
+
+### Edit Store Item Page
+
+* [X] The form data pre-populates correctly
+* [X] The activity updates correctly once the form is submitted
+* [X] Hover and focus styles work correctly
+
+
+
 ## Non Functional Tests
 
-- Is the email console backend disabled ?
-- Is debug mode deactivated ?
-
-## Functionality Tests
-
-- Can a user without an account make an order
-- If I delete a user account can I still view the order history ?
-- Can I manually upload a product
-- Can I purchase the uploaded product
-- Do all messages render correctly on the site?
-
-## Add Product Form
-
-- Can add new product using form
-- Check that the if an invalid field is submitted the form will return an error
-  - Check that for numeric fields the number of digits corresponds to the database definition
-- Form is only accessible if the user is a superuse
-- Images can be added successfully through the form
-- Products that have been added manually can be added to the cart
-  - May need to include if statement logic if the image does not render correctly
-
-## Stripe Webhooks
-
-- These can be tested by checking Video # 055
-- This can be tested by commenting out the form.submit() in the stripe_elements.js
+* [X] Email service functioning correctly
+* [X] Debug mode has been deactivated
 
 
 ## Validators
