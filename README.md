@@ -89,19 +89,21 @@ Sitemap: YOUR_SITEMAP_URL
 ## Color Palette
 A broad color palette was chosen for the site with a range of complimenting colors chosen. In choosing the color palette, my objective was to select a color palette that would create a strong visual identity with a number of colors with high contrast.
 
-In defining the colors in the HTML code, custom [Tailwind color codes](https://tailwindcss.com/docs/customizing-colors) were defined; the hex codes corresponding to the custome codes were as follows:
+<img src="./docs/images/retro-pc-palette.png" alt="color-palette" width=400px height=300px>
+
+In defining the colors in the HTML code, custom [Tailwind color codes](https://tailwindcss.com/docs/customizing-colors) were defined; the hex codes corresponding to the custom codes were as follows:
 
 
 | Color          |Hex Code        |
 |----------------|----------------|
-|      Yellow    |  `#D97706`     | 
+|      Yellow    |`#D97706`       | 
 |      Blue      |`#235789`       |
 |      Black     |`#000000`       |
 |      White     |`#F4F4F5`       |
 |      Red       |`#9B1D20`       |
-|      Green     | `#3F8D48`      |
-|      Pure-white| `#FFF`         |
-|      Gray      |`#cbd5e1`       |
+|      Green     |`#3F8D48`       |
+|      Pure-white|`#FFF`          |
+|      Gray      |`#CBD5E1`       |
 
 
 
