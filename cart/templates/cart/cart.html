@@ -105,10 +105,6 @@
 
                                         </form>
 
-
-
-
-
                                     </td>
                                     <td <a class="remove-item" id="remove_{{ item.item_id }}">
                                         <button class="btn-blue-greenhighlight">
@@ -188,17 +184,10 @@
                 </div>
 
                 <div class="flex flex-row justify-center mb-4 mt-4 space-x-4">
-                    <a href="{% url 'store' %}">
-                        <button class="btn-blue-greenhighlight">
-                            Keep Shopping
-                        </button>
+                    <a href="{% url 'store' %}" class="btn-blue-greenhighlight">
                     </a>
 
-                    <a href="{% url 'checkout' %}">
-                        <button class="btn-blue-greenhighlight">
-                            Secure Checkout
-                        </button>
-
+                    <a href="{% url 'checkout' %}" class="btn-blue-greenhighlight">
                     </a>
                 </div>
 
@@ -236,8 +225,7 @@
 
 <script src="{% static 'js/quantity_input_script.js' %}"></script>
 
-
-<script type="text/javascript">
+<script>
     // Remove item and reload on click
     $('.remove-item').click(function (e) {
         var csrfToken = "{{ csrf_token }}";
