@@ -23,7 +23,7 @@ https://devdojo.com/tailwindcss/playground?component=dropdown-simple
     </button>
     <div id="options-manu" class="absolute hidden w-48 py-2 mt-2 bg-white rounded-lg shadow-xl z-50">
         {% for m in manufacturer %}
-        <a href="{% url 'store' %}?manufacturer={{ m.manufacturer }}"
+        <a href="{% url 'store' %}?manufacturer={{ m.manufacturer_nospaces }}"
             class="block px-4 py-2 text-gray-800 hover:bg-indigo-500 hover:text-white">{{ m.manufacturer }}</a>
         {% endfor %}
     </div>
@@ -50,7 +50,7 @@ https://devdojo.com/tailwindcss/playground?component=dropdown-simple
     </button>
     <div id="options-cpu" class="absolute hidden w-48 py-2 mt-2 bg-white rounded-lg shadow-xl">
         {% for c in cpu %}
-        <a href="{% url 'store' %}?cpu={{ c.cpu }}"
+        <a href="{% url 'store' %}?cpu={{ c.cpu_nospaces }}"
             class="block px-4 py-2 text-gray-800 hover:bg-indigo-500 hover:text-white">{{ c.cpu }}</a>
         {% endfor %}
     </div>

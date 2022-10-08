@@ -3,70 +3,81 @@
         "pk": 1,
         "model": "store.manufacturer",
         "fields": {
-            "manufacturer": "MITS"
+            "manufacturer": "MITS",
+            "manu_nospaces": "MITS"
         }
     },
     {
         "pk": 2,
         "model": "store.manufacturer",
         "fields": {
-            "manufacturer": "Processor Technology"
+            "manufacturer": "Processor Technology",
+            "manu_nospaces": "ProcessorTechnology"
         }
     },
     {
         "pk": 3,
         "model": "store.manufacturer",
         "fields": {
-            "manufacturer": "Exidy"
+            "manufacturer": "Exidy",
+            "manu_nospaces": "Exidy"
+
         }
     },
     {
         "pk": 4,
         "model": "store.manufacturer",
         "fields": {
-            "manufacturer": "IBM"
+            "manufacturer": "IBM",
+            "manu_nospaces": "IBM"
         }
     },
     {
         "pk": 5,
         "model": "store.manufacturer",
         "fields": {
-            "manufacturer": "Apple"
+            "manufacturer": "Apple",
+            "manu_nospaces": "Apple"
         }
     },
     {
         "pk": 6,
         "model": "store.manufacturer",
         "fields": {
-            "manufacturer": "Commodore International"
+            "manufacturer": "Commodore International",
+            "manu_nospaces": "CommodoreInternational"
         }
     },
     {
         "pk": 7,
         "model": "store.manufacturer",
         "fields": {
-            "manufacturer": "Tandy Corporation"
+            "manufacturer": "Tandy Corporation",
+            "manu_nospaces": "TandyCorporation"
         }
     },
     {
         "pk": 8,
         "model": "store.manufacturer",
         "fields": {
-            "manufacturer": "Sharp"
+            "manufacturer": "Sharp",
+            "manu_nospaces": "Sharp"
         }
     },
     {
         "pk": 9,
         "model": "store.manufacturer",
         "fields": {
-            "manufacturer": "Sinclair"
+            "manufacturer": "Sinclair",
+            "manu_nospaces": "Sinclair"
         }
     },
     {
         "pk": 10,
         "model": "store.manufacturer",
         "fields": {
-            "manufacturer": "Compaq"
+            "manufacturer": "Compaq",
+            "manu_nospaces": "Compaq"
         }
     }
 

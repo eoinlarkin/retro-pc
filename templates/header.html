@@ -93,13 +93,13 @@
     >
       <ul class="">
         <li class="hover:text-black">
-          <a href="{% url 'home' %}" class="">Home</a>
+          <a href="{% url 'home' %}">Home</a>
         </li>
         <li class="hover:text-black">
-          <a href="{% url 'store' %}" class="" id="">Store</a>
+          <a href="{% url 'store' %}">Store</a>
         </li>
         <li class="hover:text-black">
-          <a href="{% url 'cart' %}" class="">Cart</a>
+          <a href="{% url 'cart' %}">Cart</a>
         </li>
         {% if request.user.is_authenticated %}
         <li class="hover:text-black"><a href="{% url 'profile' %}">Profile</a></li>

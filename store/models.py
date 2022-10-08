@@ -10,6 +10,7 @@ class ReleaseDecade(models.Model):
 
 class Manufacturer(models.Model):
     manufacturer = models.CharField(max_length=254, null=True, blank=True)
+    manu_nospaces = models.CharField(max_length=254, null=True, blank=True)
 
     def __str__(self):
         return self.manufacturer
@@ -17,6 +18,7 @@ class Manufacturer(models.Model):
 
 class Cpu(models.Model):
     cpu = models.CharField(max_length=254, null=True, blank=True)
+    cpu_nospaces = models.CharField(max_length=254, null=True, blank=True)
 
     def __str__(self):
         return self.cpu

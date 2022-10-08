@@ -13,7 +13,7 @@ https://codepen.io/robstinson/pen/LYNJLxm
         </button>
         <div id="options-manu-sidebar" class="hidden w-56 py-2 mt-2 bg-white rounded-lg shadow-xl z-50">
             {% for m in manufacturer %}
-            <a href="{% url 'store' %}?manufacturer={{ m.manufacturer }}" class="block px-4 py-2 text-gray-800 hover:bg-indigo-500 hover:text-white">{{ m.manufacturer }}</a>
+            <a href="{% url 'store' %}?manufacturer={{ m.manufacturer_nospaces }}" class="block px-4 py-2 text-gray-800 hover:bg-indigo-500 hover:text-white">{{ m.manufacturer }}</a>
             {% endfor %}
         </div>
     </div>
@@ -29,7 +29,7 @@ https://codepen.io/robstinson/pen/LYNJLxm
         </button>
         <div id="options-cpu-sidebar" class="hidden w-56 py-2 mt-2 bg-white rounded-lg shadow-xl">
             {% for c in cpu %}
-            <a href="{% url 'store' %}?cpu={{ c.cpu }}" class="block px-4 py-2 text-gray-800 hover:bg-indigo-500 hover:text-white">{{ c.cpu }}</a>
+            <a href="{% url 'store' %}?cpu={{ c.cpu_nospaces }}" class="block px-4 py-2 text-gray-800 hover:bg-indigo-500 hover:text-white">{{ c.cpu }}</a>
             {% endfor %}
         </div>
     </div>
