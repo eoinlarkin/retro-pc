@@ -6,7 +6,15 @@ An ecommerce website for the selling of vintage PC hardware
 
 # Objectives
 
+The objective of the project was to build a fully functioning ecommerce website with a responsive design and Stripe integration. The site is styled as an online marketplace selling vitage computer hardware.
+
 ## User Stories
+
+In designing the site, I defined a number of user stories as follows. User stories were recorded and tracked in the [Project Kanban Board](https://github.com/users/eoinlarkin/projects/2).
+
+User stories were categorised as either _"must have"_  or _"nice to have"_. Not all user stories categorised as _"nice to have"_ were implemented. These have been left open as issues on the [GitHub issues](https://github.com/eoinlarkin/retro-pc/issues) page. 
+
+The user stories for the site are as follows:
 
 ### Viewing and Navigating
 - As a **shopper** I would like to **view a list of products**
@@ -29,7 +37,6 @@ An ecommerce website for the selling of vintage PC hardware
 - As a **shopper** I would like to **select the quantity of product when purchasing**
 
 
-
 # Design
 
 The site was developed using Tailwind CSS and targets a responsive design that will work across different sized screens and devices. 
@@ -37,7 +44,6 @@ The site was developed using Tailwind CSS and targets a responsive design that w
 ## Wireframes
 
 Wireframes were created in advance of the design of the layout of the site. As the development of the site progressed, the design evovled however the original wireframes largely reflect the final site design:
-
 
 <details>
   <summary><strong style="color:skyblue">Footer</strong></summary>
@@ -70,6 +76,7 @@ Wireframes were created in advance of the design of the layout of the site. As t
   </details>  
 
 ## Color Palette
+
 A broad color palette was chosen for the site with a range of complimenting colors chosen. In choosing the color palette, my objective was to select a color palette that would create a strong visual identity with a number of colors with high contrast.
 
 <img src="./docs/images/retro-pc-palette.png" alt="color-palette" width=400px height=300px>
@@ -87,7 +94,6 @@ In defining the colors in the HTML code, custom [Tailwind color codes](https://t
 |      Green     |`#3F8D48`       |
 |      Pure-white|`#FFF`          |
 |      Gray      |`#CBD5E1`       |
-
 
 
 ## Fonts
@@ -119,16 +125,9 @@ In building the application, the following applications and associated models we
 The application features four custome models; _Manufacturer_, _CPU_, _Product_ and _NewsletterSubscribers_
 
 
-
-
-
-
-
-
-
-# Database Model & Schema
 # Features
-  ## Implemented Features
+
+## Implemented Features
 
   - Toast Functionality
   - Newsletter Sign-up Form
@@ -138,9 +137,15 @@ The application features four custome models; _Manufacturer_, _CPU_, _Product_ a
   - Custom 404 Page
 
 
-  ## Future Additional Features
+## Future Additional Features
+
+Future additional features for the site are as follows:
+
+- Ability to sort the products that are presented to the user
+
 # Testing
-Test of the site is documented in the TESTING.md file
+
+Testing of the site is documented in the [TESTING.md](TESTING.md) file
 
 # Marketing
 
@@ -183,14 +188,22 @@ In addition to capturing the user's email, the date that the user subscribed to 
 # SEO 
 
 ## META Tags
+
 Descriptiv meta tags were added to the site headers to optimise the site for SEO purposes. 
+
+<details>
+  <summary><strong style="color:skyblue">Meta Tag:</strong></summary>
+  <img src="./docs/images/meta_tags.png" alt="meta-tag"/>
+  </details>  
 
 
 ## sitemap.xml
+
 A sitemap was made to list the websites important URL's to ensure that search engines are able to easily index the site. This xml was generated using [XML-sitemaps.com](XML-sitemaps.com) 
 
 
 ## robots.txt
+
 A robots.txt file was created to supprt the indexing of the site by search engines. A robots.txt file was created with the follwoing content: 
 
 ```
@@ -198,9 +211,6 @@ User-agent: *
 Disallow:
 Sitemap: YOUR_SITEMAP_URL
 ```
-
-
-
 
 # Deployment
 
@@ -253,8 +263,8 @@ In order to deploy the application to Heroku, the following steps should be foll
 
 # Technologies Used
   ## Languages
-  ## Tools
 
+  ## Tools
 
 - [VScode](https://code.visualstudio.com/)
   All coding was completed in VS Code.
@@ -291,9 +301,11 @@ In order to deploy the application to Heroku, the following steps should be foll
  - **[Custom Tailwind Fonts](https://blog.logrocket.com/how-to-use-custom-fonts-tailwind-css/)**
 
 
-  ## HTML / CSS
+  ## Content
+  Content for the site including images and details on the various vintage computer hardware was sourced from [wikipedia.com](https://www.wikipedia.com)
+
   ## Images
-    - The cover icon is derived from an icon sourced from [iconfinder.com](iconfinder.com) 
+- The cover icon is derived from an icon sourced from [iconfinder.com](iconfinder.com) 
       [link](https://www.iconfinder.com/icons/5426888/apple_mac_pc_retro_icon)
   ## Other
 - `venv` was used to manage the python dependencies 
