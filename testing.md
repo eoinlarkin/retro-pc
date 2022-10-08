@@ -53,17 +53,10 @@ In order to validate the functionality of the website, Functional and Non-Functi
 
 ### Order Summary Page
 
-* [X] All plots render correctly
-* [X] The activity metrics render correctly
-* [X] The edit button functions correctly
-* [X] The delete button functions correctly
-* [X] Hover and focus styles work correctly
 
 ### Edit Store Item Page
 
-* [X] The form data pre-populates correctly
-* [X] The activity updates correctly once the form is submitted
-* [X] Hover and focus styles work correctly
+### Checkout Page
 
 
 
@@ -78,6 +71,23 @@ In order to validate the functionality of the website, Functional and Non-Functi
 ### HTML
 
 The W3 HTML validator was used to validate the HTML code of the site. The results were as follows:
+
+<details>
+  <summary><strong style="color:skyblue">Homepage:</strong></summary>
+  <img src="./docs/html-validation/html-homepage.png" alt="homepage"/>
+</details>  
+
+<details>
+  <summary><strong style="color:skyblue">Login:</strong></summary>
+  <img src="./docs/html-validation/html-login.png" alt="Login"/>
+</details>  
+
+<details>
+  <summary><strong style="color:skyblue">Password Reset:</strong></summary>
+  <img src="./docs/html-validation/html-password-reset.png" alt="Password Reset"/>
+</details>  
+
+
 
 
 ### Python
