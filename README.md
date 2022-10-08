@@ -65,6 +65,23 @@ In addition to capturing the user's email, the date that the user subscribed to 
 
 # SEO 
 
+## META Tags
+Descriptiv meta tags were added to the site headers to optimise the site for SEO purposes. 
+
+
+## sitemap.xml
+A sitemap was made to list the websites important URL's to ensure that search engines are able to easily index the site. This xml was generated using [XML-sitemaps.com](XML-sitemaps.com) 
+
+
+## robots.txt
+A robots.txt file was created to supprt the indexing of the site by search engines. A robots.txt file was created with the follwoing content: 
+
+```
+User-agent: *
+Disallow:
+Sitemap: YOUR_SITEMAP_URL
+```
+
 # Design
 
 ## Wireframes
