@@ -4,9 +4,6 @@ document.addEventListener('DOMContentLoaded', function () {
     // open
     const burger = document.querySelectorAll('.drawer-burger');
     const menu = document.querySelectorAll('.drawer-menu');
-  
-    console.log(burger);
-    console.log(menu);
 
     if (burger.length && menu.length) {
       for (var i = 0; i < burger.length; i++) {

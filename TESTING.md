@@ -118,6 +118,11 @@ The W3 HTML validator was used to validate the HTML code of the site. The result
   <img src="./docs/html-validation/html-cart.png" alt="Cart"/>
 </details>  
 
+- <details>
+  <summary><strong style="color:skyblue">Store:</strong></summary>
+  <img src="./docs/html-validation/html-store.png" alt="Store"/>
+</details>  
+
 ### Python
 
 PEP8 compliance was managed directly in VS Code using the [black](https://github.com/psf/black) linter. Prior to final deployment the files were also tested using the [PEP8 Online Validator](http://pep8online.com/)

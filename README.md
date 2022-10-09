@@ -142,10 +142,6 @@ In choosing the font for the site, I elected to use a `monospace` font; this was
 
 ## Database Model & Schema
 
-The following diagram provides an overview of the various models used by the application and the relationship between them.
-
-![database-scheme|600x400](./docs/images/retro-pc-db-schema.png)
-
 In building the application, the following applications and associated models were created:
 
 **store**
@@ -166,6 +162,10 @@ In building the application, the following applications and associated models we
 - NewsletterSubscribers
 
 The application features four custome models; _Manufacturer_, _CPU_, _Product_ and _NewsletterSubscribers_. These are used to store information relating to the products as well as for the storing of users signed up to the site newsletter.
+
+The following diagram provides an overview of the various models used by the application and the relationship between them.
+
+![database-scheme|600x400](./docs/images/retro-pc-db-schema.png)
 
 ## Features
 
@@ -254,7 +254,7 @@ In addition to capturing the user's email, the date that the user subscribed to 
 
 ### META Tags
 
-Descriptiv meta tags were added to the site headers to optimise the site for SEO purposes.
+Descriptive meta tags were added to the site headers to optimise the site for SEO purposes.
 
 - <details>
   <summary><strong style="color:skyblue">Meta Tag:</strong></summary>
@@ -322,8 +322,11 @@ In order to deploy the application to Heroku, the following steps should be foll
 
 
 - Create the database schema locally by running the following Django commands:
-`python manage.py makemigrations`  
-`python manage.py migrate`
+
+```
+python manage.py makemigrations  
+python manage.py migrate
+```
 
 - Create a superuser for the application: `python manage.py createsuperuser`
 
@@ -346,25 +349,25 @@ In order to deploy the application to Heroku, the following steps should be foll
 
 ### Tools
 
-- [VScode](https://code.visualstudio.com/)
+- [VScode](https://code.visualstudio.com/)  
   All coding was completed in VS Code.
-- [Heroku](https://www.heroku.com/)
+- [Heroku](https://www.heroku.com/)  
   Heroku was used for the deployment of the app.
-- [Black](<https://github.com/psf/black>)
+- [Black](<https://github.com/psf/black>)  
   Black was used as the Linter for Python files.
-- [Stripe](www.stripe.com)
+- [Stripe](www.stripe.com)  
   Stripe was used as the payments platform.
-- [Django](https://www.djangoproject.com/)
+- [Django](https://www.djangoproject.com/)  
   The Django framework was used to develop the site.
-- [TailwindCSS](https://tailwindcss.com/)
+- [TailwindCSS](https://tailwindcss.com/)  
   TailwindCSS was used as teh CSS framework to accelerate development of the site.
-- [coolors.co](https://coolors.co/)
+- [coolors.co](https://coolors.co/)  
   Potential site palettes were tested with Coolors.
-- [Figma](https://www.figma.com/templates/wireframe-kits/)
+- [Figma](https://www.figma.com/templates/wireframe-kits/)  
   Wireframes for the site were generated using Figma
-- [gauger.io](gauger.io)
+- [gauger.io](gauger.io)  
   This website was used to generate the favicon using an icon from Font Awesome.
-- [Markdown TOC](https://ecotrust-canada.github.io/markdown-toc/)
+- [Markdown TOC](https://ecotrust-canada.github.io/markdown-toc/)  
   For generating the formatted table of contents in markdown
 
 ## Credits
@@ -398,5 +401,6 @@ The following code was levraged in order to develop the site. In addition site l
 
 ### Other
 
-- `venv` was used to manage the python dependencies
-- [Cloudinary](https://cloudinary.com/) was used for the upload and storage of both media and static files
+- `venv` was used to manage the python dependencies.
+- [Cloudinary](https://cloudinary.com/) was used for the upload and storage of both media and static files.
+- [Heroku](https://heroku.com) was used for the deploymnet of the site.
