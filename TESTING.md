@@ -1,9 +1,19 @@
 
 # Testing
 
-In order to validate the functionality of the website, Functional and Non-Functional testing was completed. Testing was completed using a manual test approach.
+Testing was completed on the site to ensure it functioned as intended; in addiiton testing was completed on the underlying code to ensure they met relevant compliance standards as well as validating the overall peformance of the was acceptable.
+
+Details of testing is as follows:
+
+* [Functionality](#functionality)
+* [Non Functional Tests](#non-functional-tests)
+* [Validators](#validators)
+* [Performance](#performance)
+
 
 ## Functionality
+
+In order to validate the functionality of the website, Functional and Non-Functional testing was completed. Testing was completed using a manual test approach.
 
 ### Navigation Bar
 
@@ -200,3 +210,15 @@ Javascript files were tested for compatability with recommended javascript forma
 ## Performance
 
 Site performance was tested using the Ligthouse feature in Chrome. The results for the base homepage for mobile and desktop devices was as follows:
+
+- <details>
+  <summary><strong style="color:skyblue">Lighthouse Desktop:</strong></summary>
+  <img src="./docs/lighthouse/lighthouse-desktop.png" alt="lighthouse"/>
+</details>  
+
+- <details>
+  <summary><strong style="color:skyblue">Lighthouse Mobile:</strong></summary>
+  <img src="./docs/lighthouse/lighthouse-mobile.png" alt="lighthouse"/>
+</details>  
+
+Overall performance was acceptable and no further changes to the site were deemed necessary.
