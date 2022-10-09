@@ -127,6 +127,9 @@ LOGIN_REDIRECT_URL = "/"
 
 WSGI_APPLICATION = "retropc.wsgi.application"
 
+# Redirect url after logout:
+ACCOUNT_LOGOUT_REDIRECT_URL ="home"
+
 
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
