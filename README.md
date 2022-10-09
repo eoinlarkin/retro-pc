@@ -1,6 +1,6 @@
 ## RetroPc E-Commerce Website
 
-A fictional ecommerce website for the selling of vintage PC hardware. 
+A fictional e-commerce website for the selling of vintage PC hardware. 
 
 The site has been developed using Django, features Stripe integration and has been deployed to Heroku.
 
@@ -24,12 +24,12 @@ The site has been developed using Django, features Stripe integration and has be
 
 ## Objectives
 
-The objective of the project was to build a fully functioning ecommerce website with a responsive design and Stripe integration. The site is styled as an online marketplace selling vitage computer hardware.
+The objective of the project was to build a fully functioning e-commerce website with a responsive design and Stripe integration. The site is styled as an online marketplace selling vintage computer hardware.
 
 
 ## Development
 
-An agile approach was used in the Developmet of the site. Development of the site was broken down into four distinct sprints as follows:
+An agile approach was used in the development of the site. Development of the site was broken down into four distinct sprints as follows:
 
 - 01 - Initial Deployment
 - 02 - Development of Core Functionality
@@ -84,7 +84,7 @@ The site was developed using Tailwind CSS and targets a responsive design that w
 
 ### Wireframes
 
-Wireframes were created in advance of the design of the layout of the site. As the development of the site progressed, the design evovled however the original wireframes largely reflect the final site design:
+Wireframes were created in advance of the design of the layout of the site. As the development of the site progressed, the design evolved however the original wireframes largely reflect the final site design:
 
 <details>
   <summary><strong style="color:skyblue">Footer</strong></summary>
@@ -147,7 +147,7 @@ In building the application, the following applications and associated models we
 **store**
 
 - ReleaseDecade
-- Manfacturer
+- Manufacturer
 - CPU
 - Product
 
@@ -161,7 +161,7 @@ In building the application, the following applications and associated models we
 - UserProfile
 - NewsletterSubscribers
 
-The application features four custome models; _Manufacturer_, _CPU_, _Product_ and _NewsletterSubscribers_. These are used to store information relating to the products as well as for the storing of users signed up to the site newsletter.
+The application features four custom models; _Manufacturer_, _CPU_, _Product_ and _NewsletterSubscribers_. These are used to store information relating to the products as well as for the storing of users signed up to the site newsletter.
 
 The following diagram provides an overview of the various models used by the application and the relationship between them.
 
@@ -203,7 +203,7 @@ Future additional features for the site are as follows:
 
 - As a shopper I would like to sort multiple categories simultaneously 
 - As a shopper I would like to sort the list of products
-- As a site user I would like to recieve a confirmation after registering 
+- As a site user I would like to receive a confirmation after registering 
 - As a shopper I would like to easily view the total of my purchases at any time
 
 These user stories have been recorded in the [issues](https://github.com/eoinlarkin/retro-pc/issues) section of GitHub and marked for future development.
@@ -216,11 +216,11 @@ Testing of the site is documented in the [TESTING.md](TESTING.md) file
 
 ### Business Model
 
-retro-pc is a business to customer (B2C) website focusing on selling rate and vitage computer equipment. The website does business directly with customers. Key site features are the ability to search the site, complete an order and process payments through approved payment providers.
+retro-pc is a business to customer (B2C) website focusing on selling rate and vintage computer equipment. The website does business directly with customers. Key site features are the ability to search the site, complete an order and process payments through approved payment providers.
 
 ### Facebook Business
 
-A mockup of a Facebook business page has been created for the retro-pc webiste. As this was A real Facebook marketing site could be used to advertise the business, promote the products sold on the website and communicate directly with customers.
+A mock-up of a Facebook business page has been created for the retro-pc website. As this was A real Facebook marketing site could be used to advertise the business, promote the products sold on the website and communicate directly with customers.
 
 <details>
   <summary><strong style="color:skyblue">Facebook Marketing Page:</strong></summary>
@@ -229,7 +229,7 @@ A mockup of a Facebook business page has been created for the retro-pc webiste. 
 
 ### Newsletter Signup
 
-A newsletter signup form was implemented via a Django form. This allows users to enroll in the site newsletter. Details of users signed up to the newsletter can be accessed in the administration backend.
+A newsletter signup form was implemented via a Django form. This allows users to enrol in the site newsletter. Details of users signed up to the newsletter can be accessed in the administration backend.
 
 On signing up to the newsletter, a toast is posted confirming the subscription. If a user already is a subscriber; they receive a toast confirming that they have already subscribed to the newsletter and no new data is posted to the database.
 
@@ -267,7 +267,7 @@ A sitemap was made to list the websites important URL's to ensure that search en
 
 ### robots.txt
 
-A robots.txt file was created to supprt the indexing of the site by search engines. A robots.txt file was created with the follwoing content:
+A robots.txt file was created to support the indexing of the site by search engines. A robots.txt file was created with the following content:
 
 ```
 User-agent: *
@@ -283,7 +283,7 @@ In order to make a local clone, the recommended approach is to use the command l
 
 - Navigate to the repository [website](https://github.com/eoinlarkin/retro-pc)
 - By clicking on the `Code` button, it is possible to copy the HTTPS link for the repository
-- Open the commandline interace on the local computer and navigate to the working directory into which you wish to clone the repository.
+- Open the commandline interface on the local computer and navigate to the working directory into which you wish to clone the repository.
 - Open commandline interface on your computer
 - Enter the following command:  
   `git clone https://github.com/eoinlarkin/retro-pc.git`
@@ -376,7 +376,7 @@ In developing the site, the following code / tools / content was leveraged:
 
 ### Code
 
-The following code was levraged in order to develop the site. In addition site logic was based on template logic from the [Code Institute Boutique Ado](https://github.com/Code-Institute-Solutions/boutique_ado_v1) repository. 
+The following code was leveraged in order to develop the site. In addition site logic was based on template logic from the [Code Institute Boutique Ado](https://github.com/Code-Institute-Solutions/boutique_ado_v1) repository. 
 
 - **[Sticky Footer](https://stackoverflow.com/questions/59812003/tailwindcss-fixed-sticky-footer-on-the-bottom)**  
 
@@ -403,4 +403,4 @@ The following code was levraged in order to develop the site. In addition site l
 
 - `venv` was used to manage the python dependencies.
 - [Cloudinary](https://cloudinary.com/) was used for the upload and storage of both media and static files.
-- [Heroku](https://heroku.com) was used for the deploymnet of the site.
+- [Heroku](https://heroku.com) was used for the deployment of the site.

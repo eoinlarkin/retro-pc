@@ -1,7 +1,7 @@
 
 # Testing
 
-Testing was completed on the site to ensure it functioned as intended; in addiiton testing was completed on the underlying code to ensure they met relevant compliance standards as well as validating the overall peformance of the was acceptable.
+Testing was completed on the site to ensure it functioned as intended; in addition testing was completed on the underlying code to ensure they met relevant compliance standards as well as validating the overall performance of the was acceptable.
 
 Details of testing is as follows:
 
@@ -66,7 +66,7 @@ In order to validate the functionality of the website, Functional and Non-Functi
 * [X] The store page renders correctly
 * [X] The filters on the store page work correctly
 * [X] The size is responsive for different device sizes
-* [X] The search fucntionality works correctly
+* [X] The search functionality works correctly
 
 
 ### Order Summary Page
@@ -179,7 +179,7 @@ The following `.py` files were tested using the linter:
 
 ### Javascript
 
-Javascript files were tested for compatability with recommended javascript formatting using [jshint.com](jshint.com). No issues were noted in the files aside from some minor warnings:
+Javascript files were tested for compatibility with recommended javascript formatting using [jshint.com](jshint.com). No issues were noted in the files aside from some minor warnings:
 
 
 - <details>
@@ -209,7 +209,7 @@ Javascript files were tested for compatability with recommended javascript forma
 
 ## Performance
 
-Site performance was tested using the Ligthouse feature in Chrome. The results for the base homepage for mobile and desktop devices was as follows:
+Site performance was tested using the Lighthouse feature in Chrome. The results for the base homepage for mobile and desktop devices was as follows:
 
 - <details>
   <summary><strong style="color:skyblue">Lighthouse Desktop:</strong></summary>
