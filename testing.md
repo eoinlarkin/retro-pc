@@ -21,16 +21,17 @@ In order to validate the functionality of the website, Functional and Non-Functi
 
 
 ### Toasts
-* [X]
+* [X] Toasts display correctly
+* [X] Toasts can be dismissed
 
 
 ### Register Page
 
 * [X] Creating a new user works correctly
-* [X] Creating a new user works without an email address works correctly
 * [X] Hover and focus styles work correctly
 * [X] The Cover Image renders correctly and scales to various device sizes
 * [X] Deleting a user also removes their uploaded activities
+
 
 ### Sign-in Page
 
@@ -39,6 +40,7 @@ In order to validate the functionality of the website, Functional and Non-Functi
 * [X] The Cover Image renders correctly and scales to various device sizes
 * [X] Hover and focus styles work correctly
 * [X] The link to the register page renders correctly
+
 
 ### Sign Out Page
 
@@ -51,19 +53,33 @@ In order to validate the functionality of the website, Functional and Non-Functi
 
 ### Store Page
 
+* [X] The store page renders correctly
+* [X] The filters on the store page work correctly
+* [X] The size is responsive for different device sizes
+* [X] The search fucntionality works correctly
+
+
 ### Order Summary Page
 
 
 ### Edit Store Item Page
 
+* [X] The store page renders correctly
+* [X] The filters on the store page work correctly
+
+
+
 ### Checkout Page
 
+* [X] The store page renders correctly
+* [X] The filters on the store page work correctly
 
 
 ## Non Functional Tests
 
 * [X] Email service functioning correctly
 * [X] Debug mode has been deactivated
+* [X] Site newsletter signup works correctly
 
 
 ## Validators
@@ -72,29 +88,34 @@ In order to validate the functionality of the website, Functional and Non-Functi
 
 The W3 HTML validator was used to validate the HTML code of the site. The results were as follows:
 
-<details>
+- <details>
   <summary><strong style="color:skyblue">Homepage:</strong></summary>
   <img src="./docs/html-validation/html-homepage.png" alt="homepage"/>
 </details>  
 
-<details>
+- <details>
   <summary><strong style="color:skyblue">Login:</strong></summary>
   <img src="./docs/html-validation/html-login.png" alt="Login"/>
 </details>  
 
-<details>
+- <details>
   <summary><strong style="color:skyblue">Password Reset:</strong></summary>
   <img src="./docs/html-validation/html-password-reset.png" alt="Password Reset"/>
 </details>  
 
-<details>
+- <details>
   <summary><strong style="color:skyblue">Modify Activities:</strong></summary>
   <img src="./docs/html-validation/html-activity-add.png" alt="Modify Activities"/>
 </details>  
 
-<details>
+- <details>
   <summary><strong style="color:skyblue">Checkout:</strong></summary>
   <img src="./docs/html-validation/html-checkout.png" alt="Checkout"/>
+</details>  
+
+- <details>
+  <summary><strong style="color:skyblue">Cart:</strong></summary>
+  <img src="./docs/html-validation/html-cart.png" alt="Cart"/>
 </details>  
 
 ### Python
@@ -146,27 +167,31 @@ The following `.py` files were tested using the linter:
 Javascript files were tested for compatability with recommended javascript formatting using [jshint.com](jshint.com). No issues were noted in the files aside from some minor warnings:
 
 
-<details>
+- <details>
   <summary><strong style="color:skyblue">`drawer.js`:</strong></summary>
   <img src="./docs/jshint/jshint-drawer.png" alt="jshint drawer"/>
 </details>  
 
-<details>
+- <details>
   <summary><strong style="color:skyblue">`hamburger.js`:</strong></summary>
   <img src="./docs/jshint/jshint-hamburger.png" alt="jshint hamburger"/>
 </details>  
 
-<details>
+- <details>
   <summary><strong style="color:skyblue">`quantity_input_select.js`:</strong></summary>
   <img src="./docs/jshint/jshint-quantity_select.png" alt="jshint quantity select"/>
 </details>  
 
-<details>
+- <details>
   <summary><strong style="color:skyblue">`stripe_elements.js`:</strong></summary>
   <img src="./docs/jshint/jshint-stripe.png" alt="jshint stripe"/>
 </details>  
 
-<details>
+- <details>
   <summary><strong style="color:skyblue">`toast.js`:</strong></summary>
   <img src="./docs/jshint/jshint-toast.png" alt="jshint toast"/>
 </details>  
+
+## Performance
+
+Site performance was tested using the Ligthouse feature in Chrome. The results for the base homepage for mobile and desktop devices was as follows:
