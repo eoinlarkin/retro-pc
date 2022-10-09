@@ -5,7 +5,7 @@
 {% load tailwind_filters %}
 
 {% block extra_css %}
-<!-- <link rel="stylesheet" href="{% static 'checkout/css/checkout.css' %}"> -->
+<link rel="stylesheet" href="{% static 'checkout/css/checkout.css' %}">
 {% endblock %}
 
 {% block pre_js %}
@@ -142,7 +142,7 @@
 
             <!-- START: Confirm / Adjust Buttons-->
             <div>
-                <div class="flex flex-col md:flex-row justify-center">
+                <div class="flex flex-col md:flex-row justify-center space-x-8">
                     <a href="{% url 'cart' %}" class="btn-blue-redhighlight mb-2 mt-2 w-36 mx-auto md:mx-0">
                         <span>Adjust Bag</span>
                     </a>
@@ -167,11 +167,11 @@
 </div>
 
 <!-- Spinner animation for purchase processing -->
-<!-- <div class="loading-overlay no-display">
-    <h1 class="bold loading__spinner">
+<div class="loading-overlay no-display">
+    <div class="bold loading__spinner">
         <i class="fas fa-3x fa-sync-alt fa-spin"></i>
-    </h1>
-</div> -->
+    </div>
+</div>
 {% endblock %}
 
 

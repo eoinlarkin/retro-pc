@@ -1,6 +1,8 @@
 ## RetroPc E-Commerce Website
 
-An ecommerce website for the selling of vintage PC hardware
+A fictional ecommerce website for the selling of vintage PC hardware. 
+
+The site has been developed using Django, features Stripe integration and has been deployed to Heroku.
 
 ![database-scheme](./docs/images/responsive-preview.png)
 
@@ -8,13 +10,25 @@ An ecommerce website for the selling of vintage PC hardware
 
 The objective of the project was to build a fully functioning ecommerce website with a responsive design and Stripe integration. The site is styled as an online marketplace selling vitage computer hardware.
 
+
+## Development
+
+An agile approach was used in the Developmet of the site. Development of the site was broken down into four distinct sprints as follows:
+
+- 01 - Initial Deployment
+- 02 - Development of Core Functionality
+- 03 - Site styling & enhancements
+- 04 - Testing & Documentation
+
+The Sprints were tracked on Github using the Github [milestone](https://github.com/eoinlarkin/retro-pc/milestones?state=closed) tracker.
+
 ### User Stories
 
 In designing the site, I defined a number of user stories as follows. User stories were recorded and tracked in the [Project Kanban Board](https://github.com/users/eoinlarkin/projects/2).
 
 User stories were categorised as either _"must have"_  or _"nice to have"_. Not all user stories categorised as _"nice to have"_ were implemented. These have been left open as issues on the [GitHub issues](https://github.com/eoinlarkin/retro-pc/issues) page.
 
-The user stories classified as _*"must_have"_ for the site were defined as follows:
+The user stories classified as _**"must_have"**_ for the site were defined as follows:
 
 #### Viewing and Navigating
 
@@ -45,6 +59,8 @@ The user stories classified as _*"must_have"_ for the site were defined as follo
 - As a **site owner** I would like to **redirect users to an informative 404 page for bad links**
 - As a **site owner** I would like to **easily add, remove and modify products**
 - As a **site owner** I would like to **give users the ability to sign up to a newsletter**
+
+User stories classified as _**nice to have**_ which were uncompleted were marked as open on the Github issues page.
 
 ## Design
 
@@ -83,6 +99,7 @@ Wireframes were created in advance of the design of the layout of the site. As t
   <summary><strong style="color:skyblue">Sign-Up / Register</strong></summary>
   <img src="./docs/wireframes/sign-up-register.png" alt="sign-up register"/>
   </details>  
+
 
 ### Color Palette
 
@@ -138,17 +155,42 @@ The application features four custome models; _Manufacturer_, _CPU_, _Product_ a
 
 ### Implemented Features
 
-- Toast Functionality
-- Newsletter Sign-up Form
-- Admin Product Management
-- Stripe Payment Integration
-- Custom 404 Page
+- <details>
+  <summary><strong style="color:skyblue">Toast Functionality:</strong></summary>
+  <img src="./docs/images/features-toast.png" alt=""/>
+  </details>
+
+- <details>
+  <summary><strong style="color:skyblue">Newsletter Signup:</strong></summary>
+  <img src="./docs/images/features-newsletter.png" alt=""/>
+  </details>
+
+- <details>
+  <summary><strong style="color:skyblue">Product Management Page:</strong></summary>
+  <img src="./docs/images/features-product-mgmt.png" alt=""/>
+  </details>
+
+- <details>
+  <summary><strong style="color:skyblue">Stripe Integration:</strong></summary>
+  <img src="./docs/images/features-stripe.png" alt=""/>
+  </details>
+
+- <details>
+  <summary><strong style="color:skyblue">Custom 404 Page:</strong></summary>
+  <img src="./docs/images/features-404.png" alt=""/>
+  </details>
+
 
 ### Future Additional Features
 
 Future additional features for the site are as follows:
 
-- Ability to sort the products that are presented to the user
+- As a shopper I would like to sort multiple categories simultaneously 
+- As a shopper I would like to sort the list of products
+- As a site user I would like to recieve a confirmation after registering 
+- As a shopper I would like to easily view the total of my purchases at any time
+
+These user stories have been recorded in the [issues](https://github.com/eoinlarkin/retro-pc/issues) section of GitHub and marked for future development.
 
 ## Testing
 
@@ -233,13 +275,14 @@ In order to make a local clone, the recommended approach is to use the command l
 
 ### Heroku Deployment
 
-Heroku was chosen as the hosting platform for the application.
+Heroku was chosen as the hosting platform for the application. In addition Cloudinary was used as the hosting platform for media and static files.
 
 In order to deploy the application to Heroku, the following steps should be followed:
 
 - Create a `requirements.txt file: pip freeze > requirements.txt`
 
-- Define a Procfile with the following content for use by Heroku; this should sit in the the root directory: web: gunicorn trax.wsgi
+- Define a Procfile with the following content for use by Heroku; this should sit in the the root directory: 
+`web: gunicorn retropc.wsgi:application`
 
 - Create a new application in Heroku.
 
@@ -252,12 +295,21 @@ In order to deploy the application to Heroku, the following steps should be foll
   |---------------|-------------------------------|
   |DATABASE_URL   |Heroku postgres database URL   |
   |SECRET_KEY     | application secret key        |
+  |CLOUDINARY_URL     | unique cloudinary url        |
+  |DEBUG_MODE | should be set equal to False for deployment |
+  | EMAIL_HOST_PASS | password for email provider|
+  | EMAIL_HOST_USER | user name for email provider |
+  | SECRET_KEY | Django secret key for application |
+  | STRIPE_PUBLIC_KEY | Stripe public key |
+  | STRIPE_SECRET_KEY | Stripe secret key |
+  | STRIPE_WH_SECRET | Stripe webhook key | 
+
 
 - Create the database schema locally by running the following Django commands:
 `python manage.py makemigrations`  
 `python manage.py migrate`
 
-- Create a superuser for the application: python manage.py createsuperuser
+- Create a superuser for the application: `python manage.py createsuperuser`
 
 - Add the hostname of Heroku app to allowed ALLOWED_HOSTS in settings.py: `ALLOWED_HOSTS = ['Heroku app URL', 'localhost]`
 
@@ -266,11 +318,15 @@ In order to deploy the application to Heroku, the following steps should be foll
 - Ensure the Heroku CLI is installed and authenticated. Link the local repository to the Heroku Application with the following command:  
 `heroku create -a APP_NAME`
 
-- Push the code to Heroku with the following command: git push heroku
+- Push the code to Heroku with the following command: `git push heroku`
 
 ## Technologies Used
 
 ### Languages
+
+- Python
+- Jinga 
+- Javascript
 
 ### Tools
 
