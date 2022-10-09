@@ -19,7 +19,7 @@
                 class="flex flex-col items-center bg-pure-white rounded-lg border shadow-md md:flex-row  border-black hover:bg-gray ">
                 {% if product.image %}
                 <img class="object-cover h-64 rounded-t-lg max-w-xl md:rounded-none md:rounded-l-lg"
-                    src="{{ product.image.url }}" alt="{{ product.name }}">
+                    src="{{ product.image.url }}" alt="{{ product.name }}"></a>
                 {% else %}
                 <a href="{% url 'product_detail' product.id %}">
                     <img class="" src="{{ MEDIA_URL }}noimage.png" alt="{{ product.name }}">
@@ -68,11 +68,11 @@
 
                     <!-- Minus  Button  -->
                     <div class="">
-                        <button class="decrement-qty decrement-qty_{{ product.id }}" data-item_id="{{ product.id }}">
+                        <div class="decrement-qty decrement-qty_{{ product.id }}" data-item_id="{{ product.id }}">
                             <span class="icon">
                                 <i class="text-xl fas fa-minus"></i>
                             </span>
-                        </button>
+                        </div>
                     </div>
 
                     <!-- Quantity Amount  -->
@@ -81,11 +81,11 @@
 
                     <!--Plus Button  -->
                     <div class="">
-                        <button class="increment-qty increment-qty_{{ product.id }}" data-item_id="{{ product.id }}">
+                        <div class="increment-qty increment-qty_{{ product.id }}" data-item_id="{{ product.id }}">
                             <span class="icon">
                                 <i class="text-xl fas fa-plus"></i>
                             </span>
-                        </button>
+                        </div>
                     </div>
                     <!-- Add to cart button -->
                     <div class="">
@@ -108,7 +108,7 @@
         </a>
         </div>
         <!-- End: Keep Shopping Button -->
-    </div>
+</div>
 
     {% endblock %}
 

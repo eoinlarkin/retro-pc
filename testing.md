@@ -87,8 +87,15 @@ The W3 HTML validator was used to validate the HTML code of the site. The result
   <img src="./docs/html-validation/html-password-reset.png" alt="Password Reset"/>
 </details>  
 
+<details>
+  <summary><strong style="color:skyblue">Modify Activities:</strong></summary>
+  <img src="./docs/html-validation/html-activity-add.png" alt="Modify Activities"/>
+</details>  
 
-
+<details>
+  <summary><strong style="color:skyblue">Checkout:</strong></summary>
+  <img src="./docs/html-validation/html-checkout.png" alt="Checkout"/>
+</details>  
 
 ### Python
 

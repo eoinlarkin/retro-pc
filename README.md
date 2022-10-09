@@ -191,11 +191,10 @@ In addition to capturing the user's email, the date that the user subscribed to 
 
 Descriptiv meta tags were added to the site headers to optimise the site for SEO purposes. 
 
-<details>
+- <details>
   <summary><strong style="color:skyblue">Meta Tag:</strong></summary>
   <img src="./docs/images/meta_tags.png" alt="meta-tag"/>
   </details>  
-
 
 ## sitemap.xml
 
