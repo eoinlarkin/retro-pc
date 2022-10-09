@@ -128,7 +128,7 @@ LOGIN_REDIRECT_URL = "/"
 WSGI_APPLICATION = "retropc.wsgi.application"
 
 # Redirect url after logout:
-ACCOUNT_LOGOUT_REDIRECT_URL = "/accounts/login/"
+ACCOUNT_LOGOUT_REDIRECT_URL = "home"
 
 
 # Database

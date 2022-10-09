@@ -4,7 +4,23 @@ A fictional ecommerce website for the selling of vintage PC hardware.
 
 The site has been developed using Django, features Stripe integration and has been deployed to Heroku.
 
-![database-scheme](./docs/images/responsive-preview.png)
+![](./docs/images/responsive-preview.png)
+
+
+## Table of Contents
+
+- [Objectives](#objectives)
+- [Development](#development)
+- [Design](#design)
+- [Database Model & Schema](#database-model---schema)
+- [Features](#features)
+- [Testing](#testing)
+- [Marketing](#marketing)
+- [SEO](#seo)
+- [Deployment](#deployment)
+- [Technologies Used](#technologies-used)
+- [Credits](#credits)
+
 
 ## Objectives
 
