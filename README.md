@@ -1,47 +1,56 @@
-# RetroPc E-Commerce Website
+## RetroPc E-Commerce Website
 
 An ecommerce website for the selling of vintage PC hardware
 
 ![database-scheme](./docs/images/responsive-preview.png)
 
-# Objectives
+## Objectives
 
 The objective of the project was to build a fully functioning ecommerce website with a responsive design and Stripe integration. The site is styled as an online marketplace selling vitage computer hardware.
 
-## User Stories
+### User Stories
 
 In designing the site, I defined a number of user stories as follows. User stories were recorded and tracked in the [Project Kanban Board](https://github.com/users/eoinlarkin/projects/2).
 
-User stories were categorised as either _"must have"_  or _"nice to have"_. Not all user stories categorised as _"nice to have"_ were implemented. These have been left open as issues on the [GitHub issues](https://github.com/eoinlarkin/retro-pc/issues) page. 
+User stories were categorised as either _"must have"_  or _"nice to have"_. Not all user stories categorised as _"nice to have"_ were implemented. These have been left open as issues on the [GitHub issues](https://github.com/eoinlarkin/retro-pc/issues) page.
 
-The user stories for the site are as follows:
+The user stories classified as _*"must_have"_ for the site were defined as follows:
 
-### Viewing and Navigating
+#### Viewing and Navigating
+
 - As a **shopper** I would like to **view a list of products**
 - As a **shopper** I would like to **view individual product details**
-- As a **shopper** I would like to **easily view the total of my purchases at any time**
 
-### Registration and User Accounts
+#### Registration and User Accounts
+
 - As a **site user** I would like to **easily register for an account**
 - As a **site user** I would like to **easily login / logout**
 - As a **site user** I would like to **easily recover my password**
-- As a **site user** I would like to **recieve a confirmation after registering**
-- As a **site user** I would like to **have a personalised user profile**
-### Sorting and Searching
-- As a **shopper** I would like to **sort the list of products**
+- As a **site user** I would like to **have a personalised order history**
+
+#### Sorting and Searching
+
 - As a **shopper** I would like to **select the product category**
-- As a **shopper** I would like to **sort multiple categories simultaneously**
 - As a **shopper** I would like to **search for a product by name or description**
-- As a **shopper** I would like to **see what I've searched for an the number of results**
-### Purchasing and Checkout
+- As a **shopper** I would like to **search for products from any page**
+- As a **shopper** I would like to **see what I've searched for**
+
+#### Purchasing and Checkout
+
 - As a **shopper** I would like to **select the quantity of product when purchasing**
+- As a **site owner** I would like to **offer an easy to use payment method**
 
+#### Backend Features
 
-# Design
+- As a **site owner** I would like to **redirect users to an informative 404 page for bad links**
+- As a **site owner** I would like to **easily add, remove and modify products**
+- As a **site owner** I would like to **give users the ability to sign up to a newsletter**
 
-The site was developed using Tailwind CSS and targets a responsive design that will work across different sized screens and devices. 
+## Design
 
-## Wireframes
+The site was developed using Tailwind CSS and targets a responsive design that will work across different sized screens and devices.
+
+### Wireframes
 
 Wireframes were created in advance of the design of the layout of the site. As the development of the site progressed, the design evovled however the original wireframes largely reflect the final site design:
 
@@ -75,7 +84,7 @@ Wireframes were created in advance of the design of the layout of the site. As t
   <img src="./docs/wireframes/sign-up-register.png" alt="sign-up register"/>
   </details>  
 
-## Color Palette
+### Color Palette
 
 A broad color palette was chosen for the site with a range of complimenting colors chosen. In choosing the color palette, my objective was to select a color palette that would create a strong visual identity with a number of colors with high contrast.
 
@@ -83,10 +92,9 @@ A broad color palette was chosen for the site with a range of complimenting colo
 
 In defining the colors in the HTML code, custom [Tailwind color codes](https://tailwindcss.com/docs/customizing-colors) were defined; the hex codes corresponding to the custom codes were as follows:
 
-
 | Color          |Hex Code        |
 |----------------|----------------|
-|      Yellow    |`#D97706`       | 
+|      Yellow    |`#D97706`       |
 |      Blue      |`#235789`       |
 |      Black     |`#000000`       |
 |      White     |`#F4F4F5`       |
@@ -95,12 +103,11 @@ In defining the colors in the HTML code, custom [Tailwind color codes](https://t
 |      Pure-white|`#FFF`          |
 |      Gray      |`#CBD5E1`       |
 
-
-## Fonts
+### Fonts
 
 In choosing the font for the site, I elected to use a `monospace` font; this was in keeping with the theme of the site and helped to add to the identity of the site.
 
-# Database Model & Schema
+## Database Model & Schema
 
 The following diagram provides an overview of the various models used by the application and the relationship between them.
 
@@ -109,60 +116,60 @@ The following diagram provides an overview of the various models used by the app
 In building the application, the following applications and associated models were created:
 
 **store**
+
 - ReleaseDecade
 - Manfacturer
 - CPU
 - Product
 
 **cart**
+
 - Order
 - OrderLineItem
 
 **user_account**
+
 - UserProfile
 - NewsletterSubscribers
 
-The application features four custome models; _Manufacturer_, _CPU_, _Product_ and _NewsletterSubscribers_
+The application features four custome models; _Manufacturer_, _CPU_, _Product_ and _NewsletterSubscribers_. These are used to store information relating to the products as well as for the storing of users signed up to the site newsletter.
 
+## Features
 
-# Features
+### Implemented Features
 
-## Implemented Features
+- Toast Functionality
+- Newsletter Sign-up Form
+- Admin Product Management
+- Stripe Payment Integration
+- Custom 404 Page
 
-  - Toast Functionality
-  - Newsletter Sign-up Form
-  - Admin Product Management
-  - Payment Integration
-  - User Authentication 
-  - Custom 404 Page
-
-
-## Future Additional Features
+### Future Additional Features
 
 Future additional features for the site are as follows:
 
 - Ability to sort the products that are presented to the user
 
-# Testing
+## Testing
 
 Testing of the site is documented in the [TESTING.md](TESTING.md) file
 
-# Marketing
+## Marketing
 
-## Business Model
+### Business Model
 
-retro-pc is a business to customer (B2C) website focusing on selling rate and vitage computer equipment. The website does business directly with customers. Key site features are the ability to search the site, complete an order and process payments through approved payment providers. 
+retro-pc is a business to customer (B2C) website focusing on selling rate and vitage computer equipment. The website does business directly with customers. Key site features are the ability to search the site, complete an order and process payments through approved payment providers.
 
-## Facebook Business
+### Facebook Business
 
-A mockup of a Facebook business page has been created for the retro-pc webiste. As this was A real Facebook marketing site could be used to advertise the business, promote the products sold on the website and communicate directly with customers. 
+A mockup of a Facebook business page has been created for the retro-pc webiste. As this was A real Facebook marketing site could be used to advertise the business, promote the products sold on the website and communicate directly with customers.
 
 <details>
   <summary><strong style="color:skyblue">Facebook Marketing Page:</strong></summary>
   <img src="./docs/images/retro-pc-fb-business-page.png" alt="navbar"/>
   </details>
 
-## Newsletter Signup
+### Newsletter Signup
 
 A newsletter signup form was implemented via a Django form. This allows users to enroll in the site newsletter. Details of users signed up to the newsletter can be accessed in the administration backend.
 
@@ -185,25 +192,24 @@ In addition to capturing the user's email, the date that the user subscribed to 
   <img src="./docs/images/newsletter-subscriber.png" alt="newsletter-subcriber"/>
   </details>  
 
-# SEO 
+## SEO
 
-## META Tags
+### META Tags
 
-Descriptiv meta tags were added to the site headers to optimise the site for SEO purposes. 
+Descriptiv meta tags were added to the site headers to optimise the site for SEO purposes.
 
 - <details>
   <summary><strong style="color:skyblue">Meta Tag:</strong></summary>
   <img src="./docs/images/meta_tags.png" alt="meta-tag"/>
   </details>  
 
-## sitemap.xml
+### sitemap.xml
 
-A sitemap was made to list the websites important URL's to ensure that search engines are able to easily index the site. This xml was generated using [XML-sitemaps.com](XML-sitemaps.com) 
+A sitemap was made to list the websites important URL's to ensure that search engines are able to easily index the site. This xml was generated using [XML-sitemaps.com](XML-sitemaps.com)
 
+### robots.txt
 
-## robots.txt
-
-A robots.txt file was created to supprt the indexing of the site by search engines. A robots.txt file was created with the follwoing content: 
+A robots.txt file was created to supprt the indexing of the site by search engines. A robots.txt file was created with the follwoing content:
 
 ```
 User-agent: *
@@ -211,9 +217,10 @@ Disallow:
 Sitemap: YOUR_SITEMAP_URL
 ```
 
-# Deployment
+## Deployment
 
-## Local CLone
+### Local CLone
+
 In order to make a local clone, the recommended approach is to use the command line interface. The following steps should be taken :
 
 - Navigate to the repository [website](https://github.com/eoinlarkin/retro-pc)
@@ -224,7 +231,8 @@ In order to make a local clone, the recommended approach is to use the command l
   `git clone https://github.com/eoinlarkin/retro-pc.git`
 - Press Enter. Your local clone will be created.
 
-## Heroku Deployment
+### Heroku Deployment
+
 Heroku was chosen as the hosting platform for the application.
 
 In order to deploy the application to Heroku, the following steps should be followed:
@@ -240,7 +248,7 @@ In order to deploy the application to Heroku, the following steps should be foll
 
 - Define the following Environmental Variables in Heroku:
 
-  |Key	          | Value                         |
+  |Key           | Value                         |
   |---------------|-------------------------------|
   |DATABASE_URL   |Heroku postgres database URL   |
   |SECRET_KEY     | application secret key        |
@@ -260,16 +268,17 @@ In order to deploy the application to Heroku, the following steps should be foll
 
 - Push the code to Heroku with the following command: git push heroku
 
-# Technologies Used
-  ## Languages
+## Technologies Used
 
-  ## Tools
+### Languages
+
+### Tools
 
 - [VScode](https://code.visualstudio.com/)
   All coding was completed in VS Code.
 - [Heroku](https://www.heroku.com/)
   Heroku was used for the deployment of the app.
-- [Black])(https://github.com/psf/black)
+- [Black](<https://github.com/psf/black>)
   Black was used as the Linter for Python files.
 - [Stripe](www.stripe.com)
   Stripe was used as the payments platform.
@@ -286,32 +295,36 @@ In order to deploy the application to Heroku, the following steps should be foll
 - [Markdown TOC](https://ecotrust-canada.github.io/markdown-toc/)
   For generating the formatted table of contents in markdown
 
-# Credits
-  ## Libraries
-  ## Code
+## Credits
 
-  - **[Sticky Footer](https://stackoverflow.com/questions/59812003/tailwindcss-fixed-sticky-footer-on-the-bottom)**  
+In developing the site, the following code / tools / content was leveraged:
 
+### Code
 
-  - **[CSS Not Rendering Locally](https://stackoverflow.com/questions/35557129/css-not-loading-wrong-mime-type-django)**
+The following code was levraged in order to develop the site. In addition site logic was based on template logic from the [Code Institute Boutique Ado](https://github.com/Code-Institute-Solutions/boutique_ado_v1) repository. 
 
-  - **[404 Error](https://www.vectorstock.com/royalty-free-vector/power-plug-and-cloud-icon-in-shape-on-a-white-vector-29024655">)**
- 
- - **[Custom Tailwind Fonts](https://blog.logrocket.com/how-to-use-custom-fonts-tailwind-css/)**
+- **[Sticky Footer](https://stackoverflow.com/questions/59812003/tailwindcss-fixed-sticky-footer-on-the-bottom)**  
 
+- **[CSS Not Rendering Locally](https://stackoverflow.com/questions/35557129/css-not-loading-wrong-mime-type-django)**
 
-  ## Content
+- **[404 Error](https://www.vectorstock.com/royalty-free-vector/power-plug-and-cloud-icon-in-shape-on-a-white-vector-29024655">)**
+
+- **[Custom Tailwind Fonts](https://blog.logrocket.com/how-to-use-custom-fonts-tailwind-css/)**
+
+- **[Tailwind Dropdown Buttons](https://codepen.io/robstinson/pen/LYNJLxm)**
+
+- **[Header with Hamburger Menu](https://codepen.io/Zeeslag/pen/MWpLoKX)**
+
+### Content
+
   Content for the site including images and details on the various vintage computer hardware was sourced from [wikipedia.com](https://www.wikipedia.com)
 
-  ## Images
-- The cover icon is derived from an icon sourced from [iconfinder.com](iconfinder.com) 
+### Images
+
+- The cover icon is derived from an icon sourced from [iconfinder.com](iconfinder.com)
       [link](https://www.iconfinder.com/icons/5426888/apple_mac_pc_retro_icon)
-  ## Other
-- `venv` was used to manage the python dependencies 
 
+### Other
 
-
-
-
-
-
+- `venv` was used to manage the python dependencies
+- [Cloudinary](https://cloudinary.com/) was used for the upload and storage of both media and static files

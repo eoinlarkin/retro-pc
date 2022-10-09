@@ -3,9 +3,6 @@
 {% load cart_tools %}
 
 {% block page_header %}
-<div>
-    <h1>PAGE HEADER</h1>
-</div>
 {% endblock %}
 
 {% block content %}
@@ -106,14 +103,11 @@
                                         </form>
 
                                     </td>
-                                    <td <a class="remove-item" id="remove_{{ item.item_id }}">
-                                        <button class="btn-blue-greenhighlight">
+                                    <td>
+                                        <button class="remove-item btn-blue-greenhighlight" id="remove_{{ item.item_id }}">
                                             Remove Item
                                         </button>
-                                        </a>
-
                                     </td>
-
 
                                     <td class="py-4 px-6">
                                         <p>${{ item.product.price | calc_subtotal:item.quantity }}</p>
@@ -179,10 +173,7 @@
                     </div>
                     <!-- END: Order Summary Table -->
 
-
-
                 </div>
-
                 <div class="flex flex-row justify-center mb-4 mt-4 space-x-4">
                     <a href="{% url 'store' %}" class="btn-blue-greenhighlight">Back to Store
                     </a>
@@ -191,11 +182,8 @@
                     </a>
                 </div>
 
-
-
                 {% else %}
                 <!--    Start: Condition on where bag is empty -->
-
                 <div class="flex ">
                     <div class="md:max-w-6xl bg-pure-white border-4 justify-center border-black rounded-lg px-12 py-8">
                         <div class="text-center text-4xl my-4 ">

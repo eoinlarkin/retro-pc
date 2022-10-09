@@ -14,9 +14,9 @@
     <!-- Parent Div -->
     <div class="max-w-4xl">
         <!-- Image and Attributes -->
-        <div class="max-w-4xl">
+        <div class="max-w-4xl flex flex-col items-center bg-pure-white rounded-lg border shadow-md md:flex-row  border-black hover:bg-gray ">
             <a href="{% url 'product_detail' product.id %}"
-                class="flex flex-col items-center bg-pure-white rounded-lg border shadow-md md:flex-row  border-black hover:bg-gray ">
+                class="">
                 {% if product.image %}
                 <img class="object-cover h-64 rounded-t-lg max-w-xl md:rounded-none md:rounded-l-lg"
                     src="{{ product.image.url }}" alt="{{ product.name }}"></a>
@@ -29,28 +29,27 @@
                 <div class="flex flex-col justify-between p-4 leading-normal w-full md:w-96">
                     <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 ">{{ product.name }}</h5>
                     <ul>
-                        <li class="mb-3 font-normal text-gray-700 ">${{ product.price }}</li>
-                        <li class="mb-3 font-normal text-gray-700 ">{{ product.manufacturer }}</li>
+                        <li class="mb-3 font-normal text-gray-700 ">Cost: ${{ product.price }}</li>
+                        <li class="mb-3 font-normal text-gray-700 ">Manufacturer: {{ product.manufacturer }}</li>
+                        <li class="mb-3 font-normal text-gray-700 ">CPU: {{ product.cpu }}</li>
                     </ul>
                 </div>
+        </div>
 
-                <!-- Code to edit and delete if user is admin -->
-                {% if request.user.is_superuser %}
-                <a href="{% url 'edit_product' product.id %}">Edit</a> |
-                <a href="{% url 'delete_product' product.id %}">Delete</a>
-                {% endif %}
+        <!-- Code to edit and delete if user is admin -->
+        {% if request.user.is_superuser %}
+        <a href="{% url 'edit_product' product.id %}">Edit</a> |
+        <a href="{% url 'delete_product' product.id %}">Delete</a>
+        {% endif %}
 
-
-            </div>
         <!-- Product Description-->
         <div class="bg-pure-white rounded-lg border shadow-md md:flex-row  border-black hover:bg-gray max-w-4xl mt-4 mb-4">
             <p class="text-center text-2xl"><strong>Description:</strong></p>
             {{ product.description }}
-
         </div>
 
         <!-- DIV for Add to Cart-->
-        <div class="bg-pure-white rounded-lg border shadow-md md:flex-row  border-black hover:bg-gray ">
+        <div class="bg-pure-white rounded-lg border shadow-md md:flex-row  border-black hover:bg-gray mt-4 mb-4 py-4 ">
 
             <!-- Add to Cart Form-->
             <!-- Uses the post method to send information to the server -->
